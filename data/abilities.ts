@@ -5614,4 +5614,65 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: -3,
 	},
+	
+	vengefulspirit: {
+		onStart(pokemon) {
+			if (pokemon.side.totalFainted) {
+				this.add('-activate', pokemon, 'ability: Supreme Overlord');
+				const fallen = Math.min(pokemon.side.totalFainted, 5);
+				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
+				this.effectState.fallen = fallen;
+			}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.fallen) {
+				const powMod = [4096, 4506, 4915, 5325, 5734, 6144];
+				this.debug(`Supreme Overlord boost: ${powMod[this.effectState.fallen]}/4096`);
+				return this.chainModify([powMod[this.effectState.fallen], 4096]);
+			}
+		},
+		flags: {},
+		name: "Vengeful Spirit",
+		rating: 4,
+		num: 293,
+	},
+	rhythmicbeat: {
+		onStart(pokemon) {
+			pokemon.addVolatile('rhythmicbeat');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.effectState.lastMove = '';
+				this.effectState.numConsecutive = 0;
+			},
+			onTryMovePriority: -2,
+			onTryMove(pokemon, target, move) {
+				if (!pokemon.hasAbility('rhythmicbeat')) {
+					pokemon.removeVolatile('rhythmicbeat');
+					return;
+				}
+				if (this.effectState.lastMove === move.id && pokemon.moveLastTurnResult) {
+					this.effectState.numConsecutive++;
+				} else if (pokemon.volatiles['twoturnmove'] && (this.effectState.lastMove !== move.id)) {
+					this.effectState.numConsecutive = 1;
+				} else {
+					this.effectState.numConsecutive = 0;
+				}
+				this.effectState.lastMove = move.id;
+			},
+			onModifyDamage(damage, source, target, move) {
+				const dmgMod = [4096, 4915, 5734, 6553, 7372, 8192];
+				const numConsecutive = this.effectState.numConsecutive > 5 ? 5 : this.effectState.numConsecutive;
+				//this.debug(`Current Metronome boost: ${dmgMod[numConsecutive]}/4096`);
+				return this.chainModify([dmgMod[numConsecutive], 4096]);
+			},
+		},
+		name: "Rhythmic Beat",
+		rating: 1.5,
+		num: 20,
+	},
 };
