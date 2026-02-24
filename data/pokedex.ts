@@ -1,4 +1,16 @@
 export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
+	mario: {
+		num: 2001,
+		name: "Mario",
+		types: ["Normal"],
+		genderRatio: {M: 1, F: 0},
+		baseStats: { hp: 85, atk: 100, def: 75, spa: 100, spd: 75, spe: 110 },
+		abilities: { 0: "Protean" },
+		heightm: 1,
+		weightkg: 6.9,
+		color: "Red",
+		eggGroups: ["Human-Like"],
+	},
 	bulbasaur: {
 		num: 1,
 		name: "Bulbasaur",
