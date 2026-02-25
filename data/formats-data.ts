@@ -5,6 +5,18 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	donkeykong: {
 		tier: "OU",
 	},
+	link: {
+		tier: "OU",
+	},
+	samus: {
+		tier: "OU",
+	},
+	darksamus: {
+		tier: "OU",
+	},
+	yoshi: {
+		tier: "OU",
+	},
 	madrat: {
 		tier: "OU",
 	},
