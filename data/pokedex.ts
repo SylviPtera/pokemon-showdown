@@ -11,7 +11,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Red",
 		eggGroups: ["Human-Like"],
 	},
-	dk: {
+	donkeykong: {
 		num: 2002,
 		name: "Donkey Kong",
 		types: ["Fighting", "Grass"],
@@ -29,7 +29,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Dark", "Ground"],
 		genderRatio: {M: 1, F: 0},
 		baseStats: { hp: 105, atk: 130, def: 100, spa: 85, spd: 60, spe: 90 },
-		abilities: { 0: "Rough SKin", 1: "Sheer Force" },
+		abilities: { 0: "Rough Skin", 1: "Sheer Force" },
 		heightm: 1,
 		weightkg: 6.9,
 		color: "Purple",
@@ -89,7 +89,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Ghost", "Dark"],
 		gender: "N",
 		baseStats: { hp: 110, atk: 135, def: 65, spa: 110, spd: 95, spe: 65 },
-		abilities: { 0: "Supreme Overlord" },
+		abilities: { 0: "Vengeful Spirit" },
 		heightm: 7,
 		weightkg: 30,
 		color: "White",

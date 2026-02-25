@@ -22097,4 +22097,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
+
+	mindmeltingtoxin: {
+		num: 51,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Mind-Melting Toxin",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			boosts: {
+				spa: -1,
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Clever",
+	},
 };
