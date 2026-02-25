@@ -17,7 +17,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fighting", "Grass"],
 		genderRatio: {M: 1, F: 0},
 		baseStats: { hp: 110, atk: 145, def: 90, spa: 35, spd: 60, spe: 80 },
-		abilities: { 0: "Protean" },
+		abilities: { 0: "Rhythmic Beat" },
 		heightm: 1,
 		weightkg: 6.9,
 		color: "Brown",
