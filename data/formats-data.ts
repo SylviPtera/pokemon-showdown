@@ -17,6 +17,111 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	yoshi: {
 		tier: "OU",
 	},
+	kirby: {
+		tier: "OU",
+	},
+	fox: {
+		tier: "OU",
+	},
+	luigi: {
+		tier: "OU",
+	},
+	ness: {
+		tier: "OU",
+	},
+	captainfalcon: {
+		tier: "OU",
+	},
+	peach: {
+		tier: "OU",
+	},
+	daisy: {
+		tier: "OU",
+	},
+	bowser: {
+		tier: "OU",
+	},
+	iceclimbers: {
+		tier: "OU",
+	},
+	sheik: {
+		tier: "OU",
+	},
+	zelda: {
+		tier: "OU",
+	},
+	drmario: {
+		tier: "OU",
+	},
+	falco: {
+		tier: "OU",
+	},
+	marth: {
+		tier: "OU",
+	},
+	lucina: {
+		tier: "OU",
+	},
+	younglink: {
+		tier: "LC",
+	},
+	ganondorf: {
+		tier: "OU",
+	},
+	roy: {
+		tier: "OU",
+	},
+	chrom: {
+		tier: "OU",
+	},
+	mrgamewatch: {
+		tier: "OU",
+	},
+	metaknight: {
+		tier: "OU",
+	},
+	pit: {
+		tier: "OU",
+	},
+	darkpit: {
+		tier: "OU",
+	},
+	zerosuitsamus: {
+		tier: "OU",
+	},
+	wario: {
+		tier: "OU",
+	},
+	snake: {
+		tier: "OU",
+	},
+	ike: {
+		tier: "OU",
+	},
+	diddykong: {
+		tier: "OU",
+	},
+	lucas: {
+		tier: "OU",
+	},
+	sonic: {
+		tier: "OU",
+	},
+	kingdedede: {
+		tier: "OU",
+	},
+	olimar: {
+		tier: "OU",
+	},
+	rob: {
+		tier: "OU",
+	},
+	toonlink: {
+		tier: "OU",
+	},
+	wolf: {
+		tier: "OU",
+	},
 	madrat: {
 		tier: "OU",
 	},
@@ -274,7 +379,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	pikachustarter: {
 		isNonstandard: "LGPE",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	pikachugmax: {
 		isNonstandard: "Past",
@@ -388,7 +493,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	jigglypuff: {
-		tier: "Illegal",
+		tier: "NFE",
 	},
 	wigglytuff: {
 		tier: "Illegal",

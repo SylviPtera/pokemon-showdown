@@ -22098,8 +22098,164 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Beautiful",
 	},
 
+	bananabonanza: {
+		num: 3005,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Banana Bonanza",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		condition: {
+			onModifyCritRatio(critRatio) {
+				return critRatio + 1;
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Grass",
+		contestType: "Cool",
+	},
+	bombblast: {
+		num: 3002,
+		accuracy: 90,
+		basePower: 90,
+		category: "Physical",
+		name: "Bomb Blast",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			chance: 20,
+			volatileStatus: "flinch",	
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Tough",
+	},
+	bulletstorm: {
+		num: 3004,
+		accuracy: 100,
+		basePower: 25,
+		category: "Physical",
+		name: "Bullet Storm",
+		pp: 30,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		multihit: [2, 5],
+		secondary: null,
+		target: "normal",
+		type: "Fire",
+		contestType: "Cool",
+	},
+	electrowhip: {
+		num: 3006,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Electrowhip",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Electric",
+		contestType: "Tough",
+	},
+	explosivescheme: {
+		num: 3009,
+		accuracy: 95,
+		basePower: 100,
+		category: "Physical",
+		name: "Explosive Scheme",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, metronome: 1, mirror: 1},
+		mindBlownRecoil: true,
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				const hpBeforeRecoil = pokemon.hp;
+				this.damage(Math.round(pokemon.maxhp / 4), pokemon, pokemon, this.dex.conditions.get('Mind Blown'), true);
+				if (pokemon.hp <= pokemon.maxhp / 4 && hpBeforeRecoil > pokemon.maxhp / 4) {
+					this.runEvent('EmergencyExit', pokemon, pokemon);
+				}
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
+	falconpunch: {
+		num: 3008,
+		accuracy: 100,
+		basePower: 140,
+		category: "Physical",
+		name: "Falcon Punch",
+		pp: 5,
+		priority: -3,
+		flags: {
+			contact: 1, protect: 1, punch: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1,
+		},
+		priorityChargeCallback(pokemon) {
+			pokemon.addVolatile('focuspunch');
+		},
+		beforeMoveCallback(pokemon) {
+			if (pokemon.volatiles['focuspunch']?.lostFocus) {
+				this.add('cant', pokemon, 'Focus Punch', 'Focus Punch');
+				return true;
+			}
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Focus Punch');
+			},
+			onHit(pokemon, source, move) {
+				if (move.category !== 'Status') {
+					this.effectState.lostFocus = true;
+				}
+			},
+			onTryAddVolatile(status, pokemon) {
+				if (status.id === 'flinch') return null;
+			},
+		},
+		secondary: {
+			chance: 100,
+			self: {
+				boosts: {
+					atk: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
+	ghosthunting: {
+		num: 3007,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Ghost Hunting",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Ghost') return 1;
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Clever",
+	},
 	mindmeltingtoxin: {
-		num: 51,
+		num: 3001,
 		accuracy: 100,
 		basePower: 80,
 		category: "Special",
@@ -22116,5 +22272,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
+	},
+	strikingsword: {
+		num: 3003,
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		name: "Striking Sword",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, slicing: 1},
+		ignoreEvasion: true,
+		ignoreDefensive: true,
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Tough",
 	},
 };
