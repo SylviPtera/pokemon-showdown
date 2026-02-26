@@ -1479,6 +1479,14 @@ export const Scripts: ModdedBattleScriptsData = {
 						this.battle.runEvent('EmergencyExit', pokemon, pokemon);
 					}
 				}
+				if (move.explosiveSchemeRecoil) {
+					const hpBeforeRecoil = pokemon.hp;
+					this.battle.damage(Math.round(pokemon.maxhp / 4), pokemon, pokemon, this.dex.conditions.get(move.id), true);
+					move.explosiveSchemeRecoil = false;
+					if (pokemon.hp <= pokemon.maxhp / 2 && hpBeforeRecoil > pokemon.maxhp / 2) {
+						this.battle.runEvent('EmergencyExit', pokemon, pokemon);
+					}
+				}
 				this.battle.eachEvent('Update');
 				if (!pokemon.hp && targets.length === 1) {
 					hit++; // report the correct number of hits for multihit moves

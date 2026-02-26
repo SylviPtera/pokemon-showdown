@@ -2547,7 +2547,7 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	cari: "Caribolt",
 	cawm: "Cawmodore",
 	colo: "Colossoil",
-	chrom: "Chromera",
+	chrome: "Chromera",
 	chugg: "Chuggalong",
 	clo: "Cyclohm",
 	clohm: "Cyclohm",

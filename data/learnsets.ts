@@ -371,6 +371,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			icebeam: ["9M"],
 			doubleedge: ["9M"],
 			rapidspin: ["9M"],
+			fakeout: ["9M"],
 			knockoff: ["9M"],
 			darkestlariat: ["9M"],
 			playrough: ["9M"],
@@ -549,7 +550,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			strikingsword: ["9M"],
 		},
 	},
-	mrgamewatch: {
+	mrgameandwatch: {
 		learnset: {
 			bombblast: ["9M"],
 			thunderwave: ["9M"],

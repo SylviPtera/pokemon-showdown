@@ -74,7 +74,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	chrom: {
 		tier: "OU",
 	},
-	mrgamewatch: {
+	mrgameandwatch: {
 		tier: "OU",
 	},
 	metaknight: {

@@ -22109,11 +22109,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1},
 		condition: {
 			onModifyCritRatio(critRatio) {
-				return critRatio + 1;
+				return critRatio + 3;
 			},
 		},
 		secondary: null,
-		target: "self",
+		target: "normal",
 		type: "Grass",
 		contestType: "Cool",
 	},
@@ -22177,12 +22177,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, metronome: 1, mirror: 1},
-		mindBlownRecoil: true,
+		explosiveSchemeRecoil: true,
 		onAfterMove(pokemon, target, move) {
 			if (move.mindBlownRecoil && !move.multihit) {
 				const hpBeforeRecoil = pokemon.hp;
 				this.damage(Math.round(pokemon.maxhp / 4), pokemon, pokemon, this.dex.conditions.get('Mind Blown'), true);
-				if (pokemon.hp <= pokemon.maxhp / 4 && hpBeforeRecoil > pokemon.maxhp / 4) {
+				if (pokemon.hp <= pokemon.maxhp / 2 && hpBeforeRecoil > pokemon.maxhp / 2) {
 					this.runEvent('EmergencyExit', pokemon, pokemon);
 				}
 			}
@@ -22235,7 +22235,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 		},
 		target: "normal",
-		type: "Fighting",
+		type: "Fire",
 		contestType: "Tough",
 	},
 	ghosthunting: {
