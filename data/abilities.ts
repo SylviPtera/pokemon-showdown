@@ -5615,6 +5615,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: -3,
 	},
 	
+	artillery: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['bullet']) {
+				this.debug('Artillery boost');
+				return this.chainModify(1.3);
+			}
+		},
+		name: "Artillery",
+		rating: 2,
+		num: 138,
+	},
 	vengefulspirit: {
 		onStart(pokemon) {
 			if (pokemon.side.totalFainted) {

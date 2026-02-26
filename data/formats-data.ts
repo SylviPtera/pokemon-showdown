@@ -122,6 +122,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	wolf: {
 		tier: "OU",
 	},
+	bayonetta: {
+		tier: "OU",
+	},
 	madrat: {
 		tier: "OU",
 	},

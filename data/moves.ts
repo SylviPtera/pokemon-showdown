@@ -22107,9 +22107,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		self: {
+			onHit(source) {
+				for (const pokemon of source.alliesAndSelf()) {
+					pokemon.addVolatile('gmaxchistrike');
+				}
+			},
+		},
 		condition: {
+			noCopy: true,
+			onStart(target, source, effect) {
+				this.effectState.layers = 1;
+				if (!['costar', 'imposter', 'psychup', 'transform'].includes(effect?.id)) {
+					this.add('-start', target, 'move: G-Max Chi Strike');
+				}
+			},
+			onRestart(target, source, effect) {
+				if (this.effectState.layers >= 3) return false;
+				this.effectState.layers++;
+				if (!['costar', 'imposter', 'psychup', 'transform'].includes(effect?.id)) {
+					this.add('-start', target, 'move: G-Max Chi Strike');
+				}
+			},
 			onModifyCritRatio(critRatio) {
-				return critRatio + 3;
+				return critRatio + this.effectState.layers;
 			},
 		},
 		secondary: null,
@@ -22125,7 +22146,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Bomb Blast",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, metronome: 1, bullet: 1},
 		secondary: {
 			chance: 20,
 			volatileStatus: "flinch",	
@@ -22176,10 +22197,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Explosive Scheme",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, metronome: 1, mirror: 1},
+		flags: {protect: 1, metronome: 1, mirror: 1, bullet: 1},
 		explosiveSchemeRecoil: true,
 		onAfterMove(pokemon, target, move) {
-			if (move.mindBlownRecoil && !move.multihit) {
+			if (move.explosiveSchemeRecoil && !move.multihit) {
 				const hpBeforeRecoil = pokemon.hp;
 				this.damage(Math.round(pokemon.maxhp / 4), pokemon, pokemon, this.dex.conditions.get('Mind Blown'), true);
 				if (pokemon.hp <= pokemon.maxhp / 2 && hpBeforeRecoil > pokemon.maxhp / 2) {
@@ -22253,6 +22274,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Clever",
+	},
+	infernalclimax: {
+		num: 844,
+		accuracy: 100,
+		basePower: 25,
+
+		//power trip
+		basePowerCallback(pokemon, target, move) {
+			const bp = move.basePower + 5 * pokemon.positiveBoosts();
+			this.debug('BP: ' + bp);
+			return bp;
+		},
+		category: "Physical",
+		name: "Infernal Climax",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		multihit: 3,
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		contestType: "Beautiful",
 	},
 	mindmeltingtoxin: {
 		num: 3001,
