@@ -39,7 +39,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	bowser: {
-		tier: "OU",
+		tier: "Uber",
 	},
 	iceclimbers: {
 		tier: "OU",
@@ -66,7 +66,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	ganondorf: {
-		tier: "OU",
+		tier: "Uber",
 	},
 	roy: {
 		tier: "OU",

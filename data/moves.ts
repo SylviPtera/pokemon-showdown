@@ -8936,7 +8936,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 60,
 		category: "Special",
-		isNonstandard: "Past",
 		name: "Hidden Power",
 		pp: 15,
 		priority: 0,
@@ -14908,7 +14907,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return move.basePower;
 		},
 		category: "Physical",
-		isNonstandard: "Past",
 		name: "Pursuit",
 		pp: 20,
 		priority: 0,
@@ -15577,7 +15575,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			return Math.floor((pokemon.happiness * 10) / 25) || 1;
 		},
 		category: "Physical",
-		isNonstandard: "Past",
 		name: "Return",
 		pp: 20,
 		priority: 0,
