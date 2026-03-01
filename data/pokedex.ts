@@ -731,7 +731,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	cloud: {
 		num: 5062,
 		name: "Cloud",
-		types: ["Grey"],
+		types: ["Steel"],
 		gender: "M",
 		baseStats: { hp: 70, atk: 115, def: 90, spa: 100, spd: 70, spe: 100 },
 		abilities: { 0: "Inner Focus" },
