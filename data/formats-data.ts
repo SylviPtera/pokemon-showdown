@@ -111,7 +111,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	olimar: {
-		tier: "OU",
+		tier: "UU",
 	},
 	rob: {
 		tier: "OU",
@@ -120,6 +120,72 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	wolf: {
+		tier: "OU",
+	},
+	villager: {
+		tier: "OU",
+	},
+	megaman: {
+		tier: "OU",
+	},
+	wiifittrainer: {
+		tier: "OU",
+	},
+	rosalina: {
+		tier: "OU",
+	},
+	littlemac: {
+		tier: "OU",
+	},
+	palutena: {
+		tier: "OU",
+	},
+	pacman: {
+		tier: "OU",
+	},
+	robin: {
+		tier: "OU",
+	},
+	shulk: {
+		tier: "OU",
+	},
+	bowserjr: {
+		tier: "OU",
+	},
+	lemmy: {
+		tier: "OU",
+	},
+	morton: {
+		tier: "OU",
+	},
+	larry: {
+		tier: "OU",
+	},
+	wendy: {
+		tier: "OU",
+	},
+	iggy: {
+		tier: "OU",
+	},
+	roykoopa: {
+		tier: "OU",
+	},
+	ludwig: {
+		tier: "OU",
+	},
+	duckhunt: {
+		tier: "OU",
+	},
+	ryu: {
+		tier: "OU",
+	},
+	ken: {
+		tier: "OU",
+	},
+	cloud: {
+		tier: "OU",
+	},
+	corrin: {
 		tier: "OU",
 	},
 	bayonetta: {
@@ -134,11 +200,35 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	ratgod: {
 		tier: "OU",
 	},
+	labrat: {
+		tier: "LC",
+	},
+	mobrat: {
+		tier: "NFE",
+	},
 	ghostrat: {
 		tier: "OU",
 	},
-	mimic: {
+	blackcat: {
 		tier: "OU",
+	},
+	phantommoon: {
+		tier: "OU",
+	},
+	cactusnightmare: {
+		tier: "UU",
+	},
+	skullnightmare: {
+		tier: "UU",
+	},
+	meltingnightmare: {
+		tier: "UU",
+	},
+	burstnightmare: {
+		tier: "UU",
+	},
+	mimic: {
+		tier: "UU",
 	},
 	thugly: {
 		tier: "OU",

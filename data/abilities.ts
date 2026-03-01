@@ -5630,7 +5630,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	vengefulspirit: {
 		onStart(pokemon) {
 			if (pokemon.side.totalFainted) {
-				this.add('-activate', pokemon, 'ability: Supreme Overlord');
+				this.add('-activate', pokemon, 'ability: Vengeful Spirit');
 				const fallen = Math.min(pokemon.side.totalFainted, 5);
 				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
 				this.effectState.fallen = fallen;
