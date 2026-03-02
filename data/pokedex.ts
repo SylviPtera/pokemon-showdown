@@ -137,7 +137,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Captain Falcon",
 		types: ["Fighting", "Fire"],
 		gender: "M",
-		baseStats: { hp: 83, atk: 121, def: 90, spa: 60, spd: 55, spe: 121 },
+		baseStats: { hp: 83, atk: 121, def: 90, spa: 60, spd: 60, spe: 121 },
 		abilities: { 0: "Iron Fist", H: "Guts" },
 		heightm: 1.9,
 		weightkg: 100,
