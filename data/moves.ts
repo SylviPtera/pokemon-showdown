@@ -22123,8 +22123,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	bladebeam: {
 		num: 3010,
-		accuracy: 80,
-		basePower: 100,
+		accuracy: 100,
+		basePower: 80,
 		category: "Physical",
 		name: "Blade Beam",
 		pp: 10,
@@ -22170,8 +22170,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	crossslash: {
 		num: 3011,
-		accuracy: 85,
-		basePower: 100,
+		accuracy: 100,
+		basePower: 85,
 		category: "Physical",
 		name: "Cross Slash",
 		pp: 10,
