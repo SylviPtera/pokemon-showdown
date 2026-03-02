@@ -3,6 +3,12 @@ import { Recoverable } from 'node:repl';
 import { crypto_pwhash_scryptsalsa208sha256_MEMLIMIT_INTERACTIVE, sodium_mprotect_noaccess } from 'sodium-native';
 
 export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
+	titanchor: {
+		learnset: {
+			woodhammer: ["9M"],
+			wavecrash: ["9M"],
+		}
+	},
 	mario: {
 		learnset: {
 			hiddenpower: ["9M"],

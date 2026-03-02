@@ -1,5 +1,7 @@
 // List of flags and their descriptions can be found in sim/dex-moves.ts
 
+let drainvar = 0;
+
 export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	"10000000voltthunderbolt": {
 		num: 719,
@@ -8954,7 +8956,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Bug",
 		pp: 15,
 		priority: 0,
@@ -8970,7 +8971,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Dark",
 		pp: 15,
 		priority: 0,
@@ -8986,7 +8986,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Dragon",
 		pp: 15,
 		priority: 0,
@@ -9002,7 +9001,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Electric",
 		pp: 15,
 		priority: 0,
@@ -9018,7 +9016,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Fighting",
 		pp: 15,
 		priority: 0,
@@ -9034,7 +9031,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Fire",
 		pp: 15,
 		priority: 0,
@@ -9050,7 +9046,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Flying",
 		pp: 15,
 		priority: 0,
@@ -9066,7 +9061,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Ghost",
 		pp: 15,
 		priority: 0,
@@ -9082,7 +9076,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Grass",
 		pp: 15,
 		priority: 0,
@@ -9098,7 +9091,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Ground",
 		pp: 15,
 		priority: 0,
@@ -9114,7 +9106,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Ice",
 		pp: 15,
 		priority: 0,
@@ -9130,7 +9121,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Poison",
 		pp: 15,
 		priority: 0,
@@ -9146,7 +9136,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Psychic",
 		pp: 15,
 		priority: 0,
@@ -9162,7 +9151,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Rock",
 		pp: 15,
 		priority: 0,
@@ -9178,7 +9166,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Steel",
 		pp: 15,
 		priority: 0,
@@ -9194,7 +9181,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 60,
 		category: "Special",
 		realMove: "Hidden Power",
-		isNonstandard: "Past",
 		name: "Hidden Power Water",
 		pp: 15,
 		priority: 0,
@@ -22135,6 +22121,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	bladebeam: {
+		num: 3010,
+		accuracy: 80,
+		basePower: 100,
+		category: "Physical",
+		name: "Blade Beam",
+		pp: 10,
+		priority: 0,
+		overrideDefensiveStat: 'spd',
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	},
 	bombblast: {
 		num: 3002,
 		accuracy: 90,
@@ -22164,7 +22165,39 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Fire",
+		type: "Dark",
+		contestType: "Cool",
+	},
+	crossslash: {
+		num: 3011,
+		accuracy: 85,
+		basePower: 100,
+		category: "Physical",
+		name: "Cross Slash",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1, slicing: 1},
+		secondary: {
+			chance: 20,
+			status: 'par',
+		},
+		target: "normal",
+		type: "Steel",
+		contestType: "Cool",
+	},
+	doublehammer: {
+		num: 3012,
+		accuracy: 90,
+		basePower: 50,
+		category: "Physical",
+		name: "Double Hammer",
+		pp: 15,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		multihit: 2,
+		secondary: null,
+		target: "normal",
+		type: "Ice",
 		contestType: "Cool",
 	},
 	electrowhip: {
@@ -22293,6 +22326,212 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dark",
 		contestType: "Beautiful",
+	},
+	inhale: {
+		num: 547,
+		accuracy: 100,
+		basePower: 70,
+		category: "Physical",
+		name: "Inhale",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1},
+		/*onTryHit(target, source) {
+			if (target.ability === source.ability) return false;
+			if (target.getAbility().flags['failroleplay'] || source.getAbility().flags['cantsuppress']) return false;
+		},*/
+		onHit(target, source) {
+			
+			//role play
+			if (!source.volatiles['copying']) {
+				if (!(target.ability === source.ability)) {
+					if (!(target.getAbility().flags['failroleplay'] || source.getAbility().flags['cantsuppress'])) {
+						const oldAbility = source.setAbility(target.ability, target);
+						if (!oldAbility) return oldAbility as false | null;
+
+						//core enforcer
+						target.addVolatile('gastroacid');
+					}
+				}
+			}
+
+			//reflect type
+			if (!(source.volatiles['copying'])) {
+				if (source.species && (source.species.num === 493 || source.species.num === 773)) return false;
+				if (source.terastallized) return false;
+				const oldApparentType = source.apparentType;
+				let newBaseTypes = target.getTypes(true).filter(type => type !== '???');
+				if (!newBaseTypes.length) {
+					if (target.addedType) {
+						newBaseTypes = ['Normal'];
+					} else {
+						return false;
+					}
+				}
+				this.add('-start', source, 'typechange', '[from] move: Reflect Type', '[of] ' + target);
+				source.setType(newBaseTypes);
+				source.addedType = target.addedType;
+				source.knownType = target.isAlly(source) && target.knownType;
+				if (!source.knownType) source.apparentType = oldApparentType;
+				
+				//soak
+				!target.setType("???")
+				this.add('-start', target, 'typechange', "???");
+
+				source.addVolatile('copying');
+				target.removeVolatile('copying');
+			}
+		},
+
+		//revelation dance
+		onModifyType(move, pokemon) {
+			let type = pokemon.getTypes()[0];
+			if (type === "Bird") type = "???";
+			move.type = type;
+		},
+
+		//photon geyser
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+
+			//secret power
+			if (move.type === "Normal" && !pokemon.volatiles['copying']) return;
+			move.secondaries = [];
+
+			if (move.type === "Normal") {
+				move.secondaries.push({
+					self: {
+						boosts: {
+							atk: 1,
+							spa: 1,
+							spe: -1,
+						},
+					},
+				});
+			} else if (move.type === "Fire") {
+				move.secondaries.push({
+					chance: 30,
+					status: 'brn',
+				});
+			} else if (move.type === "Ground") {
+				move.secondaries.push({
+					chance: 50,
+					self: {
+						boosts: {
+							spd: 1,
+						},
+					},
+				});
+			} else if (move.type === "Rock") {
+				move.secondaries.push({
+					chance: 30,
+					volatileStatus: 'flinch',
+				});
+			} else if (move.type === "Fighting") {
+				move.secondaries.push({
+					chance: 50,
+					self: {
+						boosts: {
+							atk: 1,
+						},
+					},
+				});
+			} else if (move.type === "Electric") {
+				move.secondaries.push({
+					chance: 30,
+					status: 'par',
+				});
+			} else if (move.type === "Grass") {
+				move.secondaries.push({
+					self: {
+						volatileStatus: 'aquaring'
+					},
+				});
+			} else if (move.type === "Bug") {
+				move.secondaries.push({
+					chance: 50,
+					boosts: {
+						spa: -1,
+					},
+				});
+			} else if (move.type === "Water") {
+				move.secondaries.push({
+					chance: 50,
+					boosts: {
+						spe: -1,
+					},
+				});
+			} else if (move.type === "Ice") {
+				move.secondaries.push({
+					chance: 10,
+					status: 'frz',
+				});
+			} else if (move.type === "Psychic") {
+				move.secondaries.push({
+					chance: 50,
+					self: {
+						boosts: {
+							spa: 1,
+						},
+					},
+				});
+			} else if (move.type === "Poison") {
+				move.secondaries.push({
+					chance: 30,
+					status: 'psn',
+				});
+			} else if (move.type === "Ghost") {
+				move.secondaries.push({
+					chance: 50,
+					boosts: {
+						atk: -1,
+					},
+				});
+			} else if (move.type === "Flying") {
+				move.secondaries.push({
+					chance: 50,
+					self: {
+						boosts: {
+							spe: 1,
+						},
+					},
+				});
+			} else if (move.type === "Dark") {
+				move.secondaries.push({
+					chance: 50,
+					boosts: {
+						def: -1,
+					},
+				});
+			} else if (move.type === "Steel") {
+				move.secondaries.push({
+					chance: 50,
+					self: {
+						boosts: {
+							def: 1,
+						},
+					},
+				});
+			} else if (move.type === "Dragon") {
+				move.secondaries.push({
+					chance: 50,
+					boosts: {
+						spd: -1,
+					},
+				});
+			} else if (move.type === "Fairy") {
+				move.secondaries.push({
+					self: {
+						sideCondition: 'safeguard'
+					},
+				});
+			}
+		},
+		drain: [drainvar, 2],
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Cute",
 	},
 	mindmeltingtoxin: {
 		num: 3001,

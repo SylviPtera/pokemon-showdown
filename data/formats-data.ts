@@ -1,4 +1,7 @@
 export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable = {
+	titanchor: {
+		tier: "OU",
+	},
 	mario: {
 		tier: "OU",
 	},
@@ -4860,8 +4863,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	dhelmise: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "UU",
 		natDexTier: "RU",
 	},
 	jangmoo: {

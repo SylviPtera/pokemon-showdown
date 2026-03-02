@@ -32,6 +32,8 @@ Ratings and how they work:
 
 */
 
+let newvarpb = 0;
+
 export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
 		isNonstandard: "Past",
@@ -5626,6 +5628,77 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Artillery",
 		rating: 2,
 		num: 138,
+	},
+	
+	tagteam: {
+
+		//parental bond
+		onModifyMove(move, pokemon, target) {
+
+			if (!move.multihit) {
+				newvarpb = 1
+			}
+			if (move.multihit) {
+				newvarpb = 0
+			}
+
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (!target) return;
+			// singles, or single-target move
+			if (this.activePerHalf === 1 || ['any', 'normal', 'randomNormal'].includes(move.target)) {
+				move.multihit = 2;
+				//move.multihitType = 'parentalbond';
+				pokemon.addVolatile('parentalbond');
+			}
+		},
+
+		//tough claws (damage multiplier)
+		onBasePower(basePower, attacker, defender, move) {
+			if (newvarpb === 1) {
+				return this.chainModify([0.5]);
+			}
+			else {
+				return this.chainModify([1.2]);
+			}
+		},
+
+		onModifyCritRatio(critRatio) {
+			if (newvarpb === 0) {
+				return critRatio + 1;
+			}
+		},
+		
+
+		//other parental bond script:
+
+		//condition: {
+			//duration: 1,
+			//onBasePowerPriority: 8,
+			//onBasePower(basePower) {
+				//return this.chainModify(0.25);
+			//},
+		//},
+
+
+		//Original Symbiosis:
+
+		//onAllyAfterUseItem(item, pokemon) {
+			//if (pokemon.switchFlag) return;
+			//const source = this.effectState.target;
+			//const myItem = source.takeItem();
+			//if (!myItem) return;
+			//if (
+				//!this.singleEvent('TakeItem', myItem, source.itemState, pokemon, source, this.effect, myItem) ||
+				//!pokemon.setItem(myItem)
+			//) {
+				//source.item = myItem.id;
+				//return;
+			//}
+			//this.add('-activate', source, 'ability: Symbiosis', myItem, '[of] ' + pokemon);
+		//},
+		name: "Tag Team",
+		rating: 0,
+		num: 180,
 	},
 	vengefulspirit: {
 		onStart(pokemon) {

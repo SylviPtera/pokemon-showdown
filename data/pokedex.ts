@@ -1,6 +1,19 @@
 export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
-	mario: {
+	titanchor: {
 		num: 2001,
+		name: "Titanchor",
+		types: ["Ghost", "Grass"],
+		gender: "N",
+		baseStats: { hp: 135, atk: 139, def: 115, spa: 86, spd: 85, spe: 45 },
+		abilities: { 0: "Steelworker" },
+		heightm: 4.5,
+		weightkg: 700,
+		color: "Green",
+		prevo: "Dhelmise",
+		eggGroups: ["Mineral"],
+	},
+	mario: {
+		num: 3001,
 		name: "Mario",
 		types: ["Normal"],
 		gender: "M",
@@ -12,7 +25,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	donkeykong: {
-		num: 2002,
+		num: 3002,
 		name: "Donkey Kong",
 		types: ["Fighting"],
 		gender: "M",
@@ -24,7 +37,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	link: {
-		num: 2003,
+		num: 3003,
 		name: "Link",
 		types: ["Fairy", "Steel"],
 		gender: "M",
@@ -37,7 +50,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	samus: {
-		num: 2004,
+		num: 3004,
 		name: "Samus",
 		types: ["Electric", "Steel"],
 		gender: "F",
@@ -49,7 +62,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	darksamus: {
-		num: 2005,
+		num: 3005,
 		name: "Dark Samus",
 		types: ["Electric", "Dark"],
 		gender: "F",
@@ -61,7 +74,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	yoshi: {
-		num: 2006,
+		num: 3006,
 		name: "Yoshi",
 		types: ["Dragon"],
 		baseStats: { hp: 103, atk: 54, def: 93, spa: 90, spd: 75, spe: 120 },
@@ -72,7 +85,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Dragon", "Monster"],
 	},
 	kirby: {
-		num: 2007,
+		num: 3007,
 		name: "Kirby",
 		types: ["Normal"],
 		gender: "M",
@@ -84,7 +97,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	fox: {
-		num: 2008,
+		num: 3008,
 		name: "Fox",
 		types: ["Fighting"],
 		gender: "M",
@@ -96,7 +109,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	luigi: {
-		num: 2009,
+		num: 3009,
 		name: "Luigi",
 		types: ["Normal"],
 		gender: "M",
@@ -108,7 +121,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	ness: {
-		num: 2010,
+		num: 3010,
 		name: "Ness",
 		types: ["Psychic"],
 		gender: "M",
@@ -120,7 +133,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	captainfalcon: {
-		num: 2011,
+		num: 3011,
 		name: "Captain Falcon",
 		types: ["Fighting", "Fire"],
 		gender: "M",
@@ -132,7 +145,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	peach: {
-		num: 2012,
+		num: 3012,
 		name: "Peach",
 		types: ["Fairy"],
 		gender: "F",
@@ -144,7 +157,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Life"],
 	},
 	daisy: {
-		num: 2013,
+		num: 3013,
 		name: "Daisy",
 		types: ["Grass", "Fighting"],
 		gender: "F",
@@ -156,7 +169,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	bowser: {
-		num: 2014,
+		num: 3014,
 		name: "Bowser",
 		types: ["Fire", "Dragon"],
 		gender: "M",
@@ -168,7 +181,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	iceclimbers: {
-		num: 2015,
+		num: 3015,
 		name: "Ice Climbers",
 		types: ["Ice"],
 		gender: "N",
@@ -180,7 +193,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 	},
 	sheik: {
-		num: 2016,
+		num: 3016,
 		name: "Sheik",
 		types: ["Fairy", "Fighting"],
 		gender: "F",
@@ -192,7 +205,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	zelda: {
-		num: 2017,
+		num: 3017,
 		name: "Zelda",
 		types: ["Fairy", "Psychic"],
 		gender: "F",
@@ -204,7 +217,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	drmario: {
-		num: 2018,
+		num: 3018,
 		name: "Dr. Mario",
 		types: ["Normal"],
 		gender: "M",
@@ -216,7 +229,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	falco: {
-		num: 2019,
+		num: 3019,
 		name: "Falco",
 		types: ["Flying"],
 		gender: "M",
@@ -228,7 +241,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Flying"],
 	},
 	marth: {
-		num: 2020,
+		num: 3020,
 		name: "Marth",
 		types: ["Steel"],
 		gender: "M",
@@ -240,7 +253,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	lucina: {
-		num: 2021,
+		num: 3021,
 		name: "Lucina",
 		types: ["Steel"],
 		gender: "F",
@@ -252,7 +265,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	younglink: {
-		num: 2022,
+		num: 3022,
 		name: "Young Link",
 		types: ["Fairy", "Normal"],
 		gender: "M",
@@ -265,7 +278,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	ganondorf: {
-		num: 2023,
+		num: 3023,
 		name: "Ganondorf",
 		types: ["Dark"],
 		gender: "M",
@@ -277,7 +290,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	roy: {
-		num: 2024,
+		num: 3024,
 		name: "Roy",
 		types: ["Steel", "Fire"],
 		gender: "M",
@@ -289,7 +302,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	chrom: {
-		num: 2025,
+		num: 3025,
 		name: "Chrom",
 		types: ["Steel"],
 		gender: "M",
@@ -301,7 +314,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	mrgameandwatch: {
-		num: 2026,
+		num: 3026,
 		name: "Mr. Game and Watch",
 		types: ["Normal"],
 		gender: "M",
@@ -313,7 +326,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like", "Amorphous"],
 	},
 	metaknight: {
-		num: 2027,
+		num: 3027,
 		name: "Meta Knight",
 		types: ["Dark", "Flying"],
 		gender: "M",
@@ -325,7 +338,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	pit: {
-		num: 2028,
+		num: 3028,
 		name: "Pit",
 		types: ["Fairy", "Flying"],
 		gender: "M",
@@ -337,7 +350,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	darkpit: {
-		num: 2029,
+		num: 3029,
 		name: "Dark Pit",
 		types: ["Dark", "Flying"],
 		gender: "M",
@@ -349,7 +362,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	zerosuitsamus: {
-		num: 2030,
+		num: 3030,
 		name: "Zero Suit Samus",
 		types: ["Electric", "Fighting"],
 		gender: "F",
@@ -361,7 +374,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	wario: {
-		num: 2031,
+		num: 3031,
 		name: "Wario",
 		types: ["Poison"],
 		gender: "M",
@@ -373,7 +386,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	snake: {
-		num: 2032,
+		num: 3032,
 		name: "Snake",
 		types: ["Fighting", "Dark"],
 		gender: "M",
@@ -385,7 +398,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	ike: {
-		num: 2033,
+		num: 3033,
 		name: "Ike",
 		types: ["Steel", "Fighting"],
 		gender: "M",
@@ -397,7 +410,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	diddykong: {
-		num: 2034,
+		num: 3034,
 		name: "Diddy Kong",
 		types: ["Grass"],
 		gender: "M",
@@ -409,7 +422,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	lucas: {
-		num: 2035,
+		num: 3035,
 		name: "Lucas",
 		types: ["Psychic"],
 		gender: "M",
@@ -421,7 +434,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	sonic: {
-		num: 2036,
+		num: 3036,
 		name: "Sonic",
 		types: ["Normal", "Electric"],
 		gender: "M",
@@ -433,7 +446,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	kingdedede: {
-		num: 2037,
+		num: 3037,
 		name: "King Dedede",
 		types: ["Normal"],
 		gender: "M",
@@ -445,7 +458,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous", "Water 1"],
 	},
 	olimar: {
-		num: 2038,
+		num: 3038,
 		name: "Olimar",
 		types: ["Normal", "Grass"],
 		gender: "M",
@@ -457,7 +470,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	rob: {
-		num: 2039,
+		num: 3039,
 		name: "R.O.B.",
 		types: ["Steel", "Flying"],
 		gender: "N",
@@ -469,7 +482,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 	},
 	toonlink: {
-		num: 2040,
+		num: 3040,
 		name: "Toon Link",
 		types: ["Fairy", "Steel"],
 		gender: "M",
@@ -482,7 +495,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	wolf: {
-		num: 2041,
+		num: 3041,
 		name: "Wolf",
 		types: ["Dark"],
 		gender: "M",
@@ -494,7 +507,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	villager: {
-		num: 2042,
+		num: 3042,
 		name: "Villager",
 		types: ["Normal"],
 		baseStats: { hp: 80, atk: 80, def: 80, spa: 60, spd: 95, spe: 85 },
@@ -505,7 +518,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	megaman: {
-		num: 2043,
+		num: 3043,
 		name: "Mega Man",
 		types: ["Steel"],
 		gender: "M",
@@ -517,7 +530,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	wiifittrainer: {
-		num: 2044,
+		num: 3044,
 		name: "Wii Fit Trainer",
 		types: ["Normal", "Fighting"],
 		baseStats: { hp: 90, atk: 88, def: 70, spa: 67, spd: 105, spe: 90 },
@@ -528,7 +541,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	rosalina: {
-		num: 2045,
+		num: 3045,
 		name: "Rosalina",
 		types: ["Psychic", "Fairy"],
 		gender: "F",
@@ -540,7 +553,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	littlemac: {
-		num: 2046,
+		num: 3046,
 		name: "Little Mac",
 		types: ["Fighting"],
 		gender: "M",
@@ -552,7 +565,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	palutena: {
-		num: 2047,
+		num: 3047,
 		name: "Palutena",
 		types: ["Fairy"],
 		gender: "F",
@@ -564,7 +577,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	pacman: {
-		num: 2048,
+		num: 3048,
 		name: "Pac-Man",
 		types: ["Normal"],
 		gender: "M",
@@ -576,7 +589,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	robin: {
-		num: 2049,
+		num: 3049,
 		name: "Robin",
 		types: ["Psychic", "Electric"],
 		baseStats: { hp: 79, atk: 85, def: 65, spa: 120, spd: 100, spe: 67 },
@@ -587,7 +600,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	shulk: {
-		num: 2050,
+		num: 3050,
 		name: "Shulk",
 		types: ["Psychic"],
 		gender: "M",
@@ -599,7 +612,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	bowserjr: {
-		num: 5051,
+		num: 3051,
 		name: "Bowser Jr.",
 		types: ["Dragon"],
 		gender: "M",
@@ -611,7 +624,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	lemmy: {
-		num: 5052,
+		num: 3052,
 		name: "Lemmy",
 		types: ["Normal", "Dragon"],
 		baseStats: { hp: 60, atk: 55, def: 95, spa: 90, spd: 85, spe: 115 },
@@ -622,7 +635,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	morton: {
-		num: 5053,
+		num: 3053,
 		name: "Morton",
 		types: ["Ground", "Steel"],
 		gender: "M",
@@ -634,7 +647,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	larry: {
-		num: 5054,
+		num: 3054,
 		name: "Larry",
 		types: ["Water", "Dragon"],
 		gender: "M",
@@ -646,7 +659,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	wendy: {
-		num: 5055,
+		num: 3055,
 		name: "Wendy",
 		types: ["Ice", "Psychic"],
 		gender: "F",
@@ -658,7 +671,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	iggy: {
-		num: 5056,
+		num: 3056,
 		name: "Iggy",
 		types: ["Grass", "Dark"],
 		gender: "M",
@@ -670,7 +683,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	roykoopa: {
-		num: 5057,
+		num: 3057,
 		name: "Roy Koopa",
 		types: ["Ground", "Dark"],
 		gender: "M",
@@ -682,7 +695,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	ludwig: {
-		num: 5058,
+		num: 3058,
 		name: "Ludwig",
 		types: ["Psychic", "Dark"],
 		gender: "M",
@@ -694,7 +707,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Monster"],
 	},
 	duckhunt: {
-		num: 5059,
+		num: 3059,
 		name: "Duck Hunt",
 		types: ["Normal", "Flying"],
 		baseStats: { hp: 75, atk: 106, def: 63, spa: 85, spd: 63, spe: 93 },
@@ -705,7 +718,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field", "Flying"],
 	},
 	ryu: {
-		num: 5060,
+		num: 3060,
 		name: "Ryu",
 		types: ["Fighting"],
 		gender: "M",
@@ -717,7 +730,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	ken: {
-		num: 5061,
+		num: 3061,
 		name: "Ken",
 		types: ["Fighting", "Fire"],
 		gender: "M",
@@ -729,7 +742,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	cloud: {
-		num: 5062,
+		num: 3062,
 		name: "Cloud",
 		types: ["Steel"],
 		gender: "M",
@@ -741,7 +754,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	corrin: {
-		num: 5051,
+		num: 3063,
 		name: "Corrin",
 		types: ["Water", "Dragon"],
 		baseStats: { hp: 90, atk: 105, def: 95, spa: 85, spd: 80, spe: 75 },
@@ -752,7 +765,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	bayonetta: {
-		num: 2060,
+		num: 3064,
 		name: "Bayonetta",
 		types: ["Dark", "Fairy"],
 		gender: "F",
@@ -764,7 +777,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	madrat: {
-		num: 2005,
+		num: 4001,
 		name: "Mad Rat",
 		types: ["Normal", "Ghost"],
 		gender: "M",
@@ -776,7 +789,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	heart: {
-		num: 2006,
+		num: 4002,
 		name: "Heart",
 		types: ["Ghost"],
 		gender: "N",
@@ -788,7 +801,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 	},
 	ratgod: {
-		num: 2007,
+		num: 4003,
 		name: "Rat God",
 		types: ["Fairy", "Poison"],
 		gender: "F",
@@ -800,7 +813,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	labrat: {
-		num: 2008,
+		num: 4004,
 		name: "Lab Rat",
 		types: ["Normal"],
 		baseStats: { hp: 50, atk: 55, def: 45, spa: 30, spd: 30, spe: 90 },
@@ -812,7 +825,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	mobrat: {
-		num: 2008,
+		num: 4005,
 		name: "Mob Rat",
 		types: ["Normal", "Dark"],
 		baseStats: { hp: 50, atk: 80, def: 105, spa: 60, spd: 65, spe: 75 },
@@ -825,7 +838,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	ghostrat: {
-		num: 2008,
+		num: 4006,
 		name: "Ghost Rat",
 		types: ["Ghost", "Dark"],
 		gender: "N",
@@ -837,7 +850,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	blackcat: {
-		num: 2008,
+		num: 4007,
 		name: "Black Cat",
 		types: ["Dark"],
 		baseStats: { hp: 83, atk: 117, def: 60, spa: 65, spd: 70, spe: 112 },
@@ -848,7 +861,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Field"],
 	},
 	phantommoon: {
-		num: 2008,
+		num: 4008,
 		name: "Phantom Moon",
 		types: ["Rock", "Ghost"],
 		gender: "N",
@@ -860,7 +873,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 	},
 	cactusnightmare: {
-		num: 2008,
+		num: 4009,
 		name: "Cactus Nightmare",
 		types: ["Grass"],
 		gender: "N",
@@ -872,7 +885,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	skullnightmare: {
-		num: 2008,
+		num: 4010,
 		name: "Skull Nightmare",
 		types: ["Ghost", "Fire"],
 		gender: "N",
@@ -884,7 +897,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	meltingnightmare: {
-		num: 2008,
+		num: 4011,
 		name: "Melting Nightmare",
 		types: ["Poison"],
 		gender: "N",
@@ -896,7 +909,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	burstnightmare: {
-		num: 2008,
+		num: 4012,
 		name: "Burst Nightmare",
 		types: ["Psychic"],
 		gender: "N",
@@ -908,7 +921,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Amorphous"],
 	},
 	mimic: {
-		num: 2004,
+		num: 5001,
 		name: "Mimic",
 		types: ["Grass", "Dark"],
 		baseStats: { hp: 50, atk: 105, def: 95, spa: 65, spd: 80, spe: 95 },
@@ -919,7 +932,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Grass", "Monster"],
 	},
 	thugly: {
-		num: 2003,
+		num: 5002,
 		name: "Thugly",
 		types: ["Dark", "Ground"],
 		gender: "M",
@@ -16024,6 +16037,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		heightm: 3.9,
 		weightkg: 210,
 		color: "Green",
+		evos: ["Titanchor"],
 		eggGroups: ["Mineral"],
 	},
 	jangmoo: {
