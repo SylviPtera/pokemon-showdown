@@ -1375,6 +1375,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			psyshock: ["9M"],
 			calmmind: ["9M"],
 			psychocut: ["9M"],
+			futuresight: ["9M"],
 			reflect: ["9M"],
 			lightscreen: ["9M"],
 			storedpower: ["9M"],
