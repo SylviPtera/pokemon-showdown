@@ -12,6 +12,18 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Dhelmise",
 		eggGroups: ["Mineral"],
 	},
+	luinor: {
+		num: 2002,
+		name: "Luinor",
+		types: ["Electric", "Ice"],
+		gender: "M",
+		baseStats: { hp: 50, atk: 170, def: 70, spa: 170, spd: 70, spe: 170 },
+		abilities: { 0: "Frostbolt Storm" },
+		heightm: 1.9,
+		weightkg: 86,
+		color: "White",
+		eggGroups: ["Human-Like"],
+	},
 	mario: {
 		num: 3001,
 		name: "Mario",

@@ -5630,6 +5630,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 138,
 	},
 	
+	frostboltstorm: {
+		onBasePowerPriority: 19,
+		onStart(source) {
+			this.field.setTerrain('electricterrain');
+			this.field.setWeather('snowscape');
+		},
+		flags: {},
+		name: "Frostbolt Storm",
+		rating: 2,
+		num: 138,
+	},
+	
 	tagteam: {
 
 		//parental bond

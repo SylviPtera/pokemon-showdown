@@ -2,6 +2,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	titanchor: {
 		tier: "OU",
 	},
+	luinor: {
+		tier: "Uber",
+	},
 	mario: {
 		tier: "OU",
 	},
