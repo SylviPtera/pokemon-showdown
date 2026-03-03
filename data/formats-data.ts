@@ -230,10 +230,31 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	burstnightmare: {
 		tier: "UU",
 	},
+	blooper: {
+		tier: "LC",
+	},
+	gooperblooper: {
+		tier: "OU",
+	},
+	fracktail: {
+		tier: "OU",
+	},
+	cudge: {
+		tier: "OU",
+	},
 	mimic: {
 		tier: "UU",
 	},
+	mangoruby: {
+		tier: "OU",
+	},
+	xylobone: {
+		tier: "OU",
+	},
 	thugly: {
+		tier: "OU",
+	},
+	gloptic: {
 		tier: "OU",
 	},
 	bulbasaur: {
