@@ -17,7 +17,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Luinor",
 		types: ["Electric", "Ice"],
 		gender: "M",
-		baseStats: { hp: 50, atk: 170, def: 70, spa: 170, spd: 70, spe: 170 },
+		baseStats: { hp: 80, atk: 140, def: 70, spa: 170, spd: 70, spe: 170 },
 		abilities: { 0: "Frostbolt Storm" },
 		heightm: 1.9,
 		weightkg: 86,
