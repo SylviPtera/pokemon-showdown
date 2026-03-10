@@ -5641,9 +5641,45 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 138,
 	},
-	
+	holyveil: {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ghost' || move.type === 'Dark') {
+				this.debug('Holy Veil weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(spa, attacker, defender, move) {
+			if (move.type === 'Ghost' || move.type === 'Dark') {
+				this.debug('Holy Veil weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Holy Veil",
+		rating: 4,
+		num: 272,
+	},
+	perfectshape: {
+		onSetStatus(status, target, source, effect) {
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Perfect Shape');
+			}
+			return false;
+		},
+		onTryAddVolatile(status, target) {
+			if (status.id === 'yawn') {
+				this.add('-immune', target, '[from] ability: Perfect Shape');
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Perfect Shape",
+		rating: 4,
+		num: 272,
+	},
 	tagteam: {
-
 		//parental bond
 		onModifyMove(move, pokemon, target) {
 
@@ -5711,6 +5747,49 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Tag Team",
 		rating: 0,
 		num: 180,
+	},
+	thedarkside: {
+		//zen mode
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Anakin' || pokemon.transformed) {
+				return;
+			}
+			if (pokemon.hp <= pokemon.maxhp / 2 && !['Vader'].includes(pokemon.species.forme)) {
+				pokemon.addVolatile('darkside');
+			} else if (pokemon.hp > pokemon.maxhp / 2 && ['Vader'].includes(pokemon.species.forme)) {
+				pokemon.addVolatile('darkside'); // in case of base Darmanitan-Zen
+				pokemon.removeVolatile('darkside');
+			}
+		},
+		onEnd(pokemon) {
+			if (!pokemon.volatiles['darkside'] || !pokemon.hp) return;
+			pokemon.transformed = false;
+			delete pokemon.volatiles['darkside'];
+			if (pokemon.species.baseSpecies === 'Anakin' && pokemon.species.battleOnly) {
+				pokemon.formeChange(pokemon.species.battleOnly as string, this.effect, false, '0', '[silent]');
+			}
+		},
+		condition: {
+			onStart(pokemon) {
+				if (pokemon.species.id !== 'anakinvader') pokemon.formeChange('Anakin-Vader');
+
+				/*if (!pokemon.species.name.includes('Galar')) {
+					if (pokemon.species.id !== 'darmanitanzen') pokemon.formeChange('Darmanitan-Zen');
+				} else {
+					if (pokemon.species.id !== 'darmanitangalarzen') pokemon.formeChange('Darmanitan-Galar-Zen');
+				}*/
+			},
+			onEnd(pokemon) {
+				if (['Vader'].includes(pokemon.species.forme)) {
+					pokemon.formeChange(pokemon.species.battleOnly as string);
+				}
+			},
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
+		name: "The Dark Side",
+		rating: 0,
+		num: 1610,
 	},
 	vengefulspirit: {
 		onStart(pokemon) {

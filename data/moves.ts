@@ -22289,6 +22289,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Tough",
 	},
+	forcechoke: {
+		num: 527,
+		accuracy: 95,
+		basePower: 80,
+		category: "Special",
+		name: "Force Choke",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "allAdjacentFoes",
+		type: "Dark",
+		contestType: "Tough",
+	},
 	ghosthunting: {
 		num: 3007,
 		accuracy: 100,

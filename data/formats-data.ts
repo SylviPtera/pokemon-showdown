@@ -1,39 +1,39 @@
 export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable = {
 	titanchor: {
-		tier: "OU",
+		tier: "UU",
 	},
 	luinor: {
 		tier: "Uber",
 	},
 	mario: {
-		tier: "OU",
+		tier: "UU",
 	},
 	donkeykong: {
-		tier: "OU",
+		tier: "UU",
 	},
 	link: {
 		tier: "OU",
 	},
 	samus: {
-		tier: "OU",
+		tier: "UU",
 	},
 	darksamus: {
-		tier: "OU",
+		tier: "UU",
 	},
 	yoshi: {
-		tier: "OU",
+		tier: "UU",
 	},
 	kirby: {
-		tier: "OU",
+		tier: "UU",
 	},
 	fox: {
-		tier: "OU",
+		tier: "UU",
 	},
 	luigi: {
-		tier: "OU",
+		tier: "UU",
 	},
 	ness: {
-		tier: "OU",
+		tier: "UU",
 	},
 	captainfalcon: {
 		tier: "OU",
@@ -48,25 +48,25 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 	},
 	iceclimbers: {
-		tier: "OU",
+		tier: "UU",
 	},
 	sheik: {
-		tier: "OU",
+		tier: "UU",
 	},
 	zelda: {
-		tier: "OU",
+		tier: "UU",
 	},
 	drmario: {
-		tier: "OU",
+		tier: "UU",
 	},
 	falco: {
-		tier: "OU",
+		tier: "UU",
 	},
 	marth: {
-		tier: "OU",
+		tier: "UU",
 	},
 	lucina: {
-		tier: "OU",
+		tier: "UU",
 	},
 	younglink: {
 		tier: "LC",
@@ -78,43 +78,43 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	chrom: {
-		tier: "OU",
+		tier: "UU",
 	},
 	mrgameandwatch: {
-		tier: "OU",
+		tier: "UU",
 	},
 	metaknight: {
 		tier: "OU",
 	},
 	pit: {
-		tier: "OU",
+		tier: "UU",
 	},
 	darkpit: {
-		tier: "OU",
+		tier: "UU",
 	},
 	zerosuitsamus: {
 		tier: "OU",
 	},
 	wario: {
-		tier: "OU",
+		tier: "UU",
 	},
 	snake: {
 		tier: "OU",
 	},
 	ike: {
-		tier: "OU",
+		tier: "UU",
 	},
 	diddykong: {
-		tier: "OU",
+		tier: "UU",
 	},
 	lucas: {
-		tier: "OU",
+		tier: "UU",
 	},
 	sonic: {
 		tier: "OU",
 	},
 	kingdedede: {
-		tier: "OU",
+		tier: "UU",
 	},
 	olimar: {
 		tier: "UU",
@@ -123,85 +123,136 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	toonlink: {
-		tier: "OU",
+		tier: "UU",
 	},
 	wolf: {
-		tier: "OU",
+		tier: "UU",
 	},
 	villager: {
-		tier: "OU",
+		tier: "UU",
 	},
 	megaman: {
-		tier: "OU",
+		tier: "UU",
 	},
 	wiifittrainer: {
-		tier: "OU",
+		tier: "UU",
 	},
 	rosalina: {
-		tier: "OU",
+		tier: "UU",
 	},
 	littlemac: {
-		tier: "OU",
+		tier: "UU",
 	},
 	palutena: {
-		tier: "OU",
+		tier: "UU",
 	},
 	pacman: {
-		tier: "OU",
+		tier: "UU",
 	},
 	robin: {
 		tier: "OU",
 	},
 	shulk: {
-		tier: "OU",
+		tier: "UU",
 	},
 	bowserjr: {
-		tier: "OU",
+		tier: "UU",
 	},
 	lemmy: {
-		tier: "OU",
+		tier: "UU",
 	},
 	morton: {
-		tier: "OU",
+		tier: "UU",
 	},
 	larry: {
-		tier: "OU",
+		tier: "UU",
 	},
 	wendy: {
-		tier: "OU",
+		tier: "UU",
 	},
 	iggy: {
-		tier: "OU",
+		tier: "UU",
 	},
 	roykoopa: {
 		tier: "OU",
 	},
 	ludwig: {
-		tier: "OU",
+		tier: "UU",
 	},
 	duckhunt: {
-		tier: "OU",
+		tier: "UU",
 	},
 	ryu: {
-		tier: "OU",
+		tier: "UU",
 	},
 	ken: {
-		tier: "OU",
+		tier: "UU",
 	},
 	cloud: {
-		tier: "OU",
+		tier: "UU",
 	},
 	corrin: {
-		tier: "OU",
+		tier: "UU",
 	},
 	bayonetta: {
-		tier: "OU",
+		tier: "UU",
+	},
+	inkling: {
+		tier: "UU",
+	},
+	ridley: {
+		tier: "Uber",
+	},
+	simon: {
+		tier: "UU",
+	},
+	richter: {
+		tier: "UU",
+	},
+	kingkrool: {
+		tier: "UU",
+	},
+	isabelle: {
+		tier: "RU",
+	},
+	piranhaplant: {
+		tier: "RU",
+	},
+	joker: {
+		tier: "UU",
+	},
+	hero: {
+		tier: "UU",
+	},
+	banjo: {
+		tier: "RU",
+	},
+	banjokazooie: {
+		tier: "UU",
+	},
+	kazooie: {
+		tier: "RU",
+	},
+	terry: {
+		tier: "UU",
+	},
+	byleth: {
+		tier: "UU",
+	},
+	minmin: {
+		tier: "UU",
+	},
+	sephiroth: {
+		tier: "Uber",
+	},
+	sephirothangel: {
+		tier: "Uber",
 	},
 	madrat: {
-		tier: "OU",
+		tier: "UU",
 	},
 	heart: {
-		tier: "OU",
+		tier: "UU",
 	},
 	ratgod: {
 		tier: "OU",
@@ -216,7 +267,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	blackcat: {
-		tier: "OU",
+		tier: "UU",
 	},
 	phantommoon: {
 		tier: "OU",
@@ -249,16 +300,22 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	mangoruby: {
-		tier: "OU",
+		tier: "UU",
 	},
 	xylobone: {
-		tier: "OU",
+		tier: "UU",
 	},
 	thugly: {
 		tier: "OU",
 	},
 	gloptic: {
 		tier: "OU",
+	},
+	anakin: {
+		tier: "UU",
+	},
+	anakinvader: {
+		tier: "UU",
 	},
 	bulbasaur: {
 		tier: "Illegal",
@@ -287,7 +344,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Illegal",
 	},
 	charizard: {
-		tier: "OU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -499,7 +556,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	pikachustarter: {
 		isNonstandard: "LGPE",
-		tier: "OU",
+		tier: "UU",
 	},
 	pikachugmax: {
 		isNonstandard: "Past",
