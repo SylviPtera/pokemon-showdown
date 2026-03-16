@@ -1249,8 +1249,19 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Field"],
 	},
-	anakin: {
+	goldexperiencerequiem: {
 		num: 8001,
+		name: "Gold Experience Requiem",
+		types: ["Grass", "Fairy"],
+		baseStats: { hp: 100, atk: 0, def: 0, spa: 0, spd: 0, spe: 0 },
+		abilities: { 0: "Revert to Zero" },
+		heightm: 1.9,
+		weightkg: 0,
+		color: "Yellow",
+		eggGroups: ["Undiscovered"],
+	},
+	anakin: {
+		num: 9001,
 		name: "Anakin",
 		baseForme: "Light",
 		types: ["Psychic"],
@@ -1264,7 +1275,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		formeOrder: ["Anakin", "Anakin-Vader"],
 	},
 	anakinvader: {
-		num: 8001,
+		num: 9001,
 		name: "Anakin-Vader",
 		baseSpecies: "Anakin",
 		forme: "Vader",

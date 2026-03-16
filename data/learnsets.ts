@@ -2577,7 +2577,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			phantomforce: ["9M"],
 			explosion: ["9M"],
 			selfdestruct: ["9M"],
-			shellsmash: ["9M"],
 			darkpulse: ["9M"],
 			nightdaze: ["9M"],
 			gyroball: ["9M"],
