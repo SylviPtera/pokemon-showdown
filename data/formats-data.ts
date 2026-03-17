@@ -284,6 +284,24 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	burstnightmare: {
 		tier: "UU",
 	},
+	flowey: {
+		tier: "RU",
+	},
+	napstablook: {
+		tier: "UU",
+	},
+	toriel: {
+		tier: "UU",
+	},
+	undyne: {
+		tier: "UU",
+	},
+	mettaton: {
+		tier: "UU",
+	},
+	mettatonex: {
+		tier: "UU",
+	},
 	blooper: {
 		tier: "LC",
 	},
