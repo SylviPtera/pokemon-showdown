@@ -22153,6 +22153,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Tough",
 	},
+	brilliantarrow: {
+		num: 3012,
+		accuracy: true,
+		basePower: 80,
+		category: "Physical",
+		name: "Brilliant Arrow",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			boosts: {
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Fairy",
+		contestType: "Beautiful",
+	},
 	bulletstorm: {
 		num: 3004,
 		accuracy: 100,
@@ -22552,6 +22571,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
+	magicburst: {
+		num: 3011,
+		accuracy: 100,
+		basePower: 150,
+		category: "Special",
+		name: "Magic Burst",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			self: {
+				boosts: {
+					spa: -12,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Cool",
+	},
 	mindmeltingtoxin: {
 		num: 3001,
 		accuracy: 100,
@@ -22570,6 +22609,61 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
+	},
+	openheart: {
+		num: 3010,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Open Heart",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		
+		onHit(target, source) {
+			let i: BoostID;
+			for (i in target.boosts) {
+				source.boosts[i] = target.boosts[i];
+			}
+
+			const volatilesToCopy = ['dragoncheer', 'focusenergy', 'gmaxchistrike', 'laserfocus'];
+			// we need to remove all crit stage volatiles first; otherwise copying e.g. dragoncheer onto a mon with focusenergy
+			// will crash the server (since addVolatile fails due to overlap, leaving the source mon with no hasDragonType to set)
+			for (const volatile of volatilesToCopy) source.removeVolatile(volatile);
+			for (const volatile of volatilesToCopy) {
+				if (target.volatiles[volatile]) {
+					source.addVolatile(volatile);
+					if (volatile === 'gmaxchistrike') source.volatiles[volatile].layers = target.volatiles[volatile].layers;
+					if (volatile === 'dragoncheer') source.volatiles[volatile].hasDragonType = target.volatiles[volatile].hasDragonType;
+				}
+			}
+			this.add('-copyboost', source, target, '[from] move: Psych Up');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Cute",
+	},
+	pklove: {
+		num: 3001,
+		accuracy: 100,
+		basePower: 120,
+		category: "Special",
+		name: "PK Love",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			self: {
+				boosts: {
+					spa: -1,
+					spd: -1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Beautiful",
 	},
 	strikingsword: {
 		num: 3003,
