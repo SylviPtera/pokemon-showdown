@@ -285,7 +285,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	flowey: {
-		tier: "RU",
+		tier: "LC",
 	},
 	napstablook: {
 		tier: "UU",
@@ -300,6 +300,45 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	mettatonex: {
+		tier: "UU",
+	},
+	sans: {
+		tier: "UU",
+	},
+	asgore: {
+		tier: "UU",
+	},
+	asriel: {
+		tier: "Uber",
+	},
+	frisk: {
+		tier: "UU",
+	},
+	kris: {
+		tier: "UU",
+	},
+	susie: {
+		tier: "UU",
+	},
+	ralsei: {
+		tier: "UU",
+	},
+	noelle: {
+		tier: "UU",
+	},
+	berdly: {
+		tier: "UU",
+	},
+	rudinn: {
+		tier: "LC",
+	},
+	rudinnranger: {
+		tier: "UU",
+	},
+	hathy: {
+		tier: "LC",
+	},
+	headhathy: {
 		tier: "UU",
 	},
 	blooper: {

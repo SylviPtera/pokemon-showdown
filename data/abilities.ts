@@ -5741,8 +5741,52 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1 },
 		name: "Revert To Zero",
-		rating: 3.5,
+		rating: 4.5,
 		num: 256,
+	},
+	rhythmicbeat: {
+		onStart(pokemon) {
+			pokemon.addVolatile('rhythmicbeat');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.effectState.lastMove = '';
+				this.effectState.numConsecutive = 0;
+			},
+			onTryMovePriority: -2,
+			onTryMove(pokemon, target, move) {
+				if (!pokemon.hasAbility('rhythmicbeat')) {
+					pokemon.removeVolatile('rhythmicbeat');
+					return;
+				}
+				if (this.effectState.lastMove === move.id && pokemon.moveLastTurnResult) {
+					this.effectState.numConsecutive++;
+				} else if (pokemon.volatiles['twoturnmove'] && (this.effectState.lastMove !== move.id)) {
+					this.effectState.numConsecutive = 1;
+				} else {
+					this.effectState.numConsecutive = 0;
+				}
+				this.effectState.lastMove = move.id;
+			},
+			onModifyDamage(damage, source, target, move) {
+				const dmgMod = [4096, 4915, 5734, 6553, 7372, 8192];
+				const numConsecutive = this.effectState.numConsecutive > 5 ? 5 : this.effectState.numConsecutive;
+				//this.debug(`Current Metronome boost: ${dmgMod[numConsecutive]}/4096`);
+				return this.chainModify([dmgMod[numConsecutive], 4096]);
+			},
+		},
+		name: "Rhythmic Beat",
+		rating: 1.5,
+		num: 20,
+	},
+	starscourge: {
+		onStart(source) {
+			this.field.addPseudoWeather('gravity');
+		},
+		flags: {},
+		name: "Starscourge",
+		rating: 4,
+		num: 2,
 	},
 	tagteam: {
 		//parental bond
@@ -5814,47 +5858,64 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 180,
 	},
 	thedarkside: {
-		//zen mode
+		onSwitchInPriority: -1,
+		onStart(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Anakin' || pokemon.level < 20 || pokemon.transformed) return;
+			if (pokemon.hp < pokemon.maxhp / 2) {
+				if (pokemon.species.id === 'anakin') {
+					pokemon.formeChange('Anakin-Vader');
+				}
+			} else {
+				if (pokemon.species.id === 'anakinvader') {
+					pokemon.formeChange('Anakin');
+				}
+			}
+		},
 		onResidualOrder: 29,
 		onResidual(pokemon) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Anakin' || pokemon.transformed) {
-				return;
-			}
-			if (pokemon.hp <= pokemon.maxhp / 2 && !['Vader'].includes(pokemon.species.forme)) {
-				pokemon.addVolatile('darkside');
-			} else if (pokemon.hp > pokemon.maxhp / 2 && ['Vader'].includes(pokemon.species.forme)) {
-				pokemon.addVolatile('darkside'); // in case of base Darmanitan-Zen
-				pokemon.removeVolatile('darkside');
-			}
-		},
-		onEnd(pokemon) {
-			if (!pokemon.volatiles['darkside'] || !pokemon.hp) return;
-			pokemon.transformed = false;
-			delete pokemon.volatiles['darkside'];
-			if (pokemon.species.baseSpecies === 'Anakin' && pokemon.species.battleOnly) {
-				pokemon.formeChange(pokemon.species.battleOnly as string, this.effect, false, '0', '[silent]');
-			}
-		},
-		condition: {
-			onStart(pokemon) {
-				if (pokemon.species.id !== 'anakinvader') pokemon.formeChange('Anakin-Vader');
-
-				/*if (!pokemon.species.name.includes('Galar')) {
-					if (pokemon.species.id !== 'darmanitanzen') pokemon.formeChange('Darmanitan-Zen');
-				} else {
-					if (pokemon.species.id !== 'darmanitangalarzen') pokemon.formeChange('Darmanitan-Galar-Zen');
-				}*/
-			},
-			onEnd(pokemon) {
-				if (['Vader'].includes(pokemon.species.forme)) {
-					pokemon.formeChange(pokemon.species.battleOnly as string);
+			if (
+				pokemon.baseSpecies.baseSpecies !== 'Anakin' || pokemon.level < 20 ||
+				pokemon.transformed || !pokemon.hp
+			) return;
+			if (pokemon.hp < pokemon.maxhp / 2) {
+				if (pokemon.species.id === 'anakin') {
+					pokemon.formeChange('Anakin-Vader');
 				}
-			},
+			} else {
+				if (pokemon.species.id === 'anakinvader') {
+					pokemon.formeChange('Anakin');
+				}
+			}
 		},
 		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
 		name: "The Dark Side",
-		rating: 0,
-		num: 1610,
+		rating: 3,
+		num: 208,
+	},
+	truehero: {
+		onStart(pokemon) {
+			if (pokemon.side.totalFainted) {
+				this.add('-activate', pokemon, 'ability: True Hero');
+				const fallen = Math.min(pokemon.side.totalFainted, 5);
+				this.add('-start', pokemon, `fallen${fallen}`, '[silent]');
+				this.effectState.fallen = fallen;
+			}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, `fallen${this.effectState.fallen}`, '[silent]');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.fallen) {
+				const powMod = [4096, 4506, 4915, 5325, 5734, 6144];
+				this.debug(`True Hero boost: ${powMod[this.effectState.fallen]}/4096`);
+				return this.chainModify([powMod[this.effectState.fallen], 4096]);
+			}
+		},
+		flags: {},
+		name: "True Hero",
+		rating: 4,
+		num: 293,
 	},
 	vengefulspirit: {
 		onStart(pokemon) {
@@ -5880,40 +5941,5 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Vengeful Spirit",
 		rating: 4,
 		num: 293,
-	},
-	rhythmicbeat: {
-		onStart(pokemon) {
-			pokemon.addVolatile('rhythmicbeat');
-		},
-		condition: {
-			onStart(pokemon) {
-				this.effectState.lastMove = '';
-				this.effectState.numConsecutive = 0;
-			},
-			onTryMovePriority: -2,
-			onTryMove(pokemon, target, move) {
-				if (!pokemon.hasAbility('rhythmicbeat')) {
-					pokemon.removeVolatile('rhythmicbeat');
-					return;
-				}
-				if (this.effectState.lastMove === move.id && pokemon.moveLastTurnResult) {
-					this.effectState.numConsecutive++;
-				} else if (pokemon.volatiles['twoturnmove'] && (this.effectState.lastMove !== move.id)) {
-					this.effectState.numConsecutive = 1;
-				} else {
-					this.effectState.numConsecutive = 0;
-				}
-				this.effectState.lastMove = move.id;
-			},
-			onModifyDamage(damage, source, target, move) {
-				const dmgMod = [4096, 4915, 5734, 6553, 7372, 8192];
-				const numConsecutive = this.effectState.numConsecutive > 5 ? 5 : this.effectState.numConsecutive;
-				//this.debug(`Current Metronome boost: ${dmgMod[numConsecutive]}/4096`);
-				return this.chainModify([dmgMod[numConsecutive], 4096]);
-			},
-		},
-		name: "Rhythmic Beat",
-		rating: 1.5,
-		num: 20,
 	},
 };

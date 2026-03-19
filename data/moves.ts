@@ -246,21 +246,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Cool",
 	},
-	aircutter: {
-		num: 314,
-		accuracy: 95,
-		basePower: 60,
-		category: "Special",
-		name: "Air Cutter",
-		pp: 25,
-		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1, wind: 1 },
-		critRatio: 2,
-		secondary: null,
-		target: "allAdjacentFoes",
-		type: "Flying",
-		contestType: "Cool",
-	},
 	airslash: {
 		num: 403,
 		accuracy: 95,
@@ -22081,6 +22066,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Beautiful",
 	},
 
+	aircutter: {
+		num: 314,
+		accuracy: 95,
+		basePower: 90,
+		category: "Physical",
+		name: "Air Cutter",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1, wind: 1 },
+		critRatio: 2,
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Flying",
+		contestType: "Cool",
+	},
 	bananabonanza: {
 		num: 3005,
 		accuracy: 100,
@@ -22139,7 +22139,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	bombblast: {
 		num: 3002,
 		accuracy: 90,
-		basePower: 90,
+		basePower: 80,
 		category: "Physical",
 		name: "Bomb Blast",
 		pp: 10,
@@ -22187,6 +22187,31 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cool",
 	},
+	channeledblitz: {
+		num: 3014,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Channeled Blitz",
+		pp: 5,
+		priority: 0,
+		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			this.boost({ atk: 1 }, attacker, attacker, move);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+	},
 	crossslash: {
 		num: 3011,
 		accuracy: 100,
@@ -22229,7 +22254,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
-			chance: 100,
+			chance: 50,
 			boosts: {
 				def: -1,
 			},
@@ -22680,5 +22705,44 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
+	},
+	whirlingtornado: {
+		num: 3010,
+		accuracy: 95,
+		basePower: 85,
+		category: "Physical",
+		name: "Whirling Tornado",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		onAfterHit(target, pokemon, move) {
+			if (!move.hasSheerForce) {
+				if (pokemon.hp && pokemon.removeVolatile('leechseed')) {
+					this.add('-end', pokemon, 'Leech Seed', '[from] move: Rapid Spin', `[of] ${pokemon}`);
+				}
+				if (pokemon.hp && pokemon.volatiles['partiallytrapped']) {
+					pokemon.removeVolatile('partiallytrapped');
+				}
+			}
+		},
+		onAfterSubDamage(damage, target, pokemon, move) {
+			if (!move.hasSheerForce) {
+				if (pokemon.hp && pokemon.removeVolatile('leechseed')) {
+					this.add('-end', pokemon, 'Leech Seed', '[from] move: Rapid Spin', `[of] ${pokemon}`);
+				}
+				if (pokemon.hp && pokemon.volatiles['partiallytrapped']) {
+					pokemon.removeVolatile('partiallytrapped');
+				}
+			}
+		},
+		secondary: {
+			chance: 10,
+			boosts: {
+				spe: -1,
+			},
+		},
+		target: "normal",
+		type: "Flying",
+		contestType: "Beautiful",
 	},
 };
