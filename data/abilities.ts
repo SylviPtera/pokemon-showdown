@@ -5629,7 +5629,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 138,
 	},
-	
+	dragonblood: {
+		onSwitchInPriority: -1,
+		onStart(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Corrin' || pokemon.level < 20 || pokemon.transformed) return;
+			if (pokemon.hp < pokemon.maxhp * 3 / 4) {
+				if (pokemon.species.id === 'corrin') {
+					pokemon.formeChange('Corrin-Dragon');
+				}
+			} else {
+				if (pokemon.species.id === 'corrindragon') {
+					pokemon.formeChange('Corrin');
+				}
+			}
+		},
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (
+				pokemon.baseSpecies.baseSpecies !== 'Corrin' || pokemon.level < 20 ||
+				pokemon.transformed || !pokemon.hp
+			) return;
+			if (pokemon.hp < pokemon.maxhp * 3 / 4) {
+				if (pokemon.species.id === 'corrin') {
+					pokemon.formeChange('Corrin-Dragon');
+				}
+			} else {
+				if (pokemon.species.id === 'corrindragon') {
+					pokemon.formeChange('Corrin');
+				}
+			}
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
+		name: "Dragon Blood",
+		rating: 3,
+		num: 208,
+	},
 	frostboltstorm: {
 		onBasePowerPriority: 19,
 		onStart(source) {

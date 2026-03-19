@@ -194,6 +194,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	corrin: {
 		tier: "UU",
 	},
+	corrindragon: {
+		tier: "UU",
+	},
 	bayonetta: {
 		tier: "UU",
 	},
