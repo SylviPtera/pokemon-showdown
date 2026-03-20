@@ -389,6 +389,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	vaalhazak: {
 		tier: "UU",
 	},
+	radahn: {
+		tier: "UU",
+	},
 	bulbasaur: {
 		tier: "Illegal",
 	},

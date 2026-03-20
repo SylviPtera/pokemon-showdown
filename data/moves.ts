@@ -7905,7 +7905,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: 55,
 		basePower: 0,
 		category: "Status",
-		isNonstandard: "Past",
 		name: "Grass Whistle",
 		pp: 15,
 		priority: 0,

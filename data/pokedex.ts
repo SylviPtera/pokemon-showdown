@@ -1570,7 +1570,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Anakin",
 		baseForme: "Light",
 		types: ["Psychic"],
-		baseStats: { hp: 90, atk: 80, def: 80, spa: 100, spd: 80, spe: 110 },
+		baseStats: { hp: 90, atk: 85, def: 80, spa: 100, spd: 80, spe: 105 },
 		abilities: { 0: "The Dark Side" },
 		heightm: 1.8,
 		weightkg: 60,
