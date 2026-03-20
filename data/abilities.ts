@@ -5813,6 +5813,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 20,
 	},
+	shadowmantle: {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ghost' || move.type === 'Dark') {
+				this.debug('Holy Veil weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(spa, attacker, defender, move) {
+			if (move.type === 'Ghost' || move.type === 'Dark') {
+				this.debug('Holy Veil weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Shadow Mantle",
+		rating: 4,
+		num: 272,
+	},
 	starscourge: {
 		onStart(source) {
 			this.field.addPseudoWeather('gravity');
@@ -5898,13 +5918,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (pokemon.hp < pokemon.maxhp / 2) {
 				if (pokemon.species.id === 'anakin') {
 					pokemon.formeChange('Anakin-Vader');
+
+					//intimidate
+					let activated = false;
+					for (const target of pokemon.adjacentFoes()) {
+						if (!activated) {
+							this.add('-ability', pokemon, 'Intimidate', 'boost');
+							activated = true;
+						}
+						if (target.volatiles['substitute']) {
+							this.add('-immune', target);
+						} else {
+							this.boost({ atk: -1 }, target, pokemon, null, true);
+						}
+					}
 				}
 			} else {
 				if (pokemon.species.id === 'anakinvader') {
 					pokemon.formeChange('Anakin');
 				}
 			}
-		},
+		},/*
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Intimidate', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ atk: -1 }, target, pokemon, null, true);
+				}
+			}
+		},*/
 		onResidualOrder: 29,
 		onResidual(pokemon) {
 			if (
@@ -5914,6 +5962,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (pokemon.hp < pokemon.maxhp / 2) {
 				if (pokemon.species.id === 'anakin') {
 					pokemon.formeChange('Anakin-Vader');
+
+					//intimidate
+					let activated = false;
+					for (const target of pokemon.adjacentFoes()) {
+						if (!activated) {
+							this.add('-ability', pokemon, 'Intimidate', 'boost');
+							activated = true;
+						}
+						if (target.volatiles['substitute']) {
+							this.add('-immune', target);
+						} else {
+							this.boost({ atk: -1 }, target, pokemon, null, true);
+						}
+					}
 				}
 			} else {
 				if (pokemon.species.id === 'anakinvader') {

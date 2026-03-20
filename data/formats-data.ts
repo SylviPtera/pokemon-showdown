@@ -344,6 +344,15 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	headhathy: {
 		tier: "UU",
 	},
+	werewire: {
+		tier: "LC",
+	},
+	werewerewire: {
+		tier: "UU",
+	},
+	eram: {
+		tier: "UU",
+	},
 	blooper: {
 		tier: "LC",
 	},
@@ -375,6 +384,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	anakinvader: {
+		tier: "UU",
+	},
+	vaalhazak: {
 		tier: "UU",
 	},
 	bulbasaur: {

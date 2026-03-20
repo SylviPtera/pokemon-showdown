@@ -22237,11 +22237,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Double Hammer",
 		pp: 15,
 		priority: 0,
-		flags: {bullet: 1, protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1},
 		multihit: 2,
 		secondary: null,
 		target: "normal",
 		type: "Ice",
+		contestType: "Cool",
+	},
+	dragonlunge: {
+		num: 3015,
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		name: "Dragon Lunge",
+		pp: 15,
+		priority: 0,
+		critRatio: 2,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.name === 'Corrin-Dragon') {
+				return move.basePower + 35;
+			}
+			return move.basePower;
+		},
+		onModifyMove(move, pokemon) {
+			move.secondaries = [];
+			if (pokemon.species.name === "Corrin-Dragon") {
+				move.secondaries.push({
+					self: {
+						boosts: {
+							def: -1,
+							spd: -1,
+						},
+					},
+				});
+				move.critRatio = 1;
+			}
+		},
+		target: "normal",
+		type: "Dragon",
 		contestType: "Cool",
 	},
 	electrowhip: {
@@ -22336,14 +22370,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	forcechoke: {
 		num: 527,
 		accuracy: 95,
-		basePower: 80,
+		basePower: 85,
 		category: "Special",
 		name: "Force Choke",
 		pp: 5,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
-			chance: 100,
+			chance: 30,
 			boosts: {
 				spe: -1,
 			},
