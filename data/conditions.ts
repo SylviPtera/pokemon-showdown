@@ -635,6 +635,17 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			}
 			return 5;
 		},
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (move.id === 'thefool' && !attacker.hasItem('utilityumbrella')) {
+				this.debug('Sandstorm The Fool boost');
+				return this.chainModify(1.5);
+			}
+
+			if (move.id === 'sandycyclone' && !attacker.hasItem('utilityumbrella')) {
+				this.debug('Sandstorm Sandy Cyclone boost');
+				return this.chainModify(1.5);
+			}
+		},
 		// This should be applied directly to the stat before any of the other modifiers are chained
 		// So we give it increased priority.
 		onModifySpDPriority: 10,

@@ -5842,6 +5842,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 2,
 	},
+	showtime: {
+		condition: {
+			duration: 1,
+			onStart(target, source, effect) {
+				if (effect?.id === 'zpower') {
+					this.add('-singleturn', target, 'move: Follow Me', '[zeffect]');
+				} else {
+					this.add('-singleturn', target, 'move: Follow Me');
+				}
+			},
+			onFoeRedirectTargetPriority: 1,
+			onFoeRedirectTarget(target, source, source2, move) {
+				if (move?.category === 'Status' && move?.priority <= 0) {
+					if (!this.effectState.target.isSkyDropped() && this.validTarget(this.effectState.target, source, move.target)) {
+						if (move.smartTarget) move.smartTarget = false;
+						this.debug("Showtime redirected target of move");
+						return this.effectState.target;
+					}
+				}
+			},
+		},
+		flags: {},
+		name: "Showtime",
+		rating: 4,
+		num: 2,
+	},
 	tagteam: {
 		//parental bond
 		onModifyMove(move, pokemon, target) {
@@ -5987,6 +6013,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "The Dark Side",
 		rating: 3,
 		num: 208,
+	},
+	transcendenteye: {
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Psychic'] = true;
+			}
+		},
+		flags: {},
+		name: "Transcendent Eye",
+		rating: 0,
+		num: 300,
 	},
 	truehero: {
 		onStart(pokemon) {

@@ -170,7 +170,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	wendy: {
 		tier: "UU",
 	},
-	iggy: {
+	iggykoopa: {
 		tier: "UU",
 	},
 	roykoopa: {
@@ -192,9 +192,6 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	corrin: {
-		tier: "UU",
-	},
-	corrindragon: {
 		tier: "UU",
 	},
 	bayonetta: {
@@ -255,7 +252,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 	},
 	heart: {
-		tier: "UU",
+		tier: "OU",
 	},
 	ratgod: {
 		tier: "OU",
@@ -276,16 +273,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	cactusnightmare: {
-		tier: "UU",
+		tier: "RU",
 	},
 	skullnightmare: {
-		tier: "UU",
+		tier: "RU",
 	},
 	meltingnightmare: {
-		tier: "UU",
+		tier: "RU",
 	},
 	burstnightmare: {
-		tier: "UU",
+		tier: "RU",
 	},
 	flowey: {
 		tier: "LC",
@@ -344,10 +341,61 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	headhathy: {
 		tier: "UU",
 	},
+	rabbick: {
+		tier: "LC",
+	},
+	ribbick: {
+		tier: "UU",
+	},
+	jigsawry: {
+		tier: "RU",
+	},
+	seam: {
+		tier: "UU",
+	},
+	lancer: {
+		tier: "UU",
+	},
+	chaosking: {
+		tier: "UU",
+	},
+	jevil: {
+		tier: "UU",
+	},
 	werewire: {
 		tier: "LC",
 	},
 	werewerewire: {
+		tier: "UU",
+	},
+	virovirokun: {
+		tier: "RU",
+	},
+	tasque: {
+		tier: "RU",
+	},
+	tasquemanager: {
+		tier: "UU",
+	},
+	queen: {
+		tier: "UU",
+	},
+	spamton: {
+		tier: "UU",
+	},
+	spamtonneo: {
+		tier: "UU",
+	},
+	elnina: {
+		tier: "UU",
+	},
+	lanino: {
+		tier: "UU",
+	},
+	ramb: {
+		tier: "RU",
+	},
+	tenna: {
 		tier: "UU",
 	},
 	eram: {
@@ -366,7 +414,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 	},
 	mimic: {
-		tier: "UU",
+		tier: "RU",
 	},
 	mangoruby: {
 		tier: "UU",
@@ -383,7 +431,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	anakin: {
 		tier: "UU",
 	},
-	anakinvader: {
+	iggy: {
 		tier: "UU",
 	},
 	vaalhazak: {
