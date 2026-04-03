@@ -3272,7 +3272,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	poisonpuppeteer: {
 		onAnyAfterSetStatus(status, target, source, effect) {
-			if (source.baseSpecies.name !== "Pecharunt") return;
 			if (source !== this.effectState.target || target === source || effect.effectType !== 'Move') return;
 			if (status.id === 'psn' || status.id === 'tox') {
 				target.addVolatile('confusion');
@@ -5629,6 +5628,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 138,
 	},
+	dimensiond: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(spa, pokemon) {
+			if (this.field.getPseudoWeather('trickroom') || this.field.getPseudoWeather('magicroom') || this.field.getPseudoWeather('wonderroom') || this.field.getPseudoWeather('gravity')) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, pokemon) {
+			if (this.field.getPseudoWeather('trickroom') || this.field.getPseudoWeather('magicroom') || this.field.getPseudoWeather('wonderroom') || this.field.getPseudoWeather('gravity')) {
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Dimension D",
+		rating: 2,
+		num: 94,
+	},
 	dragonblood: {
 		onSwitchInPriority: -1,
 		onStart(pokemon) {
@@ -5867,6 +5884,30 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Showtime",
 		rating: 4,
 		num: 2,
+	},
+	superarmour: {
+		onPrepareHit(source, target, move) { //idk
+			if (move.category === 'Physical') {
+				source.addVolatile('superarmour'); //source?
+			}
+		},
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch' && pokemon.volatiles['superarmour']) return null;
+		},
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.atk && boost.atk < 0) {
+				if (target.volatiles['superarmour']) return; //target?
+				delete boost.atk;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "Attack", "[from] ability: Super Armour", `[of] ${target}`);
+				}
+			}
+		},
+		flags: {},
+		name: "Super Armour",
+		rating: 2,
+		num: 3010,
 	},
 	tagteam: {
 		//parental bond

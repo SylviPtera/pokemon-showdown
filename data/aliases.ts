@@ -1164,7 +1164,6 @@ export const Aliases: import('../sim/dex').AliasesTable = {
 	pz: "Porygon-Z",
 	quag: "Quagsire",
 	quaq: "Quaquaval",
-	queen: "Nidoqueen",
 	rachi: "Jirachi",
 	rai: "Darkrai",
 	raj: "Copperajah",

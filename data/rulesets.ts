@@ -1017,10 +1017,12 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		desc: "Bans sleep moves below 100% accuracy, in conjunction with Gravity or Gigantamax Orbeetle",
 		banlist: [
 			'Gravity ++ Dark Void', 'Gravity ++ Grass Whistle', 'Gravity ++ Hypnosis', 'Gravity ++ Lovely Kiss', 'Gravity ++ Sing', 'Gravity ++ Sleep Powder',
+			'Starscourge ++ Dark Void', 'Starscourge ++ Grass Whistle', 'Starscourge ++ Hypnosis', 'Starscourge ++ Lovely Kiss', 'Starscourge ++ Sing', 'Starscourge ++ Sleep Powder',
 		],
 		onValidateTeam(team) {
 			let hasOrbeetle = false;
 			let hasSleepMove = false;
+			let hasStarscourge = false;
 			for (const set of team) {
 				const species = this.dex.species.get(set.species);
 				if (species.name === "Orbeetle" && set.gigantamax) hasOrbeetle = true;
@@ -1036,9 +1038,24 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 						hasSleepMove = true;
 					}
 				}
+				for (const abilityid of set.ability) {
+					if (abilityid === 'starscourge') {
+						hasStarscourge = true;
+					}
+					/*
+					const ability = this.dex.abilities.get(abilityid);
+					// replicates previous behavior which may compare `true` to 100: true < 100 == true
+					// this variable is true if the move never misses (even with lowered acc) or has a chance to miss,
+					// but false if the move's accuracy is 100% (yet can be lowered).
+					const hasMissChanceOrNeverMisses = move.accuracy === true || move.accuracy < 100;
+
+					if (ability.status === 'slp' && hasMissChanceOrNeverMisses) {
+						hasSleepMove = true;
+					}*/
+				}
 			}
 			if (hasOrbeetle && hasSleepMove) {
-				return [`The combination of Gravity and Gigantamax Orbeetle on the same team is banned.`];
+				return [`The combination of Gravity and inaccurate sleep moves on the same team is banned.`];
 			}
 		},
 		onBegin() {
