@@ -5616,6 +5616,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: -3,
 	},
 	
+	amplifier: {
+		onAllyBasePowerPriority: 22,
+		onAllyBasePower(basePower, attacker, defender, move) {
+			if (move.flags['sound']) {
+				this.debug('Amplifier boost');
+				return this.chainModify(1.3);
+			}
+		},
+		name: "Amplifier",
+		rating: 3.5,
+		num: 244,
+	},
 	artillery: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {

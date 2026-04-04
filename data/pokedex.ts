@@ -1068,7 +1068,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Ghost"],
 		gender: "N",
 		baseStats: { hp: 114, atk: 70, def: 60, spa: 105, spd: 70, spe: 71 },
-		abilities: { 0: "Rhythmic Beat", H: "Regenerator" },
+		abilities: { 0: "Rhythmic Beat", 1: "Amplifier", H: "Regenerator" },
 		heightm: 0.1,
 		weightkg: 0.5,
 		color: "Red",
@@ -1080,7 +1080,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Fairy", "Poison"],
 		gender: "F",
 		baseStats: { hp: 60, atk: 100, def: 65, spa: 145, spd: 116, spe: 114 },
-		abilities: { 0: "Adaptability", H: "Merciless" },
+		abilities: { 0: "Adaptability", 1: "Poison Puppeteer", H: "Merciless" },
 		heightm: 0.3,
 		weightkg: 0.1,
 		color: "Pink",
@@ -1989,7 +1989,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Dragon"],
 	},
 	gehrman: {
-		num: 9006,
+		num: 9007,
 		name: "Gehrman",
 		types: ["Dark", "Ghost"],
 		baseStats: { hp: 110, atk: 130, def: 90, spa: 110, spd: 100, spe: 140 },
@@ -2000,7 +2000,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	radahn: {
-		num: 9007,
+		num: 9008,
 		name: "Radahn",
 		types: ["Psychic", "Steel"],
 		baseStats: { hp: 120, atk: 120, def: 90, spa: 120, spd: 90, spe: 30 },
@@ -2011,7 +2011,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 	},
 	malenia: {
-		num: 9008,
+		num: 9009,
 		name: "Malenia",
 		types: ["Fighting", "Poison"],
 		baseStats: { hp: 110, atk: 135, def: 85, spa: 80, spd: 70, spe: 120 },
@@ -2022,7 +2022,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	maliketh: {
-		num: 9009,
+		num: 9010,
 		name: "Maliketh",
 		types: ["Ghost", "Dark"],
 		baseStats: { hp: 70, atk: 150, def: 50, spa: 90, spd: 60, spe: 115 },
@@ -2033,7 +2033,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	messmer: {
-		num: 9009,
+		num: 9011,
 		name: "Messmer",
 		types: ["Fire", "Flying"],
 		baseStats: { hp: 100, atk: 115, def: 70, spa: 65, spd: 85, spe: 110 },
@@ -2044,7 +2044,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	caligo: {
-		num: 9010,
+		num: 9012,
 		name: "Caligo",
 		types: ["Dragon", "Ice"],
 		baseStats: { hp: 95, atk: 90, def: 75, spa: 125, spd: 100, spe: 65 },
@@ -2055,7 +2055,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	azura: {
-		num: 9009,
+		num: 9013,
 		name: "Azura",
 		types: ["Water", "Fairy"],
 		baseStats: { hp: 69, atk: 60, def: 65, spa: 87, spd: 98, spe: 108 },
@@ -2066,7 +2066,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	lordshen: {
-		num: 9010,
+		num: 9014,
 		name: "Lord Shen",
 		types: ["Fire", "Flying"],
 		baseStats: { hp: 75, atk: 70, def: 55, spa: 130, spd: 95, spe: 105 },
@@ -2077,7 +2077,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Flying"],
 	},
 	rell: {
-		num: 9010,
+		num: 9015,
 		name: "Rell",
 		types: ["Steel", "Fighting"],
 		baseStats: { hp: 100, atk: 100, def: 135, spa: 65, spd: 70, spe: 60 },
