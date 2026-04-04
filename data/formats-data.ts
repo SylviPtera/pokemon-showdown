@@ -228,7 +228,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	iggykoopa: {
 		tier: "UU",
-		doublesTier: "DUU",
+		doublesTier: "DOU",
 	},
 	roykoopa: {
 		tier: "OU",
@@ -552,7 +552,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	mangoruby: {
 		tier: "UU",
-		doublesTier: "DUU",
+		doublesTier: "DOU",
 	},
 	xylobone: {
 		tier: "UU",
@@ -563,6 +563,54 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 	},
 	gloptic: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	blasoom: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	glaishur: {
+		tier: "OU",
+		doublesTier: "DUU",
+	},
+	attmoz: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	hornacle: {
+		tier: "OU",
+		doublesTier: "DUU",
+	},
+	torrt: {
+		tier: "OU",
+		doublesTier: "DUU",
+	},
+	furnoss: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	plixie: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	loodvigg: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	vhamp: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	syncopite: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	scaratar: {
+		tier: "OU",
+		doublesTier: "(DUU)",
+	},
+	galvana: {
 		tier: "OU",
 		doublesTier: "(DUU)",
 	},
@@ -590,7 +638,27 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "DOU",
 	},
+	maliketh: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
+	messmer: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
+	caligo: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	azura: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
+	lordshen: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
+	rell: {
 		tier: "UU",
 		doublesTier: "DUU",
 	},

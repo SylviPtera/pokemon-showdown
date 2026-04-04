@@ -5628,6 +5628,354 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 138,
 	},
+	celestialmelodyplant: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodyplant');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Grass';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodyplant')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodyplant');
+		},
+		flags: {},
+		name: "Celestial Melody (Plant)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodycold: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodycold');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Ice';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodycold')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodycold');
+		},
+		flags: {},
+		name: "Celestial Melody (Cold)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodyair: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodyair');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Flying';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodyair')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodyair');
+		},
+		flags: {},
+		name: "Celestial Melody (Air)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodywater: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodywater');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Water';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodywater')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodywater');
+		},
+		flags: {},
+		name: "Celestial Melody (Water)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodyearth: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodyearth');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Ground';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodyearth')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodyearth');
+		},
+		flags: {},
+		name: "Celestial Melody (Earth)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodyfire: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodyfire');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Fire';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodyfire')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodyfire');
+		},
+		flags: {},
+		name: "Celestial Melody (Fire)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodyplasma: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodyplasma');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Psychic';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodyplasma')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodyplasma');
+		},
+		flags: {},
+		name: "Celestial Melody (Plasma)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodyshadow: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodyshadow');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Ghost';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodyshadow')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodyshadow');
+		},
+		flags: {},
+		name: "Celestial Melody (Shadow)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodymech: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodymech');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Steel';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodymech')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodymech');
+		},
+		flags: {},
+		name: "Celestial Melody (Mech)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodycrystal: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodycrystal');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Rock';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodycrystal')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodycrystal');
+		},
+		flags: {},
+		name: "Celestial Melody (Crystal)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodypoison: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodypoison');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Poison';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodypoison')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodypoison');
+		},
+		flags: {},
+		name: "Celestial Melody (Poison)",
+		rating: 2.5,
+		num: 204,
+	},
+	celestialmelodysupernatural: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Celestial Melody');
+			this.field.addPseudoWeather('celestialmelodysupernatural');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifyTypePriority: -2,
+			onModifyType(move, pokemon) {
+				if (move.flags['sound'] && !pokemon.volatiles['dynamax']) { // hardcode
+					move.type = 'Electric';
+				}
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('celestialmelodysupernatural')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('celestialmelodysupernatural');
+		},
+		flags: {},
+		name: "Celestial Melody (Supernatural)",
+		rating: 2.5,
+		num: 204,
+	},
 	dimensiond: {
 		onModifyAtkPriority: 5,
 		onModifyAtk(spa, pokemon) {

@@ -22203,12 +22203,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		contestType: "Cool",
 	},
-	channeledblitz: {
+	channelledblitz: {
 		num: 3014,
 		accuracy: 100,
 		basePower: 100,
 		category: "Physical",
-		name: "Channeled Blitz",
+		name: "Channelled Blitz",
 		pp: 5,
 		priority: 0,
 		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1 },
@@ -22399,6 +22399,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Fire",
 		contestType: "Tough",
+	},
+	fireworkcannon: {
+		num: 893,
+		accuracy: 95,
+		basePower: 100,
+		category: "Special",
+		name: "Firework Cannon",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, cantusetwice: 1 },
+		secondary: {
+			chance: 100,
+			status: 'brn',
+		},
+		target: "allAdjacentFoes",
+		type: "Steel",
 	},
 	forcechoke: {
 		num: 527,
@@ -22688,6 +22704,31 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Psychic",
 		contestType: "Cool",
+	},
+	magnetstorm: {
+		num: 3001,
+		accuracy: 90,
+		basePower: 70,
+		category: "Physical",
+		name: "Magnet Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, metronome: 1},
+		secondary: {
+			self: {
+				boosts: {
+					def: 1,
+				},
+			},
+		},
+		onHit(target) {
+			if (target.hasType('Steel')) return false;
+			if (!target.addType('Steel')) return false;
+			this.add('-start', target, 'typeadd', 'Steel', '[from] move: Magnet Storm');
+		},
+		target: "allAdjacentFoes",
+		type: "Steel",
+		contestType: "Clever",
 	},
 	mindmeltingtoxin: {
 		num: 3001,
