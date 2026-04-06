@@ -336,7 +336,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	heart: {
 		tier: "OU",
-		doublesTier: "(DUU)",
+		doublesTier: "DUU",
 	},
 	ratgod: {
 		tier: "OU",
@@ -612,7 +612,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	galvana: {
 		tier: "OU",
-		doublesTier: "(DUU)",
+		doublesTier: "DOU",
 	},
 	anakin: {
 		tier: "UU",
@@ -650,13 +650,17 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "DUU",
 	},
+	godfrey: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	azura: {
 		tier: "UU",
 		doublesTier: "DUU",
 	},
 	lordshen: {
 		tier: "UU",
-		doublesTier: "DUU",
+		doublesTier: "DOU",
 	},
 	rell: {
 		tier: "UU",

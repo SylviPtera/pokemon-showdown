@@ -22403,7 +22403,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	fireworkcannon: {
 		num: 893,
 		accuracy: 95,
-		basePower: 100,
+		basePower: 110,
 		category: "Special",
 		name: "Firework Cannon",
 		pp: 5,
@@ -22413,7 +22413,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			chance: 100,
 			status: 'brn',
 		},
-		target: "allAdjacentFoes",
+		target: "normal",
 		type: "Steel",
 	},
 	forcechoke: {
@@ -22714,11 +22714,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: {
-			self: {
-				boosts: {
-					def: 1,
-				},
+		self: {
+			boosts: {
+				def: 1,
 			},
 		},
 		onHit(target) {

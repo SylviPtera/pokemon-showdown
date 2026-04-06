@@ -2054,8 +2054,19 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Blue",
 		eggGroups: ["Human-Like"],
 	},
-	azura: {
+	godfrey: {
 		num: 9013,
+		name: "Godfrey",
+		types: ["Fighting", "Ground"],
+		baseStats: { hp: 110, atk: 140, def: 105, spa: 95, spd: 65, spe: 85 },
+		abilities: { 0: "Sheer Force", H: "Tough Claws" },
+		heightm: 4,
+		weightkg: 200,
+		color: "Blue",
+		eggGroups: ["Human-Like"],
+	},
+	azura: {
+		num: 9014,
 		name: "Azura",
 		types: ["Water", "Fairy"],
 		baseStats: { hp: 69, atk: 60, def: 65, spa: 87, spd: 98, spe: 108 },
@@ -2066,7 +2077,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	lordshen: {
-		num: 9014,
+		num: 9015,
 		name: "Lord Shen",
 		types: ["Fire", "Flying"],
 		baseStats: { hp: 75, atk: 70, def: 55, spa: 130, spd: 95, spe: 105 },
@@ -2077,7 +2088,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Flying"],
 	},
 	rell: {
-		num: 9015,
+		num: 9016,
 		name: "Rell",
 		types: ["Steel", "Fighting"],
 		baseStats: { hp: 100, atk: 100, def: 135, spa: 65, spd: 70, spe: 60 },

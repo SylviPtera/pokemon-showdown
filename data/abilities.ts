@@ -6190,6 +6190,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1.5,
 		num: 20,
 	},
+	runeofdeath: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			target.addVolatile('healblock');
+		},
+		flags: {},
+		name: "Rune of Death",
+		rating: 2,
+		num: 143,
+	},
 	shadowmantle: {
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyAtk(atk, attacker, defender, move) {
