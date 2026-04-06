@@ -566,6 +566,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		doublesTier: "(DUU)",
 	},
+	fungpray: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	blasoom: {
 		tier: "OU",
 		doublesTier: "(DUU)",

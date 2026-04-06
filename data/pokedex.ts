@@ -1635,7 +1635,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like", "Mineral"],
 	},
 	eram: {
-		num: 5021,
+		num: 5037,
 		name: "ERAM",
 		types: ["Ghost", "Fire"],
 		baseStats: { hp: 70, atk: 95, def: 70, spa: 125, spd: 130, spe: 110 },
@@ -1682,7 +1682,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Human-Like"],
 	},
 	fracktail: {
-		num: 6003,
+		num: 6004,
 		name: "Fracktail",
 		types: ["Dragon", "Electric"],
 		gender: "N",
@@ -1694,7 +1694,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 	},
 	cudge: {
-		num: 6004,
+		num: 6005,
 		name: "Cudge",
 		types: ["Fairy", "Ground"],
 		gender: "M",
@@ -1760,6 +1760,17 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 50,
 		color: "Blue",
 		eggGroups: ["Field"],
+	},
+	fungpray: {
+		num: 8014,
+		name: "Fung Pray",
+		types: ["Bug", "Grass"],
+		baseStats: { hp: 116, atk: 107, def: 71, spa: 85, spd: 111, spe: 40 },
+		abilities: { 0: "Effect Spore", 1: "Serene Grace", H: "Poison Heal" },
+		heightm: 1.2,
+		weightkg: 23,
+		color: "Red",
+		eggGroups: ["Grass"],
 	},
 	blasoom: {
 		num: 8002,
