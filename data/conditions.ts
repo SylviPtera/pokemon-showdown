@@ -249,7 +249,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
 			if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
 		},
-	},
+	},/*
 	dimensionalcage: {
 		name: 'dimensionalcage',
 		duration: 5,
@@ -275,19 +275,19 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			// G-Max Centiferno and G-Max Sandblast continue even after the user leaves the field
 			const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
 			if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns) && !gmaxEffect) {
-				delete pokemon.volatiles['partiallytrapped'];
-				this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]', '[silent]');
+				delete pokemon.volatiles['dimensionalcage'];
+				this.add('-end', pokemon, this.effectState.sourceEffect, '[dimensionalcage]', '[silent]');
 				return;
 			}
 		},
 		onEnd(pokemon) {
-			this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]');
+			this.add('-end', pokemon, this.effectState.sourceEffect, '[dimensionalcage]');
 		},
 		onTrapPokemon(pokemon) {
 			const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
 			if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
 		},
-	},
+	},*/
 	lockedmove: {
 		// Outrage, Thrash, Petal Dance...
 		name: 'lockedmove',
