@@ -7612,4 +7612,15 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 			shortDesc: "Nearly always goes first. Always crits.",
 		},
 	},
+
+	dimensionalcage: {
+		name: "Dimensional Cage",
+		desc: "Prevents the target from switching for four or five turns. During this time, they cannot dodge attacks and take 1.5x damage from bullet and bomb-based attacks. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
+		shortDesc: "Traps the target, making them unable to dodge attacks and weak to bomb moves.",
+		gen8: {
+			desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
+		},
+
+		start: "  [SOURCE] trapped [POKEMON]!",
+	},
 };

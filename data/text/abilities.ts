@@ -2281,4 +2281,12 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+	
+	greenday: {
+		name: "Green Day",
+		desc: "Any Pokemon switching in while this Pokemon is on the field will be badly poisoned, unless they are Poison, Steel or Grass-type, not grounded, or immune to powder.",
+		shortDesc: "Badly poisons grounded, non-Grass, Poison, or Steel-type, non-powder immune Pokemon switching in.",
+
+		start: "  Mold fills the battlefield!",
+	},
 };

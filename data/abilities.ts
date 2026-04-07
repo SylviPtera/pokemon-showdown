@@ -6052,6 +6052,35 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 138,
 	},
+	greenday: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			if (this.field.getPseudoWeather('greenday')) {
+				this.add('-activate', pokemon, 'ability: Green Day');
+				this.field.addPseudoWeather('greenday');
+			}
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onSwitchIn(pokemon) {
+				if (!pokemon.isGrounded() || pokemon.hasType('Poison') || pokemon.hasType('Steel') || pokemon.hasType('Grass') || pokemon.hasAbility('Green Day') || pokemon.hasAbility('Overcoat') || pokemon.hasItem('Safety Goggles')) return;
+				pokemon.trySetStatus('tox', pokemon.side.foe.active[0]);
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('greenday')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('greenday');
+		},
+		flags: {},
+		name: "Green Day",
+		rating: 3.5,
+		num: 204,
+	},
 	holyveil: {
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyAtk(atk, attacker, defender, move) {

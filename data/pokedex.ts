@@ -1915,6 +1915,17 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Yellow",
 		eggGroups: ["Undiscovered"],
 	},
+	cioccolata: {
+		num: 9017,
+		name: "Cioccolata",
+		types: ["Poison"],
+		baseStats: { hp: 70, atk: 70, def: 65, spa: 140, spd: 100, spe: 65 },
+		abilities: { 0: "Green Day" },
+		heightm: 1.7,
+		weightkg: 70,
+		color: "Green",
+		eggGroups: ["Undiscovered"],
+	},
 	anakin: {
 		num: 9002,
 		name: "Anakin",

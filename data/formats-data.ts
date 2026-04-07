@@ -618,6 +618,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		doublesTier: "DOU",
 	},
+	cioccolata: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	anakin: {
 		tier: "UU",
 		doublesTier: "DOU",
