@@ -19568,7 +19568,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 			},
 			onModifySpe(spe, pokemon) {
-				return this.chainModify(2);
+				if (!pokemon.hasAbility('northwinds')) {
+					return this.chainModify(2);
+				}
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 5,
@@ -22120,6 +22122,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	blackknife: {
+		num: 917,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Black Knife",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, slicing: 1, metronome: 1 },
+		secondary: {
+			chance: 100,
+			volatileStatus: 'healblock',
+		},
+		target: "normal",
+		type: "Dark",
+		contestType: "Tough",
+	},
 	bladebeam: {
 		num: 3010,
 		accuracy: 100,
@@ -22258,6 +22277,44 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		// onHit(target, source, move) {
 		// 	return target.addVolatile('dimensionalcage');
 		// },
+		
+			condition: {
+			duration: 5,
+			durationCallback(target, source) {
+				if (source?.hasItem('gripclaw')) return 8;
+				return this.random(5, 7);
+			},
+			onStart(pokemon, source) {
+				this.add('-activate', pokemon, 'move: Dimensional Cage', `[of] ${source}`);
+				this.effectState.boundDivisor = source.hasItem('bindingband') ? 6 : 8;
+			},
+			onSourceModifyDamage(damage, source, target, move) {
+				if (move.flags['bullet']) {
+					return this.chainModify(1.5);
+				}
+			},
+			onAccuracy(accuracy, target, source, move) {
+				return true;
+			},
+			onResidualOrder: 13,
+			onResidual(pokemon) {
+				const source = this.effectState.source;
+				// G-Max Centiferno and G-Max Sandblast continue even after the user leaves the field
+				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
+				if (source && (!source.isActive || source.hp <= 0 || !source.activeTurns) && !gmaxEffect) {
+					delete pokemon.volatiles['dimensionalcage'];
+					this.add('-end', pokemon, this.effectState.sourceEffect, '[dimensionalcage]', '[silent]');
+					return;
+				}
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, this.effectState.sourceEffect, '[dimensionalcage]');
+			},
+			onTrapPokemon(pokemon) {
+				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
+				if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
+			},
+		},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",

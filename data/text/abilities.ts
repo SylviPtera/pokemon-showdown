@@ -2285,7 +2285,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	greenday: {
 		name: "Green Day",
 		desc: "Any Pokemon switching in while this Pokemon is on the field will be badly poisoned, unless they are Poison, Steel or Grass-type, not grounded, or immune to powder.",
-		shortDesc: "Badly poisons grounded, non-Grass, Poison, or Steel-type, non-powder immune Pokemon switching in.",
+		shortDesc: "Badly poisons all grounded Pokemon switching in, unless powder-immune.",
 
 		start: "  Mold fills the battlefield!",
 	},

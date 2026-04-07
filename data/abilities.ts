@@ -6055,7 +6055,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	greenday: {
 		onStart(pokemon) { //dark aura
 			if (this.suppressingAbility(pokemon)) return;
-			if (this.field.getPseudoWeather('greenday')) {
+			if (!this.field.getPseudoWeather('greenday')) {
 				this.add('-activate', pokemon, 'ability: Green Day');
 				this.field.addPseudoWeather('greenday');
 			}
@@ -6100,6 +6100,42 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Holy Veil",
 		rating: 4,
 		num: 272,
+	},
+	northwinds: {
+		onDamage(damage, target, source, effect) {
+			if (
+				effect.effectType === "Move" &&
+				!effect.multihit &&
+				!(effect.hasSheerForce && source.hasAbility('sheerforce'))
+			) {
+				this.effectState.checkedNorthWinds = false;
+			} else {
+				this.effectState.checkedNorthWinds = true;
+			}
+		},
+		onTryEatItem(item) {
+			const healingItems = [
+				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
+			];
+			if (healingItems.includes(item.id)) {
+				return this.effectState.checkedNorthWinds;
+			}
+			return true;
+		},
+		onAfterMoveSecondary(target, source, move) {
+			this.effectState.checkedNorthWinds = true;
+			if (!source || source === target || !target.hp || !move.totalDamage) return;
+			const lastAttackedBy = target.getLastAttackedBy();
+			if (!lastAttackedBy) return;
+			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
+			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
+				target.side.addSideCondition('tailwind');
+			}
+		},
+		flags: {},
+		name: "North Winds",
+		rating: 3,
+		num: 271,
 	},
 	perfectshape: {
 		onSetStatus(status, target, source, effect) {

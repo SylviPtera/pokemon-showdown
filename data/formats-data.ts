@@ -527,6 +527,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "DOU",
 	},
+	roaringknight: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	blooper: {
 		tier: "LC",
 	},
