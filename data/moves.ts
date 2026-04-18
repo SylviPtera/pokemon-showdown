@@ -22143,12 +22143,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		num: 3010,
 		accuracy: 100,
 		basePower: 80,
-		category: "Physical",
+		category: "Special",
 		name: "Blade Beam",
 		pp: 10,
 		priority: 0,
-		overrideDefensiveStat: 'spd',
 		flags: {protect: 1, mirror: 1, metronome: 1},
+		ignoreEvasion: true,
+		ignoreDefensive: true,
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -22278,7 +22279,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		// 	return target.addVolatile('dimensionalcage');
 		// },
 		
-			condition: {
+		/*condition: {
 			duration: 5,
 			durationCallback(target, source) {
 				if (source?.hasItem('gripclaw')) return 8;
@@ -22314,7 +22315,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
 				if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
 			},
-		},
+		},*/
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -22784,6 +22785,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Steel",
 		contestType: "Clever",
+	},
+	masamunecutter: {
+		num: 906,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Masamune Cutter",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, slicing: 1 },
+		onModifyType(move, pokemon) {
+			if (pokemon.species.name === 'Sephiroth-Angel') {
+				move.type = 'Flying';
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.species.name === 'Sephiroth-Angel') {
+				move.critRatio = 2;
+			} else move.critRatio = 1;
+		},
+		onTryHit(pokemon) {
+			// will shatter screens through sub, before you hit
+			pokemon.side.removeSideCondition('reflect');
+			pokemon.side.removeSideCondition('lightscreen');
+			pokemon.side.removeSideCondition('auroraveil');
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
 	},
 	mindmeltingtoxin: {
 		num: 3001,

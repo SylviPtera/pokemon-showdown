@@ -249,7 +249,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
 			if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
 		},
-	},/*
+	},
 	dimensionalcage: {
 		name: 'dimensionalcage',
 		duration: 5,
@@ -287,7 +287,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			const gmaxEffect = ['gmaxcentiferno', 'gmaxsandblast'].includes(this.effectState.sourceEffect.id);
 			if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
 		},
-	},*/
+	},
 	lockedmove: {
 		// Outrage, Thrash, Petal Dance...
 		name: 'lockedmove',

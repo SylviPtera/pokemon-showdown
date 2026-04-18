@@ -108,7 +108,7 @@ const NO_STAB = [
 	'dragontail', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
 	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'infestation', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit',
 	'quickattack', 'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'trailblaze',
-	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout',
+	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter'
 ];
 // Hazard-setting moves
 const HAZARDS = [
@@ -130,6 +130,7 @@ const MOVE_PAIRS = [
 	['protect', 'wish'],
 	['leechseed', 'protect'],
 	['leechseed', 'substitute'],
+	['acrobatics', 'channelledblitz']
 ];
 
 /** Pokemon who always want priority STAB, and are fine with it as its only STAB move of that type */
@@ -595,11 +596,14 @@ export class RandomTeams {
 			[['dragonpulse', 'spacialrend'], 'dracometeor'],
 			['heavyslam', 'flashcannon'],
 			['alluringvoice', 'dazzlinggleam'],
+			['acrobatics', 'whirlingtornado'],
+			['dualwingbeat', 'bravebird'],
 
 			// These status moves are redundant with each other
 			['taunt', 'disable'],
 			[['thunderwave', 'toxic'], ['thunderwave', 'willowisp']],
 			[['thunderwave', 'toxic', 'willowisp'], 'toxicspikes'],
+			['taunt', 'substitute'],
 
 			// This space reserved for assorted hardcodes that otherwise make little sense out of context
 			// Landorus and Thundurus
@@ -612,6 +616,12 @@ export class RandomTeams {
 			['healbell', 'stealthrock'],
 			// Araquanid and Magnezone
 			['mirrorcoat', ['hydropump', 'bodypress']],
+			// Meta Knight and Pit
+			['channelledblitz', 'whirlingtornado'],
+			// Corrin
+			['liquidation', 'scald'],
+			// Wendy
+			['rapidspin', 'trick']
 		];
 
 		for (const pair of incompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);
@@ -637,6 +647,10 @@ export class RandomTeams {
 		if (species.id === 'camerupt') this.incompatibleMoves(moves, movePool, 'roar', 'willowisp');
 		// nothing else rolls these lol
 		if (species.id === 'coalossal') this.incompatibleMoves(moves, movePool, 'flamethrower', 'overheat');
+		// To force Channelled Blitz and Acrobatics together on Setup Sweeper sets for Pit
+		if ((species.id === 'pit' || species.id === 'darkpit') && role === 'Setup Sweeper') this.incompatibleMoves(moves, movePool, 'roost', 'swordsdance');
+		// To force Bulk Up on Banjo if rolled Rest and Sleep Talk
+		if (species.id === 'banjo') this.incompatibleMoves(moves, movePool, ['earthquake', 'drainpunch'], ['rest', 'sleeptalk']);
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -813,6 +827,18 @@ export class RandomTeams {
 				counter = this.addMove('spore', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 					movePool, teraType, role);
 			}
+		}
+
+		// Enforce Magic Burst
+		if (movePool.includes('magicburst')) {
+			counter = this.addMove('magicburst', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+
+		// Enforce Masamune Cutter
+		if (movePool.includes('masamunecutter')) {
+			counter = this.addMove('masamunecutter', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
 		}
 
 		// Enforce moves in doubles
@@ -1077,6 +1103,10 @@ export class RandomTeams {
 			return !counter.get('Bug');
 		case 'Torrent':
 			return (!counter.get('Water') && !moves.has('flipturn'));
+		case 'Technician':
+			return ((species.id === 'banjokazooie' || species.id === 'kazooie') && !moves.has('dualwingbeat'));
+		case 'Moxie':
+			return (species.id === 'kazooie' && !moves.has('bravebird'));
 		}
 
 		return false;
@@ -1173,7 +1203,7 @@ export class RandomTeams {
 		) return 'Weakness Policy';
 		if (['dragonenergy', 'lastrespects', 'waterspout'].some(m => moves.has(m))) return 'Choice Scarf';
 		if (
-			!isDoubles && (ability === 'Imposter' || (species.id === 'magnezone' && role === 'Fast Attacker'))
+			!isDoubles && (ability === 'Imposter' || (species.id === 'snake' && role === 'Fast Attacker'))
 		) return 'Choice Scarf';
 		if (species.id === 'rampardos' && (role === 'Fast Attacker' || isDoubles)) return 'Choice Scarf';
 		if (species.id === 'palkia' && counter.get('Status')) return 'Lustrous Orb';
@@ -1199,7 +1229,7 @@ export class RandomTeams {
 		}
 		if (counter.get('Status') && (species.name === 'Latias' || species.name === 'Latios')) return 'Soul Dew';
 		if (species.id === 'scyther' && !isDoubles) return (isLead && !moves.has('uturn')) ? 'Eviolite' : 'Heavy-Duty Boots';
-		if (ability === 'Poison Heal' || ability === 'Quick Feet') return 'Toxic Orb';
+		if (ability === 'Poison Heal' || ability === 'Quick Feet' && species.id !== 'sonic') return 'Toxic Orb';
 		if (species.nfe) return 'Eviolite';
 		if ((ability === 'Guts' || moves.has('facade')) && !moves.has('sleeptalk')) {
 			return (types.includes('Fire') || ability === 'Toxic Boost') ? 'Toxic Orb' : 'Flame Orb';
@@ -1212,7 +1242,7 @@ export class RandomTeams {
 			return (moves.has('closecombat') || moves.has('leafstorm')) ? 'White Herb' : 'Sitrus Berry';
 		}
 		if (moves.has('shellsmash') && ability !== 'Weak Armor') return 'White Herb';
-		if (moves.has('meteorbeam') || (moves.has('electroshot') && !teamDetails.rain)) return 'Power Herb';
+		if (moves.has('meteorbeam') || moves.has('channelledblitz') || (moves.has('electroshot') && !teamDetails.rain)) return 'Power Herb';
 		if (moves.has('acrobatics') && ability !== 'Protosynthesis') return '';
 		if (moves.has('auroraveil') || moves.has('lightscreen') && moves.has('reflect')) return 'Light Clay';
 		if (ability === 'Gluttony') return `${this.sample(['Aguav', 'Figy', 'Iapapa', 'Mago', 'Wiki'])} Berry`;
@@ -1227,6 +1257,9 @@ export class RandomTeams {
 			species.id !== 'yanmega' &&
 			this.dex.getEffectiveness('Rock', species) >= 2 && (!types.includes('Flying') || !isDoubles)
 		) return 'Heavy-Duty Boots';
+		if (species.id === 'iggy') return 'Assault Vest';
+		if (species.id === 'duckhunt' && role === 'Setup Sweeper') return 'Scope Lens';
+		if (species.id === 'valstrax' && role === 'Fast Attacker') return 'Flame Orb';
 	}
 
 	/** Item generation specific to Random Doubles */
@@ -1357,7 +1390,7 @@ export class RandomTeams {
 			return 'Assault Vest';
 		}
 		if (species.id === 'golem') return (counter.get('speedsetup')) ? 'Weakness Policy' : 'Custap Berry';
-		if (moves.has('substitute')) return 'Leftovers';
+		if (moves.has('substitute') && species.id !== 'sephiroth') return 'Leftovers';
 		if (
 			moves.has('stickyweb') && isLead &&
 			(species.baseStats.hp + species.baseStats.def + species.baseStats.spd) <= 235
@@ -1394,7 +1427,7 @@ export class RandomTeams {
 			!counter.get('setup') && ability !== 'Levitate' && this.dex.getEffectiveness('Ground', species) >= 2
 		) return 'Air Balloon';
 		if (['Bulky Attacker', 'Bulky Support', 'Bulky Setup'].some(m => role === (m))) return 'Leftovers';
-		if (species.id === 'pawmot' && moves.has('nuzzle')) return 'Leppa Berry';
+		if (species.id === 'pawmot' && moves.has('nuzzle') || species.id === 'hero' && moves.has('revivalblessing')) return 'Leppa Berry';
 		if (role === 'Fast Support' || role === 'Fast Bulky Setup') {
 			return (
 				counter.get('Physical') + counter.get('Special') > counter.get('Status') && lifeOrbReqs
@@ -1525,7 +1558,7 @@ export class RandomTeams {
 		if (['axekick', 'highjumpkick', 'jumpkick', 'supercellslam'].some(m => moves.has(m))) srWeakness = 2;
 		while (evs.hp > 1) {
 			const hp = Math.floor(Math.floor(2 * species.baseStats.hp + ivs.hp + Math.floor(evs.hp / 4) + 100) * level / 100 + 10);
-			if ((moves.has('substitute') && ['Sitrus Berry'].includes(item)) || species.id === 'minior') {
+			if ((moves.has('substitute') && ['Sitrus Berry'].includes(item)) || species.id === 'minior' || species.id === 'sephiroth') {
 				// Two Substitutes should activate Sitrus Berry. Two switch-ins to Stealth Rock should activate Shields Down on Minior.
 				if (hp % 4 === 0) break;
 			} else if (

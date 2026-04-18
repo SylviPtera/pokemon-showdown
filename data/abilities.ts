@@ -6041,6 +6041,41 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 208,
 	},
+	finalphase: {
+		onSwitchInPriority: -1,
+		onStart(pokemon) {
+			if (pokemon.baseSpecies.baseSpecies !== 'Sephiroth' || pokemon.level < 20 || pokemon.transformed) return;
+			if (pokemon.hp < pokemon.maxhp / 2) {
+				if (pokemon.species.id === 'sephiroth') {
+					pokemon.formeChange('Sephiroth-Angel');
+				}
+			} else {
+				if (pokemon.species.id === 'sephirothangel') {
+					pokemon.formeChange('Sephiroth');
+				}
+			}
+		},
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (
+				pokemon.baseSpecies.baseSpecies !== 'Sephiroth' || pokemon.level < 20 ||
+				pokemon.transformed || !pokemon.hp
+			) return;
+			if (pokemon.hp < pokemon.maxhp / 2) {
+				if (pokemon.species.id === 'sephiroth') {
+					pokemon.formeChange('Sephiroth-Angel');
+				}
+			} else {
+				if (pokemon.species.id === 'sephirothangel') {
+					pokemon.formeChange('Sephiroth');
+				}
+			}
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
+		name: "Final Phase",
+		rating: 3,
+		num: 208,
+	},
 	frostboltstorm: {
 		onBasePowerPriority: 19,
 		onStart(source) {
