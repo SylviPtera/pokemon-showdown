@@ -6589,4 +6589,43 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 293,
 	},
+	waterbasedlifeform: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				this.debug('Water-Based Lifeform boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water') {
+				this.debug('Water-Based Lifeform boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			if (move.type === 'Water') {
+				this.damage(source.baseMaxhp / 10, source, source);
+			}
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Water') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Water-Based Lifeform');
+				}
+				return null;
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
+				this.heal(target.baseMaxhp / 8);
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Water-Based Lifeform",
+		rating: 3.5,
+		num: 293,
+	},
 };

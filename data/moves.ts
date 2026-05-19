@@ -22220,7 +22220,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "Steel",
 		contestType: "Cool",
 	},
 	channelledblitz: {
@@ -22514,6 +22514,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Clever",
+	},
+	goldexperience: {
+		num: 721,
+		accuracy: 100,
+		basePower: 90,
+		category: "Special",
+		name: "Gold Experience",
+		pp: 20,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1 },
+		pseudoWeather: 'goldexperience',
+		condition: {
+			duration: 1,
+			onFieldStart(target, source, sourceEffect) {
+				this.add('-fieldactivate', 'move: Gold Experience');
+				this.hint(`Normal-type moves become Grass-type after using ${sourceEffect}.`);
+			},
+			onModifyTypePriority: -2,
+			onModifyType(move) {
+				if (move.type === 'Normal') {
+					move.type = 'Grass';
+					this.debug(move.name + "'s type changed to Grass");
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Cool",
 	},
 	infernalclimax: {
 		num: 844,
@@ -22960,6 +22989,25 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Rock",
+	},
+	waterreplenish: {
+		num: 105,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Water Replenish",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, heal: 1, metronome: 1 },
+		heal: [1, 4],
+		boosts: {
+			spa: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Water",
+		zMove: { effect: 'clearnegativeboost' },
+		contestType: "Clever",
 	},
 	whirlingtornado: {
 		num: 3010,
