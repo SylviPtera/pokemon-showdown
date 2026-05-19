@@ -1956,7 +1956,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	giorno: {
 		num: 9022,
-		name: "Gold Experience Requiem",
+		name: "Giorno",
 		types: ["Grass", "Fairy"],
 		baseStats: { hp: 75, atk: 90, def: 65, spa: 100, spd: 90, spe: 110 },
 		abilities: { 0: "Grassy Surge" },
