@@ -1352,6 +1352,17 @@
             }
         ]
     },
+    "jolyne": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Fast Support",
+                "movepool": ["Close Combat", "Rapid Spin", "Knock Off", "Sticky Web", "U-Turn"],
+                "abilities": ["Inner Focus"],
+                "teraTypes": ["Ghost"]
+            }
+        ]
+    },
     "iggy": {
         "level": 83,
         "sets": [
