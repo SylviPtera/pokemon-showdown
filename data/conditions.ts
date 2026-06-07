@@ -14,6 +14,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		// Damage reduction is handled directly in the sim/battle.js damage function
 		onResidualOrder: 10,
 		onResidual(pokemon) {
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				this.damage(pokemon.baseMaxhp / 16);
+			}
 			this.damage(pokemon.baseMaxhp / 16);
 		},
 	},
@@ -65,7 +68,7 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
-			if (pokemon.hasAbility('earlybird')) {
+			if (pokemon.hasAbility('earlybird') || this.field.getPseudoWeather('madeinheaven')) {
 				pokemon.statusState.time--;
 			}
 			pokemon.statusState.time--;
@@ -132,6 +135,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				this.damage(pokemon.baseMaxhp / 8);
+			}
 			this.damage(pokemon.baseMaxhp / 8);
 		},
 	},
@@ -153,6 +159,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onResidualOrder: 9,
 		onResidual(pokemon) {
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				if (this.effectState.stage < 15) {
+					this.effectState.stage++;
+				}
+				this.damage(this.clampIntRange(pokemon.baseMaxhp / 16, 1) * this.effectState.stage);
+			}
 			if (this.effectState.stage < 15) {
 				this.effectState.stage++;
 			}
@@ -178,6 +190,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 		onBeforeMovePriority: 3,
 		onBeforeMove(pokemon) {
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				pokemon.volatiles['confusion'].time--;
+			}
 			pokemon.volatiles['confusion'].time--;
 			if (!pokemon.volatiles['confusion'].time) {
 				pokemon.removeVolatile('confusion');
@@ -223,7 +238,13 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'partiallytrapped',
 		duration: 5,
 		durationCallback(target, source) {
-			if (source?.hasItem('gripclaw')) return 8;
+			if (source?.hasItem('gripclaw') && !this.field.getPseudoWeather('madeinheaven')) {
+				return 8;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			} else if (source?.hasItem('gripclaw') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
+			}
 			return this.random(5, 7);
 		},
 		onStart(pokemon, source) {
@@ -240,6 +261,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 				this.add('-end', pokemon, this.effectState.sourceEffect, '[partiallytrapped]', '[silent]');
 				return;
 			}
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				this.damage(pokemon.baseMaxhp / this.effectState.boundDivisor);
+			}
 			this.damage(pokemon.baseMaxhp / this.effectState.boundDivisor);
 		},
 		onEnd(pokemon) {
@@ -254,7 +278,13 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'dimensionalcage',
 		duration: 5,
 		durationCallback(target, source) {
-			if (source?.hasItem('gripclaw')) return 8;
+			if (source?.hasItem('gripclaw') && !this.field.getPseudoWeather('madeinheaven')) {
+				return 8;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			} else if (source?.hasItem('gripclaw') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
+			}
 			return this.random(5, 7);
 		},
 		onStart(pokemon, source) {
@@ -419,7 +449,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		name: 'futuremove',
 		onStart(target) {
 			this.effectState.targetSlot = target.getSlot();
-			this.effectState.endingTurn = (this.turn - 1) + 2;
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				this.effectState.endingTurn = (this.turn - 1) + 1;
+			}
+			else {this.effectState.endingTurn = (this.turn - 1) + 2;}
 			if (this.effectState.endingTurn >= 254) {
 				this.hint(`In Gen 8+, Future attacks will never resolve when used on the 255th turn or later.`);
 			}
@@ -516,8 +549,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
-			if (source?.hasItem('damprock')) {
+			if (source?.hasItem('damprock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			} else if (source?.hasItem('damprock') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
 			}
 			return 5;
 		},
@@ -586,8 +623,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
-			if (source?.hasItem('heatrock')) {
+			if (source?.hasItem('heatrock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			} else if (source?.hasItem('heatrock') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
 			}
 			return 5;
 		},
@@ -668,8 +709,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
-			if (source?.hasItem('smoothrock')) {
+			if (source?.hasItem('smoothrock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			} else if (source?.hasItem('smoothrock') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
 			}
 			return 5;
 		},
@@ -706,6 +751,9 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			if (this.field.isWeather('sandstorm')) this.eachEvent('Weather');
 		},
 		onWeather(target) {
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				this.damage(target.baseMaxhp / 16);
+			}
 			this.damage(target.baseMaxhp / 16);
 		},
 		onFieldEnd() {
@@ -747,8 +795,12 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		effectType: 'Weather',
 		duration: 5,
 		durationCallback(source, effect) {
-			if (source?.hasItem('icyrock')) {
+			if (source?.hasItem('icyrock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			} else if (source?.hasItem('icyrock') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
 			}
 			return 5;
 		},

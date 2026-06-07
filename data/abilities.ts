@@ -5640,6 +5640,32 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 2,
 		num: 138,
 	},
+	awaitingheaven: {
+		onStart(pokemon) {
+			this.add('-start', pokemon, 'ability: Awaiting Heaven');
+			this.effectState.counter = 3;
+		},
+		onResidualOrder: 28,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			if (pokemon.activeTurns && this.effectState.counter) {
+				this.effectState.counter--;
+				if (!this.effectState.counter) {
+					this.add('-end', pokemon, 'Awaiting Heaven');
+					delete this.effectState.counter;
+					if (pokemon.species.id === 'puccinewmoon' && pokemon.hp && !pokemon.transformed && pokemon.side.foePokemonLeft()) {
+						pokemon.formeChange('Pucci-Heaven', this.effect, true);
+						pokemon.formeRegression = true;
+						//pokemon.setAbility('madeinheaven');
+					}
+				}
+			}
+		},
+		flags: {},
+		name: "Awaiting Heaven",
+		rating: 4,
+		num: 112,
+	},
 	celestialmelodyplant: {
 		onStart(pokemon) { //dark aura
 			if (this.suppressingAbility(pokemon)) return;
@@ -6135,6 +6161,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Holy Veil",
 		rating: 4,
 		num: 272,
+	},
+	madeinheaven: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Made in Heaven');
+			this.field.addPseudoWeather('madeinheaven');
+		},
+		condition: { //ion deluge
+			duration: 0,
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('madeinheaven')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('madeinheaven');
+		},
+		flags: {},
+		name: "Made in Heaven",
+		rating: 3.5,
+		num: 204,
 	},
 	northwinds: {
 		onDamage(damage, target, source, effect) {

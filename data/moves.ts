@@ -22248,6 +22248,41 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Electric",
 	},
+	cmoon: {
+		num: 614,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "C-Moon",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		onEffectiveness(typeMod, target, type, move) {
+			if (move.type !== 'Ground') return;
+			if (!target) return; // avoid crashing when called from a chat plugin
+			// ignore effectiveness if the target is Flying type and immune to Ground
+			if (!target.runImmunity('Ground')) {
+				if (target.hasType('Flying')) return 0;
+			}
+		},
+		onHit(target) {
+			let success = false;
+			let i: BoostID;
+			for (i in target.boosts) {
+				if (target.boosts[i] === 0) continue;
+				target.boosts[i] = -target.boosts[i];
+				success = true;
+			}
+			if (!success) return false;
+			this.add('-invertboost', target, '[from] move: C-Moon');
+		},
+		volatileStatus: 'smackdown',
+		ignoreImmunity: { 'Ground': true },
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Beautiful",
+	},
 	crossslash: {
 		num: 3011,
 		accuracy: 100,

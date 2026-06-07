@@ -3339,6 +3339,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onResidualOrder: 5,
 		onResidualSubOrder: 4,
 		onResidual(pokemon) {
+			if (this.field.getPseudoWeather('madeinheaven')) {
+				this.heal(pokemon.baseMaxhp / 16);
+			}
 			this.heal(pokemon.baseMaxhp / 16);
 		},
 		num: 234,

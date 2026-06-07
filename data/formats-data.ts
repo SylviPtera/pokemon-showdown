@@ -634,6 +634,18 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
+	pucci: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+	},
+	puccinewmoon: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
+	pucciheaven: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	vaalhazak: {
 		tier: "UU",
 		doublesTier: "DOU",

@@ -88,9 +88,15 @@
         "sets": [
             {
                 "role": "Fast Support",
-                "movepool": ["Draco Meteor", "U-Turn", "Defog", "Heal Bell", "Flamethrower"],
+                "movepool": ["Draco Meteor", "U-Turn", "Defog", "Flamethrower"],
                 "abilities": ["Serene Grace"],
                 "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Draco Meteor", "U-Turn", "Ice Beam", "Dazzling Gleam", "Flamethrower"],
+                "abilities": ["Serene Grace"],
+                "teraTypes": ["Fire"]
             }
         ]
     },
@@ -1358,7 +1364,7 @@
             {
                 "role": "Fast Support",
                 "movepool": ["Close Combat", "Rapid Spin", "Knock Off", "Sticky Web", "U-Turn"],
-                "abilities": ["Inner Focus"],
+                "abilities": ["Stamina"],
                 "teraTypes": ["Ghost"]
             }
         ]
