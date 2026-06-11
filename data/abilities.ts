@@ -6162,6 +6162,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 272,
 	},
+	thelichking: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect?.effectType !== 'Move') {
+				return;
+			}
+			if (source.species.id === 'arthas' && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+				this.field.setWeather('snowscape');
+				this.add('-activate', source, 'ability: Lich King');
+				source.formeChange('Arthas-Lich-King', this.effect, true);
+				source.formeRegression = true;
+			}
+		},
+		name: "The Lich King",
+		rating: 4,
+	},
+	lichking: {
+		onAnyFaintPriority: 1,
+		onAnyFaint() {
+			this.boost({atk: 1, spa: 1 }, this.effectState.target);
+		},
+		flags: {},
+		name: "Lich King",
+		rating: 3.5,
+		num: 220,
+	},
 	madeinheaven: {
 		onStart(pokemon) { //dark aura
 			if (this.suppressingAbility(pokemon)) return;

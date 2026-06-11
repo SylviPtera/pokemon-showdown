@@ -240,10 +240,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		durationCallback(target, source) {
 			if (source?.hasItem('gripclaw') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
-			} else if (this.field.getPseudoWeather('madeinheaven')) {
-				return 2;
 			} else if (source?.hasItem('gripclaw') && this.field.getPseudoWeather('madeinheaven')) {
 				return 4;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
 			}
 			return this.random(5, 7);
 		},
@@ -551,10 +551,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		durationCallback(source, effect) {
 			if (source?.hasItem('damprock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
-			} else if (this.field.getPseudoWeather('madeinheaven')) {
-				return 2;
 			} else if (source?.hasItem('damprock') && this.field.getPseudoWeather('madeinheaven')) {
 				return 4;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
 			}
 			return 5;
 		},
@@ -625,10 +625,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		durationCallback(source, effect) {
 			if (source?.hasItem('heatrock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
-			} else if (this.field.getPseudoWeather('madeinheaven')) {
-				return 2;
 			} else if (source?.hasItem('heatrock') && this.field.getPseudoWeather('madeinheaven')) {
 				return 4;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
 			}
 			return 5;
 		},
@@ -711,10 +711,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		durationCallback(source, effect) {
 			if (source?.hasItem('smoothrock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
-			} else if (this.field.getPseudoWeather('madeinheaven')) {
-				return 2;
 			} else if (source?.hasItem('smoothrock') && this.field.getPseudoWeather('madeinheaven')) {
 				return 4;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
 			}
 			return 5;
 		},
@@ -797,10 +797,10 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		durationCallback(source, effect) {
 			if (source?.hasItem('icyrock') && !this.field.getPseudoWeather('madeinheaven')) {
 				return 8;
-			} else if (this.field.getPseudoWeather('madeinheaven')) {
-				return 2;
 			} else if (source?.hasItem('icyrock') && this.field.getPseudoWeather('madeinheaven')) {
 				return 4;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
 			}
 			return 5;
 		},

@@ -4660,8 +4660,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			effectType: 'Terrain',
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('terrainextender')) {
+				if (source?.hasItem('terrainextender') && !this.field.getPseudoWeather('madeinheaven')) {
 					return 8;
+				} else if (source?.hasItem('terrainextender') && this.field.getPseudoWeather('madeinheaven')) {
+					return 4;
+				} else if (this.field.getPseudoWeather('madeinheaven')) {
+					return 2;
 				}
 				return 5;
 			},
@@ -7949,8 +7953,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			effectType: 'Terrain',
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('terrainextender')) {
+				if (source?.hasItem('terrainextender') && !this.field.getPseudoWeather('madeinheaven')) {
 					return 8;
+				} else if (source?.hasItem('terrainextender') && this.field.getPseudoWeather('madeinheaven')) {
+					return 4;
+				} else if (this.field.getPseudoWeather('madeinheaven')) {
+					return 2;
 				}
 				return 5;
 			},
@@ -12580,8 +12588,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			effectType: 'Terrain',
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('terrainextender')) {
+				if (source?.hasItem('terrainextender') && !this.field.getPseudoWeather('madeinheaven')) {
 					return 8;
+				} else if (source?.hasItem('terrainextender') && this.field.getPseudoWeather('madeinheaven')) {
+					return 4;
+				} else if (this.field.getPseudoWeather('madeinheaven')) {
+					return 2;
 				}
 				return 5;
 			},
@@ -14593,8 +14605,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			effectType: 'Terrain',
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('terrainextender')) {
+				if (source?.hasItem('terrainextender') && !this.field.getPseudoWeather('madeinheaven')) {
 					return 8;
+				} else if (source?.hasItem('terrainextender') && this.field.getPseudoWeather('madeinheaven')) {
+					return 4;
+				} else if (this.field.getPseudoWeather('madeinheaven')) {
+					return 2;
 				}
 				return 5;
 			},
@@ -22527,6 +22543,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Dark",
 		contestType: "Tough",
+	},
+	frostmourne: {
+		num: 565,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Frostmourne",
+		pp: 5,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onAfterMoveSecondarySelf(pokemon, target, move) {
+			if (!target || target.fainted || target.hp <= 0) {
+				this.actions.useMove("revivalblessing", pokemon);
+			}
+		},
+		secondary: {
+			chance: 10,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Ghost",
+		contestType: "Cool",
 	},
 	ghosthunting: {
 		num: 3007,

@@ -1230,7 +1230,7 @@
         ]
     },
     "toriel": {
-        "level": 83,
+        "level": 80,
         "sets": [
             {
                 "role": "Bulky Attacker",
@@ -1444,6 +1444,23 @@
                 "movepool": ["Hydro Pump", "Bug Buzz", "U-Turn", "Water Replenish", "Ice Beam"],
                 "abilities": ["Water-Based Lifeform"],
                 "teraTypes": ["Water"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Hydro Pump", "Bug Buzz", "Rain Dance", "Substitute"],
+                "abilities": ["Water-Based Lifeform"],
+                "teraTypes": ["Water", "Ghost"]
+            }
+        ]
+    },
+    "puccinewmoon": {
+        "level": 78,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Protect", "Toxic", "C-Moon", "Play Rough", "Zen Headbutt"],
+                "abilities": ["Awaiting Heaven"],
+                "teraTypes": ["Water", "Steel"]
             },
             {
                 "role": "Setup Sweeper",

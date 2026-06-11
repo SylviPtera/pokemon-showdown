@@ -651,6 +651,8 @@ export class RandomTeams {
 		if ((species.id === 'pit' || species.id === 'darkpit') && role === 'Setup Sweeper') this.incompatibleMoves(moves, movePool, 'roost', 'swordsdance');
 		// To force Bulk Up on Banjo if rolled Rest and Sleep Talk
 		if (species.id === 'banjo') this.incompatibleMoves(moves, movePool, ['earthquake', 'drainpunch'], ['rest', 'sleeptalk']);
+		// To force Protect and Toxic on Pucci-New Moon
+		if (species.id === 'puccinewmoon') this.incompatibleMoves(moves, movePool, 'playrough', 'zenheadbutt');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
