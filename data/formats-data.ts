@@ -130,6 +130,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
+	wariomega: {
+		tier: "OU",
+		doublesTier: "DUU",
+	},
 	snake: {
 		tier: "OU",
 		doublesTier: "DOU",

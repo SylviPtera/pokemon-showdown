@@ -8167,4 +8167,16 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 8,
 		isNonstandard: "CAP",
 	},
+	
+	warionite: {
+		name: "Warionite",
+		spritenum: 563,
+		megaStone: { "Wario": "Wario-Mega" },
+		itemUser: ["Wario"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 673,
+		gen: 6,
+	},
 };
