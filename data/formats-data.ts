@@ -507,9 +507,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
-	spamtonneo: {
-		tier: "UU",
-		doublesTier: "(DUU)",
+	spamtonmega: {
+		tier: "OU",
+		doublesTier: "DUU",
 	},
 	elnina: {
 		tier: "UU",
