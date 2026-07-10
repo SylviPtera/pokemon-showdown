@@ -5666,6 +5666,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 112,
 	},
+	blazingfury: {
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.checkMoveMakesContact(move, target, source)) {
+				if (this.randomChance(3, 10)) {
+					target.trySetStatus('brn', source);
+				}
+			}
+		},
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
+		flags: { breakable: 1 },
+		name: "Blazing Fury",
+		rating: 3,
+		num: 143,
+	},
 	celestialmelodyplant: {
 		onStart(pokemon) { //dark aura
 			if (this.suppressingAbility(pokemon)) return;
@@ -6186,6 +6204,25 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Lich King",
 		rating: 3.5,
 		num: 220,
+	},
+	lightspeed: {
+		onFoeTryMove(target, source, move) {
+			const targetAllExceptions = ['perishsong', 'flowershield', 'rototiller'];
+			if (move.target === 'foeSide' || (move.target === 'all' && !targetAllExceptions.includes(move.id))) {
+				return;
+			}
+
+			const dazzlingHolder = this.effectState.target;
+			if ((source.isAlly(dazzlingHolder) || move.target === 'all') && move.priority > 0.1) {
+				this.attrLastMove('[still]');
+				this.add('cant', dazzlingHolder, 'ability: Light Speed', move, `[of] ${target}`);
+				return false;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Light Speed",
+		rating: 2.5,
+		num: 219,
 	},
 	madeinheaven: {
 		onStart(pokemon) { //dark aura

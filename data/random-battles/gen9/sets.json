@@ -218,6 +218,17 @@
             }
         ]
     },
+    "bowsermega": {
+        "level": 73,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Heat Crash", "Outrage", "Swords Dance", "Heavy Slam"],
+                "abilities": ["Supreme Overlord"],
+                "teraTypes": ["Fire"]
+            }
+        ]
+    },
     "sheik": {
         "level": 84,
         "sets": [
@@ -424,6 +435,23 @@
                 "movepool": ["Poison Jab", "Drain Punch", "Bulk Up", "Knock Off", "Earthquake"],
                 "abilities": ["Pickpocket"],
                 "teraTypes": ["Fighting", "Dark"]
+            }
+        ]
+    },
+    "wariomega": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Gunk Shot", "Superpower", "Earthquake", "Knock Off", "Ice Punch"],
+                "abilities": ["Stench"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Poison Jab", "Drain Punch", "Bulk Up", "Knock Off"],
+                "abilities": ["Stench"],
+                "teraTypes": ["Poison"]
             }
         ]
     },
@@ -638,12 +666,23 @@
         ]
     },
     "littlemac": {
-        "level": 86,
+        "level": 84,
         "sets": [
             {
                 "role": "Fast Attacker",
                 "movepool": ["Close Combat", "Mach Punch", "Ice Punch", "Swords Dance", "Thunder Punch", "Meteor Mash"],
                 "abilities": ["Iron Fist"],
+                "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "littlemacmega": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Close Combat", "Mach Punch", "Ice Punch", "Swords Dance", "Meteor Mash"],
+                "abilities": ["Anger Point"],
                 "teraTypes": ["Fighting"]
             }
         ]
@@ -1244,10 +1283,27 @@
         "level": 82,
         "sets": [
             {
+                "role": "Setup Sweeper",
+                "movepool": ["Close Combat", "Liquidation", "Swords Dance", "Knock Off", "Aqua Jet"],
+                "abilities": ["Justified"],
+                "teraTypes": ["Water"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Close Combat", "Liquidation", "Flip Turn", "Knock Off", "Aqua Jet"],
+                "abilities": ["Justified"],
+                "teraTypes": ["Water"]
+            }
+        ]
+    },
+    "undynemega": {
+        "level": 80,
+        "sets": [
+            {
                 "role": "Fast Attacker",
                 "movepool": ["Close Combat", "Liquidation", "Swords Dance", "Knock Off", "Aqua Jet"],
-                "abilities": ["True Hero"],
-                "teraTypes": ["Water"]
+                "abilities": ["Justified"],
+                "teraTypes": ["Fighting"]
             }
         ]
     },
@@ -1310,6 +1366,17 @@
                 "movepool": ["Shadow Ball", "Moonblast", "Nasty Plot", "Flamethrower", "Meteor Beam", "Substitute"],
                 "abilities": ["Shadow Shield"],
                 "teraTypes": ["Fairy"]
+            }
+        ]
+    },
+    "kris": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Return", "Swords Dance", "Sacred Sword", "Striking Sword"],
+                "abilities": ["Friend Guard"],
+                "teraTypes": ["Fighting"]
             }
         ]
     },

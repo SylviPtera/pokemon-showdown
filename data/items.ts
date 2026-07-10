@@ -8168,11 +8168,33 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		isNonstandard: "CAP",
 	},
 	
-	warionite: {
-		name: "Warionite",
-		spritenum: 563,
-		megaStone: { "Wario": "Wario-Mega" },
-		itemUser: ["Wario"],
+	bowserite: {
+		name: "Bowserite",
+		spritenum: 613,
+		megaStone: { "Bowser": "Bowser-Mega" },
+		itemUser: ["Bowser"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 753,
+		gen: 6,
+	},
+	littlemacinite: {
+		name: "Little Macinite",
+		spritenum: 607,
+		megaStone: { "Little Mac": "Little Mac-Mega" },
+		itemUser: ["Little Mac"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 669,
+		gen: 6,
+	},
+	sonicite: {
+		name: "Sonicite",
+		spritenum: 602,
+		megaStone: { "Sonic": "Sonic-Mega" },
+		itemUser: ["Sonic"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
@@ -8188,6 +8210,28 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
 		num: 674,
+		gen: 6,
+	},
+	undynite: {
+		name: "Undynite",
+		spritenum: 623,
+		megaStone: { "Undyne": "Undyne-Mega" },
+		itemUser: ["Undyne"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 763,
+		gen: 6,
+	},
+	warionite: {
+		name: "Warionite",
+		spritenum: 591,
+		megaStone: { "Wario": "Wario-Mega" },
+		itemUser: ["Wario"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 673,
 		gen: 6,
 	},
 };

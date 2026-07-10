@@ -211,5 +211,107 @@
                 "teraTypes": ["Fire", "Grass"]
             }
         ]
+    },
+    "wario": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Poison Jab", "Drain Punch", "Bulk Up", "Protect", "Knock Off"],
+                "abilities": ["Pickpocket", "Stench"],
+                "teraTypes": ["Water", "Dark"]
+            },
+            {
+                "role": "Doubles Bulky Attacker",
+                "movepool": ["Gunk Shot", "Superpower", "Sucker Punch", "Ice Punch", "Bomb Blast", "Protect"],
+                "abilities": ["Pickpocket", "Stench"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "wariomega": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Poison Jab", "Drain Punch", "Bulk Up", "Protect", "Knock Off"],
+                "abilities": ["Stench"],
+                "teraTypes": ["Water", "Dark"]
+            },
+            {
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Gunk Shot", "Superpower", "Knock Off", "Ice Punch", "Bomb Blast", "Protect"],
+                "abilities": ["Stench"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "kris": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Protect", "Return", "Sacred Sword", "Helping Hand"],
+                "abilities": ["Friend Guard"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Doubles Setup Sweeper",
+                "movepool": ["Protect", "Swords Dance", "Return", "Sacred Sword"],
+                "abilities": ["Friend Guard"],
+                "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "susie": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Protect", "Wide Guard", "Close Combat", "Knock Off", "Dragon Claw"],
+                "abilities": ["Defiant"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Doubles Wallbreaker",
+                "movepool": ["Protect", "Close Combat", "Facade", "Knock Off"],
+                "abilities": ["Guts"],
+                "teraTypes": ["Normal"]
+            }
+        ]
+    },
+    "spamton": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Dark Pulse", "Focus Blast", "Sludge Bomb", "Protect", "Sucker Punch"],
+                "abilities": ["Berserk"],
+                "teraTypes": ["Poison", "Dark"]
+            },
+            {
+                "role": "Doubles Setup Sweeper",
+                "movepool": ["Dark Pulse", "Focus Blast", "Sludge Bomb", "Protect", "Nasty Plot"],
+                "abilities": ["Berserk"],
+                "teraTypes": ["Poison", "Dark"]
+            },
+            {
+                "role": "Choice Item user",
+                "movepool": ["Dark Pulse", "Focus Blast", "Sludge Bomb", "Fire Blast", "Switcheroo"],
+                "abilities": ["Berserk"],
+                "teraTypes": ["Poison", "Dark"]
+            }
+        ]
+    },
+    "spamtonmega": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Dark Pulse", "Aura Sphere", "Sludge Bomb", "Protect", "Nasty Plot"],
+                "abilities": ["Berserk"],
+                "teraTypes": ["Poison", "Dark"]
+            }
+        ]
     }
 }

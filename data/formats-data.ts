@@ -63,6 +63,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	bowsermega: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	iceclimbers: {
 		tier: "UU",
 		doublesTier: "(DUU)",
@@ -154,6 +158,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		doublesTier: "(DUU)",
 	},
+	sonicmega: {
+		tier: "Uber",
+		doublesTier: "DOU",
+	},
 	kingdedede: {
 		tier: "UU",
 		doublesTier: "(DUU)",
@@ -193,6 +201,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	littlemac: {
 		tier: "UU",
 		doublesTier: "(DUU)",
+	},
+	littlemacmega: {
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	palutena: {
 		tier: "UU",
@@ -393,6 +405,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	undyne: {
 		tier: "UU",
+		doublesTier: "DOU",
+	},
+	undynemega: {
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	mettaton: {
