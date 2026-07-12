@@ -22632,7 +22632,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Infernal Climax",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, metronome: 1},
+		flags: {protect: 1, mirror: 1, metronome: 1, bite: 1},
 		multihit: 3,
 		secondary: null,
 		target: "normal",
@@ -23020,9 +23020,66 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Cool",
 	},
+	sexpistols: {
+		num: 331,
+		accuracy: 90,
+		basePower: 15,
+		category: "Physical",
+		name: "Sex Pistols",
+		pp: 14,
+		priority: 0,
+		flags: { protect: 1, bullet: 1 },
+		multihit: 6,
+		multiaccuracy: true,
+		secondary: null,
+		onTryHit(target, source, move) {
+            if (!move.secondaries) move.secondaries = [];
+            if (move.hit === 1) {
+                move.secondaries.push({
+                    chance: 10,
+					boosts: {
+						def: -1,
+					},
+                });
+            }
+            if (move.hit === 2) {
+                move.secondaries.push({
+                    chance: 10,
+					boosts: {
+						spe: -1,
+					},
+                });
+            }
+            if (move.hit === 3) {
+                move.secondaries.push({
+                    chance: 10,
+					volatileStatus: "flinch",
+                });
+            }
+            if (move.hit === 4) {
+                move.secondaries.push({
+                    chance: 20,
+					boosts: {
+						atk: -1,
+					},
+                });
+            }
+            if (move.hit === 5) {
+                move.critRatio = 2;
+            }
+            if (move.hit === 6) {
+				move.basePower = 20;
+            }
+        },
+		target: "normal",
+		type: "Steel",
+		zMove: { basePower: 140 },
+		maxMove: { basePower: 130 },
+		contestType: "Cute",
+	},
 	shortcircuit: {
 		num: 745,
-		accuracy: 100,
+		accuracy: true,
 		basePower: 35,
 		category: "Special",
 		name: "Short Circuit",

@@ -1287,7 +1287,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		num: 5003,
 		name: "Toriel",
 		types: ["Fire", "Fairy"],
-		baseStats: { hp: 110, atk: 70, def: 100, spa: 110, spd: 115, spe: 65 },
+		baseStats: { hp: 105, atk: 65, def: 80, spa: 110, spd: 110, spe: 65 },
 		abilities: { 0: "Healer" },
 		heightm: 2,
 		weightkg: 103,

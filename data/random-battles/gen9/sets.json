@@ -127,7 +127,7 @@
         "sets": [
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Psychic", "Thunderbolt", "Ice Beam", "Rapid Spin", "Calm Mind"],
+                "movepool": ["Psychic", "Thunderbolt", "Flamethrower", "Rapid Spin", "Calm Mind"],
                 "abilities": ["Protean"],
                 "teraTypes": ["Electric", "Fairy"]
             },
@@ -531,6 +531,17 @@
                 "movepool": ["Extreme Speed", "Wild Charge", "Rapid Spin", "U-Turn", "Spikes", "Double-Edge"],
                 "abilities": ["Quick Feet"],
                 "teraTypes": ["Normal", "Ghost"]
+            }
+        ]
+    },
+    "sonicmega": {
+        "level": 79,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Extreme Speed", "Wild Charge", "Rapid Spin", "U-Turn", "Double-Edge"],
+                "abilities": ["Quick Feet"],
+                "teraTypes": ["Normal"]
             }
         ]
     },
@@ -1135,12 +1146,6 @@
                 "movepool": ["Knock Off", "Masamune Cutter", "Swords Dance", "Bomb Blast", "Play Rough"],
                 "abilities": ["Final Phase"],
                 "teraTypes": ["Flying", "Fairy"]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": ["Knock Off", "Masamune Cutter", "Swords Dance", "Substitute"],
-                "abilities": ["Final Phase"],
-                "teraTypes": ["Flying", "Fairy"]
             }
         ]
     },
@@ -1300,7 +1305,7 @@
         "level": 80,
         "sets": [
             {
-                "role": "Fast Attacker",
+                "role": "Setup Sweeper",
                 "movepool": ["Close Combat", "Liquidation", "Swords Dance", "Knock Off", "Aqua Jet"],
                 "abilities": ["Justified"],
                 "teraTypes": ["Fighting"]
@@ -1325,7 +1330,7 @@
         ]
     },
     "mettatonex": {
-        "level": 81,
+        "level": 82,
         "sets": [
             {
                 "role": "Fast Bulky Setup",
@@ -1363,7 +1368,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Shadow Ball", "Moonblast", "Nasty Plot", "Flamethrower", "Meteor Beam", "Substitute"],
+                "movepool": ["Shadow Ball", "Moonblast", "Nasty Plot", "Flamethrower", "Meteor Beam"],
                 "abilities": ["Shadow Shield"],
                 "teraTypes": ["Fairy"]
             }
@@ -1391,9 +1396,9 @@
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Sludge Bomb", "Psyshock", "Calm Mind", "Recover", "Focus Blast"],
+                "movepool": ["Sludge Bomb", "Psyshock", "Calm Mind", "Recover"],
                 "abilities": ["Regenerator"],
-                "teraTypes": ["Fighting", "Flying"]
+                "teraTypes": ["Fairy", "Flying"]
             }
         ]
     },
@@ -1415,7 +1420,7 @@
         ]
     },
     "scaratar": {
-        "level": 80,
+        "level": 85,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -1448,7 +1453,7 @@
         ]
     },
     "giorno": {
-        "level": 85,
+        "level": 82,
         "sets": [
             {
                 "role": "Fast Bulky Setup",
@@ -1475,7 +1480,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Bullet Storm", "Rock Blast", "U-Turn", "Double-Edge"],
+                "movepool": ["Sex Pistols", "Rock Blast", "U-Turn", "Double-Edge", "Encore"],
                 "abilities": ["Artillery"],
                 "teraTypes": ["Steel", "Ghost"]
             }
@@ -1493,7 +1498,7 @@
         ]
     },
     "cioccolata": {
-        "level": 81,
+        "level": 82,
         "sets": [
             {
                 "role": "Bulky Attacker",
@@ -1504,19 +1509,19 @@
         ]
     },
     "ff": {
-        "level": 82,
+        "level": 83,
         "sets": [
             {
                 "role": "Fast Attacker",
                 "movepool": ["Hydro Pump", "Bug Buzz", "U-Turn", "Water Replenish", "Ice Beam"],
                 "abilities": ["Water-Based Lifeform"],
-                "teraTypes": ["Water"]
+                "teraTypes": ["Water", "Ground"]
             },
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Hydro Pump", "Bug Buzz", "Rain Dance", "Substitute"],
                 "abilities": ["Water-Based Lifeform"],
-                "teraTypes": ["Water", "Ghost"]
+                "teraTypes": ["Water", "Ground"]
             }
         ]
     },
@@ -1528,17 +1533,11 @@
                 "movepool": ["Protect", "Toxic", "C-Moon", "Play Rough", "Zen Headbutt"],
                 "abilities": ["Awaiting Heaven"],
                 "teraTypes": ["Water", "Steel"]
-            },
-            {
-                "role": "Setup Sweeper",
-                "movepool": ["Hydro Pump", "Bug Buzz", "Rain Dance", "Substitute"],
-                "abilities": ["Water-Based Lifeform"],
-                "teraTypes": ["Water", "Ghost"]
             }
         ]
     },
     "valstrax": {
-        "level": 81,
+        "level": 80,
         "sets": [
             {
                 "role": "Wallbreaker",

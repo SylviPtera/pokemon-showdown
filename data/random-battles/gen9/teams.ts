@@ -1262,6 +1262,7 @@ export class RandomTeams {
 		if (species.id === 'iggy') return 'Assault Vest';
 		if (species.id === 'duckhunt' && role === 'Setup Sweeper') return 'Scope Lens';
 		if (species.id === 'valstrax' && role === 'Fast Attacker') return 'Flame Orb';
+		if (moves.has('sexpistols') && moves.has('encore')) return 'Loaded Dice';
 	}
 
 	/** Item generation specific to Random Doubles */
