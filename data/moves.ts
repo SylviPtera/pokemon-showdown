@@ -22138,6 +22138,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	bigshot: {
+		num: 143,
+		accuracy: 90,
+		basePower: 150,
+		category: "Special",
+		name: "Big Shot",
+		pp: 10,
+		priority: 0,
+		flags: { charge: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1, pulse: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		target: "any",
+		type: "Dark",
+		contestType: "Cool",
+	},
 	blackknife: {
 		num: 917,
 		accuracy: 100,
@@ -22617,6 +22641,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	healprayer: {
+		num: 505,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Heal Prayer",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, distance: 1, heal: 1, allyanim: 1, metronome: 1, },
+		onHit(target, source) {
+			let success = false;
+			success = !!this.heal(Math.ceil(target.baseMaxhp * 0.5));
+			if (success && !target.isAlly(source)) {
+				target.staleness = 'external';
+			}
+			if (!success) {
+				this.add('-fail', target, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
+		},
+		secondary: null,
+		target: "adjacentAllyOrSelf",
+		type: "Fairy",
+		zMove: { effect: 'clearnegativeboost' },
+		contestType: "Beautiful",
+	},
 	infernalclimax: {
 		num: 844,
 		accuracy: 100,
@@ -23026,14 +23077,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 15,
 		category: "Physical",
 		name: "Sex Pistols",
-		pp: 14,
+		pp: 10,
 		priority: 0,
 		flags: { protect: 1, bullet: 1 },
 		multihit: 6,
 		multiaccuracy: true,
 		secondary: null,
 		onTryHit(target, source, move) {
-            if (!move.secondaries) move.secondaries = [];
+            move.secondaries = [];
             if (move.hit === 1) {
                 move.secondaries.push({
                     chance: 10,
@@ -23090,6 +23141,28 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Electric",
+	},
+	snowgrave: {
+		num: 329,
+		accuracy: 90,
+		basePower: 0,
+		category: "Special",
+		name: "Snowgrave",
+		pp: 1,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onTryMove(pokemon, target, move) {
+			if (pokemon.hp > pokemon.maxhp / 4) {
+				return null;
+			}
+		},
+		secondary: null,
+		ohko: 'Ice',
+		target: "normal",
+		type: "Ice",
+		zMove: { basePower: 180 },
+		maxMove: { basePower: 130 },
+		contestType: "Beautiful",
 	},
 	strikingsword: {
 		num: 3003,

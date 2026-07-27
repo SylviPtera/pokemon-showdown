@@ -1235,7 +1235,7 @@
         ]
     },
     "blackcat": {
-        "level": 82,
+        "level": 80,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -1263,7 +1263,7 @@
         ]
     },
     "napstablook": {
-        "level": 86,
+        "level": 88,
         "sets": [
             {
                 "role": "Bulky Setup",
@@ -1313,7 +1313,7 @@
         ]
     },
     "mettaton": {
-        "level": 87,
+        "level": 88,
         "sets": [
             {
                 "role": "Bulky Setup",
@@ -1382,6 +1382,113 @@
                 "movepool": ["Return", "Swords Dance", "Sacred Sword", "Striking Sword"],
                 "abilities": ["Friend Guard"],
                 "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "susie": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Close Combat", "Facade", "Dragon Claw", "Swords Dance", "Protect"],
+                "abilities": ["Guts"],
+                "teraTypes": ["Normal"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Close Combat", "Outrage", "Earthquake", "Play Rough"],
+                "abilities": ["Moxie"],
+                "teraTypes": ["Fighting", "Fire"]
+            }
+        ]
+    },
+    "ralsei": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Psychic Noise", "Moonblast", "Will-O-Wisp", "Heal Prayer"],
+                "abilities": ["Transcendent Eye"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Psyshock", "Moonblast", "Calm Mind", "Heal Prayer"],
+                "abilities": ["Transcendent Eye"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "noelle": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Fast Support",
+                "movepool": ["Blizzard", "Moonblast", "Freeze-Dry", "Encore", "Aurora Veil", "Snowgrave"],
+                "abilities": ["Snow Warning"],
+                "teraTypes": ["Water"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Blizzard", "Moonblast", "Freeze-Dry", "Encore", "U-Turn"],
+                "abilities": ["Snow Warning"],
+                "teraTypes": ["Water", "Ice"]
+            }
+        ]
+    },
+    "queen": {
+        "level": 82,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Thunderbolt", "Nasty Plot", "Flash Cannon", "Short Circuit", "Focus Blast"],
+                "abilities": ["Queenly Majesty"],
+                "teraTypes": ["Electric"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Thunderbolt", "Volt Switch", "Flash Cannon", "Short Circuit", "Overheat"],
+                "abilities": ["Queenly Majesty"],
+                "teraTypes": ["Flying", "Electric"]
+            }
+        ]
+    },
+    "spamton": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Dark Pulse", "Focus Blast", "Sludge Bomb", "Nasty Plot", "Flamethrower"],
+                "abilities": ["Berserk"],
+                "teraTypes": ["Poison", "Dark"]
+            }
+        ]
+    },
+    "spamtonmega": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Dark Pulse", "Aura Sphere", "Sludge Bomb", "Nasty Plot"],
+                "abilities": ["Berserk"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "roaringknight": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Black Knife", "Swords Dance", "Sacred Sword", "Striking Sword", "Icicle Crash"],
+                "abilities": ["North Winds"],
+                "teraTypes": ["Dark", "Poison"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Black Knife", "Spikes", "Sacred Sword", "Striking Sword", "Icicle Crash"],
+                "abilities": ["North Winds"],
+                "teraTypes": ["Dark", "Poison"]
             }
         ]
     },

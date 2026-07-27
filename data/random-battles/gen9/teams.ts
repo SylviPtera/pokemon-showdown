@@ -108,7 +108,7 @@ const NO_STAB = [
 	'dragontail', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
 	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'infestation', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit',
 	'quickattack', 'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'trailblaze',
-	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter'
+	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit'
 ];
 // Hazard-setting moves
 const HAZARDS = [
@@ -621,7 +621,9 @@ export class RandomTeams {
 			// Corrin
 			['liquidation', 'scald'],
 			// Wendy
-			['rapidspin', 'trick']
+			['rapidspin', 'trick'],
+			// Noelle
+			['snowgrave', 'freezedry']
 		];
 
 		for (const pair of incompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);
@@ -653,6 +655,8 @@ export class RandomTeams {
 		if (species.id === 'banjo') this.incompatibleMoves(moves, movePool, ['earthquake', 'drainpunch'], ['rest', 'sleeptalk']);
 		// To force Protect and Toxic on Pucci-New Moon
 		if (species.id === 'puccinewmoon') this.incompatibleMoves(moves, movePool, 'playrough', 'zenheadbutt');
+		// Noelle
+		if (species.id === 'noelle') this.incompatibleMoves(moves, movePool, 'calmmind', 'uturn');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -1262,7 +1266,9 @@ export class RandomTeams {
 		if (species.id === 'iggy') return 'Assault Vest';
 		if (species.id === 'duckhunt' && role === 'Setup Sweeper') return 'Scope Lens';
 		if (species.id === 'valstrax' && role === 'Fast Attacker') return 'Flame Orb';
+		if (species.id === 'susie' && role === 'Fast Attacker') return 'Choice Scarf';
 		if (moves.has('sexpistols') && moves.has('encore')) return 'Loaded Dice';
+		if (moves.has('snowgrave')) return 'Focus Sash';
 	}
 
 	/** Item generation specific to Random Doubles */
