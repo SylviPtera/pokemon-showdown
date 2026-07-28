@@ -23145,10 +23145,11 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	snowgrave: {
 		num: 329,
 		accuracy: 90,
-		basePower: 0,
+		basePower: 250,
 		category: "Special",
 		name: "Snowgrave",
 		pp: 1,
+		noPPBoosts: true,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		onTryMove(pokemon, target, move) {
@@ -23157,7 +23158,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 		},
 		secondary: null,
-		ohko: 'Ice',
 		target: "normal",
 		type: "Ice",
 		zMove: { basePower: 180 },

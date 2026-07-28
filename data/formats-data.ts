@@ -484,6 +484,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
+	clover: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+	},
 	lancer: {
 		tier: "UU",
 		doublesTier: "(DUU)",

@@ -993,7 +993,7 @@
         ]
     },
     "simon": {
-        "level": 88,
+        "level": 86,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -1403,7 +1403,7 @@
         ]
     },
     "ralsei": {
-        "level": 86,
+        "level": 84,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -1433,6 +1433,90 @@
                 "movepool": ["Blizzard", "Moonblast", "Freeze-Dry", "Encore", "U-Turn"],
                 "abilities": ["Snow Warning"],
                 "teraTypes": ["Water", "Ice"]
+            }
+        ]
+    },
+    "berdly": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Brave Bird", "Channelled Blitz", "Knock Off", "Heat Wave", "U-Turn"],
+                "abilities": ["Neuroforce"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "rudinn": {
+        "level": 90,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Stone Edge", "Swords Dance", "Striking Sword", "Stomping Tantrum"],
+                "abilities": ["Simple"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
+    "rudinnranger": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Stone Edge", "Stealth Rock", "Spikes", "Slack Off", "Close Combat"],
+                "abilities": ["Dazzling"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Stone Edge", "Striking Sword", "Swords Dance", "Close Combat"],
+                "abilities": ["Dazzling"],
+                "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "headhathy": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Ice Beam", "Draining Kiss", "Calm Mind", "Focus Blast"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Fighting"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Ice Beam", "Moonblast", "Recover", "Toxic"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Water"]
+            }
+        ]
+    },
+    "ribbick": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Earthquake", "Gunk Shot", "Stealth Rock", "Toxic Spikes", "Toxic"],
+                "abilities": ["Sand Spit"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Earthquake", "Gunk Shot", "Tidy Up", "Crunch"],
+                "abilities": ["Sand Spit"],
+                "teraTypes": ["Ground"]
+            }
+        ]
+    },
+    "clover": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Draco Meteor", "Hyper Voice", "Earth Power", "Flamethrower"],
+                "abilities": ["Contrary"],
+                "teraTypes": ["Fairy"]
             }
         ]
     },
