@@ -22926,6 +22926,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			this.debug(`BP: ${bp}`);
 			return bp;
 		},
+		onHit(target, source, move) {
+			this.add('message', "Heh, how'd you like my Jarona?");
+		},
 		category: "Physical",
 		name: "Jarona",
 		pp: 15,

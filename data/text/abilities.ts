@@ -2281,6 +2281,16 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		activate: "  [POKEMON] extends [MOVE] by 2 turns!",
 	},
+
+
+	
+	flowersdream: {
+		name: "Flower's Dream",
+		desc: "Nothing is stronger than a flower's dream. JARONA",
+		shortDesc: "This Pokemon's moves have 5% more power for each unfainted ally, up to 5 allies.",
+
+		activate: "  [POKEMON] gained power from its friends!",
+	},
 	
 	greenday: {
 		name: "Green Day",
