@@ -6120,6 +6120,31 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 208,
 	},
+	flowersdream: {
+		onStart(pokemon) {
+			if (pokemon.side.totalFainted < 5) {
+				this.add('-activate', pokemon, "ability: Flower's Dream");
+				const friends = Math.max(5 - pokemon.side.totalFainted, 0);
+				this.add('-start', pokemon, `friends${friends}`, '[silent]');
+				this.effectState.friends = friends;
+			}
+		},
+		onEnd(pokemon) {
+			this.add('-end', pokemon, `friends${this.effectState.friends}`, '[silent]');
+		},
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.effectState.friends) {
+				const powMod = [4096, 4300, 4506, 4710, 4915, 5120];
+				this.debug(`Flower's Dream boost: ${powMod[this.effectState.friends]}/4096`);
+				return this.chainModify([powMod[this.effectState.friends], 4096]);
+			}
+		},
+		flags: {},
+		name: "Flower's Dream",
+		rating: 4,
+		num: 2930,
+	},
 	frostboltstorm: {
 		onBasePowerPriority: 19,
 		onStart(source) {

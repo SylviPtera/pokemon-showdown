@@ -835,12 +835,6 @@ export class RandomTeams {
 			}
 		}
 
-		// Enforce Magic Burst
-		if (movePool.includes('magicburst')) {
-			counter = this.addMove('magicburst', moves, types, abilities, teamDetails, species, isLead, isDoubles,
-				movePool, teraType, role);
-		}
-
 		// Enforce Masamune Cutter
 		if (movePool.includes('masamunecutter')) {
 			counter = this.addMove('masamunecutter', moves, types, abilities, teamDetails, species, isLead, isDoubles,

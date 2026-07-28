@@ -20051,7 +20051,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 		},
 		volatileStatus: 'smackdown',
-		ignoreImmunity: { 'Ground': true },
+		ignoreImmunity: {'Ground': true},
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ground",
@@ -22592,8 +22592,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	ghosthunting: {
 		num: 3007,
-		accuracy: 100,
-		basePower: 70,
+		accuracy: 95,
+		basePower: 85,
 		category: "Special",
 		name: "Ghost Hunting",
 		pp: 15,
@@ -22896,6 +22896,58 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Normal",
 		contestType: "Cute",
 	},
+	ironwill: {
+		num: 3007,
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Iron Will",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		onBasePower(basePower, pokemon, target) {
+			if ((pokemon.hp >= pokemon.maxhp / 2) && target?.hasType('Steel')) {
+				return this.chainModify(2);
+			}
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+	},
+	jarona: {
+		num: 210,
+		accuracy: 100,
+		basePower: 100,
+		basePowerCallback(pokemon, target, move) {
+			if (!pokemon.volatiles['jarona'] || move.hit === 1) {
+				pokemon.addVolatile('jarona');
+			}
+			const bp = this.clampIntRange(move.basePower + 10 * pokemon.volatiles['jarona'].multiplier, 1, 150);
+			this.debug(`BP: ${bp}`);
+			return bp;
+		},
+		category: "Physical",
+		name: "Jarona",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		condition: {
+			duration: 2,
+			onStart() {
+				this.effectState.multiplier = 1;
+			},
+			onRestart() {
+				if (this.effectState.multiplier < 4) {
+					this.effectState.multiplier <<= 1;
+				}
+				this.effectState.duration = 2;
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Cool",
+	},
 	magicburst: {
 		num: 3011,
 		accuracy: 100,
@@ -22986,6 +23038,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
+	},
+	omega: {
+		num: 847,
+		accuracy: 90,
+		basePower: 90,
+		category: "Physical",
+		name: "Omega",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+		secondary: {
+			chance: 30,
+			volatileStatus: 'confusion',
+		},
+		target: "allAdjacentFoes",
+		type: "Dark",
 	},
 	openheart: {
 		num: 3010,

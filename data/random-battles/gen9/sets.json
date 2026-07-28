@@ -880,7 +880,7 @@
         ]
     },
     "ryu": {
-        "level": 86,
+        "level": 84,
         "sets": [
             {
                 "role": "Bulky Setup",
@@ -891,7 +891,7 @@
         ]
     },
     "ken": {
-        "level": 84,
+        "level": 82,
         "sets": [
             {
                 "role": "Fast Bulky Setup",
@@ -925,7 +925,7 @@
         ]
     },
     "corrin": {
-        "level": 80,
+        "level": 84,
         "sets": [
             {
                 "role": "Bulky Attacker",
@@ -1055,11 +1055,11 @@
         ]
     },
     "hero": {
-        "level": 86,
+        "level": 87,
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Revival Blessing", "Defog", "Recover", "Will-O-Wisp", "Magic Burst"],
+                "movepool": ["Revival Blessing", "Defog", "Recover", "Will-O-Wisp", "Return"],
                 "abilities": ["Trace"],
                 "teraTypes": ["Fairy"]
             },
@@ -1165,7 +1165,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Shadow Ball", "Stealth Rock", "Wish", "Protect", "Toxic", "Knock Off"],
+                "movepool": ["Shadow Ball", "Stealth Rock", "Wish", "Protect", "Toxic"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fairy"]
             },
@@ -1576,6 +1576,34 @@
             }
         ]
     },
+    "aqua": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Omega", "Aqua Cutter", "Swords Dance", "Encore", "Slash", "U-Turn"],
+                "abilities": ["Sharpness"],
+                "teraTypes": ["Dark", "Fairy"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Knock Off", "Defog", "U-Turn", "Encore"],
+                "abilities": ["Prankster"],
+                "teraTypes": ["Ghost"]
+            }
+        ]
+    },
+    "flowery": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Jarona", "Iron Will", "Close Combat", "U-Turn", "Knock Off", "Encore"],
+                "abilities": ["Flower's Dream"],
+                "teraTypes": ["Grass", "Fire"]
+            }
+        ]
+    },
     "gloptic": {
         "level": 80,
         "sets": [
@@ -1717,7 +1745,7 @@
         ]
     },
     "puccinewmoon": {
-        "level": 78,
+        "level": 80,
         "sets": [
             {
                 "role": "Bulky Support",
@@ -1728,7 +1756,7 @@
         ]
     },
     "valstrax": {
-        "level": 80,
+        "level": 78,
         "sets": [
             {
                 "role": "Wallbreaker",
