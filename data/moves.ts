@@ -2,6 +2,8 @@
 
 let drainvar = 0;
 
+import { getName } from './mods/gen9ssb/scripts';
+
 export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	"10000000voltthunderbolt": {
 		num: 719,
@@ -1045,6 +1047,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
 					source.trySetStatus('psn', target);
+				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Baneful Bunker"));
 				}
 				return this.NOT_FAIL;
 			},
@@ -2116,6 +2121,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
 					source.trySetStatus('brn', target);
+				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Burning Bulwark"));
 				}
 				return this.NOT_FAIL;
 			},
@@ -10289,6 +10297,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost({ atk: -1 }, source, target, this.dex.getActiveMove("King's Shield"));
 				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("King's Shield"));
+				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -11404,6 +11415,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Mat Block"));
+				}
 				return this.NOT_FAIL;
 			},
 		},
@@ -11583,6 +11597,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
+				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Max Guard"));
 				}
 				return this.NOT_FAIL;
 			},
@@ -13363,6 +13380,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost({ def: -2 }, source, target, this.dex.getActiveMove("Obstruct"));
 				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Obstruct"));
+				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -14491,6 +14511,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Protect"));
+				}
 				return this.NOT_FAIL;
 			},
 		},
@@ -15040,6 +15063,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
+				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Quick Guard"));
 				}
 				return this.NOT_FAIL;
 			},
@@ -17034,6 +17060,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.boost({ spe: -1 }, source, target, this.dex.getActiveMove("Silk Trap"));
 				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Silk Trap"));
+				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -18198,6 +18227,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
 					this.damage(source.baseMaxhp / 8, source, target);
+				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Spiky Shield"));
 				}
 				return this.NOT_FAIL;
 			},
@@ -21604,6 +21636,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
+				if (source.hasAbility('impatience')) {
+					this.boost({ atk: 1 }, source, target, this.dex.getActiveMove("Wide Guard"));
+				}
 				return this.NOT_FAIL;
 			},
 		},
@@ -22762,23 +22797,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			move.secondaries = [];
 
 			if (move.type === "Normal") {
+				move.basePower = 50;
 				move.secondaries.push({
 					self: {
 						boosts: {
 							atk: 1,
 							spa: 1,
-							spe: -1,
+							spe: 1,
 						},
 					},
 				});
 			} else if (move.type === "Fire") {
 				move.secondaries.push({
-					chance: 30,
+					chance: 100,
 					status: 'brn',
 				});
 			} else if (move.type === "Ground") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					self: {
 						boosts: {
 							spd: 1,
@@ -22792,7 +22828,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 			} else if (move.type === "Fighting") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					self: {
 						boosts: {
 							atk: 1,
@@ -22801,37 +22837,37 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 			} else if (move.type === "Electric") {
 				move.secondaries.push({
-					chance: 30,
+					chance: 100,
 					status: 'par',
 				});
 			} else if (move.type === "Grass") {
 				move.secondaries.push({
-					self: {
-						volatileStatus: 'aquaring'
-					},
+					volatileStatus: 'leechseed',
 				});
 			} else if (move.type === "Bug") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					boosts: {
 						spa: -1,
 					},
 				});
 			} else if (move.type === "Water") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					boosts: {
 						spe: -1,
 					},
 				});
 			} else if (move.type === "Ice") {
 				move.secondaries.push({
-					chance: 10,
-					status: 'frz',
+					weather: 'snowscape',
+					
+					//chance: 10,
+					//status: 'frz',
 				});
 			} else if (move.type === "Psychic") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					self: {
 						boosts: {
 							spa: 1,
@@ -22840,19 +22876,19 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 			} else if (move.type === "Poison") {
 				move.secondaries.push({
-					chance: 30,
+					chance: 100,
 					status: 'psn',
 				});
 			} else if (move.type === "Ghost") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					boosts: {
 						atk: -1,
 					},
 				});
 			} else if (move.type === "Flying") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					self: {
 						boosts: {
 							spe: 1,
@@ -22861,14 +22897,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 			} else if (move.type === "Dark") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					boosts: {
 						def: -1,
 					},
 				});
 			} else if (move.type === "Steel") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					self: {
 						boosts: {
 							def: 1,
@@ -22877,7 +22913,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 			} else if (move.type === "Dragon") {
 				move.secondaries.push({
-					chance: 50,
+					chance: 100,
 					boosts: {
 						spd: -1,
 					},
@@ -22926,8 +22962,9 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			this.debug(`BP: ${bp}`);
 			return bp;
 		},
-		onHit(target, source, move) {
-			this.add('message', "Heh, how'd you like my Jarona?");
+		onAfterHit(source, target, move) {
+			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my Jarona?`);
+			//this.add('message', "Heh, how'd you like my Jarona?");
 		},
 		category: "Physical",
 		name: "Jarona",
@@ -23043,11 +23080,47 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		contestType: "Clever",
 	},
 	omega: {
-		num: 847,
+		num: 7770,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Omega",
+		pp: 5,
+		priority: 0,
+		flags: { failencore: 1, noassist: 1, failcopycat: 1, failmimic: 1, failinstruct: 1 },
+		onTryHit(target, pokemon) {
+			let move = 'omegaknife';
+			if (pokemon.baseSpecies.name === 'Aqua') {
+				move = 'omegaknife';
+			} else if (pokemon.baseSpecies.name === 'Seth') {
+				move = 'omegabook';
+			} else if (pokemon.baseSpecies.name === 'Yellow') {
+				move = 'omegaguns';
+			} else if (pokemon.baseSpecies.name === 'Blue') {
+				move = 'omegaballet';
+			} else if (pokemon.baseSpecies.name === 'Orange') {
+				move = 'omegafist';
+			} else if (pokemon.baseSpecies.name === 'Green') {
+				move = 'omegapan';
+			} else {
+				return null;
+			}
+			this.actions.useMove(move, pokemon, { target });
+			return null;
+		},
+		callsMove: true,
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: { boost: { atk: 1, def: 1, spa: 1, spd: 1, spe: 1 } },
+		contestType: "Beautiful",
+	},
+	omegaknife: {
+		num: 7771,
 		accuracy: 90,
 		basePower: 90,
 		category: "Physical",
-		name: "Omega",
+		name: "Omega Knife",
 		pp: 5,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
@@ -23057,6 +23130,196 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		target: "allAdjacentFoes",
 		type: "Dark",
+	},
+	omegabook: {
+		num: 7772,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Omega Book",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, bypasssub: 1, allyanim: 1, failinstruct: 1 },
+		onHit(target, source) {
+			//target's move
+			if (target.lastMove && !target.volatiles['dynamax']) {
+				const lastMove_Target = target.lastMove;
+				if (!(
+					lastMove_Target.flags['failinstruct'] || lastMove_Target.isZ || lastMove_Target.isMax ||
+					lastMove_Target.flags['charge'] || lastMove_Target.flags['recharge'] ||
+					target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap'])
+				) { this.actions.useMove(lastMove_Target, source); }
+				/*
+				this.add('-singleturn', target, 'move: Instruct', `[of] ${source}`);
+				this.queue.prioritizeAction(this.queue.resolveAction({
+					choice: 'move',
+					pokemon: source,
+					moveid: target.lastMove.id,
+					targetLoc: target.lastMoveTargetLoc!,
+				})[0] as MoveAction);
+				*/
+			}
+			//user's first move
+			const firstMove = this.dex.moves.get(source.moveSlots[0].id);
+
+			//user's move
+			if (
+				firstMove.flags['failinstruct'] || firstMove.isZ || firstMove.isMax ||
+				firstMove.flags['charge'] || firstMove.flags['recharge'] ||
+				target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap']
+			) {
+				return false;
+			}
+			source.addVolatile('omegabook');
+			this.actions.useMove(firstMove, source);
+			/*
+			this.add('-singleturn', target, 'move: Instruct', `[of] ${source}`);
+			this.queue.prioritizeAction(this.queue.resolveAction({
+				choice: 'move',
+				pokemon: source,
+				moveid: source.lastMove.id,
+				targetLoc: target.lastMoveTargetLoc!,
+			})[0] as MoveAction);
+			*/
+		},
+		condition: {
+			duration: 1,
+			onBasePowerPriority: 12,
+			onBasePower(basePower) {
+				return this.chainModify(0.8);
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		zMove: { boost: { spa: 1 } },
+		contestType: "Clever",
+	},
+	omegaguns: {
+		num: 7773,
+		accuracy: 90,
+		basePower: 45,
+		category: "Physical",
+		name: "Omega Gun's",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, noparentalbond: 1, bullet: 1 },
+		volatileStatus: 'laserfocus',
+		multihit: 2,
+		smartTarget: true,
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		maxMove: { basePower: 130 },
+	},
+	omegaballet: {
+		num: 7774,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Omega Ballet",
+		pp: 5,
+		priority: 0,
+		flags: { snatch: 1, metronome: 1 },
+		volatileStatus: 'omegaballet',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Omega Ballet');
+			},
+			onResidualOrder: 6,
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 16);
+			},
+			onSetStatus(status, target, source, effect) {
+				if (!effect || !source) return;
+				if (effect.id === 'yawn') return;
+				if (effect.effectType === 'Move' && effect.infiltrates && !target.isAlly(source)) return;
+				if (target !== source) {
+					this.debug('interrupting setStatus');
+					if (effect.name === 'Synchronize' || (effect.effectType === 'Move' && !effect.secondaries)) {
+						this.add('-activate', target, 'move: Omega Ballet');
+					}
+					return null;
+				}
+			},
+			onTryAddVolatile(status, target, source, effect) {
+				if (!effect || !source) return;
+				if (effect.effectType === 'Move' && effect.infiltrates && !target.isAlly(source)) return;
+				if ((status.id === 'confusion' || status.id === 'yawn') && target !== source) {
+					if (effect.effectType === 'Move' && !effect.secondaries) this.add('-activate', target, 'move: Omega Ballet');
+					return null;
+				}
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Fairy",
+		zMove: { boost: { def: 1 } },
+		contestType: "Beautiful",
+	},
+	omegafist: {
+		num: 7775,
+		accuracy: 95,
+		basePower: 65,
+		basePowerCallback(pokemon, target, move) {
+			if (!pokemon.item) {
+				this.debug("BP doubled for no item");
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Physical",
+		name: "Omega Fist",
+		pp: 5,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, punch: 1, metronome: 1 },
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
+	omegapan: {
+		num: 7776,
+		accuracy: 100,
+		basePower: 70,
+		category: "Special",
+		name: "Omega Pan",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, allyanim: 1, metronome: 1 },
+		onTryHit(target, source, move) {
+			if (source.isAlly(target)) {
+				move.basePower = 0;
+			}
+		},
+		onTryMove(source, target, move) {
+			if (source.isAlly(target) && source.volatiles['healblock']) {
+				this.attrLastMove('[still]');
+				this.add('cant', source, 'move: Heal Block', move);
+				return false;
+			}
+		},
+		onHit(target, source, move) {
+			if (source.isAlly(target)) {
+				if (!this.heal(Math.floor(target.baseMaxhp / 3))) {
+					return this.NOT_FAIL;
+				}
+				move.secondaries = [];
+				move.secondaries.push({
+					chance: 100,
+					boosts: {
+						spe: 1,
+					},
+				});
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Cool",
 	},
 	openheart: {
 		num: 3010,

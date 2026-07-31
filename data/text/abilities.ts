@@ -2288,15 +2288,20 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Flower's Dream",
 		desc: "Nothing is stronger than a flower's dream. JARONA",
 		shortDesc: "This Pokemon's moves have 5% more power for each unfainted ally, up to 5 allies.",
-
+		
 		activate: "  [POKEMON] gained power from its friends!",
 	},
-	
 	greenday: {
 		name: "Green Day",
 		desc: "Any Pokemon switching in while this Pokemon is on the field will be badly poisoned, unless they are Poison, Steel or Grass-type, not grounded, or immune to powder.",
 		shortDesc: "Badly poisons all grounded Pokemon switching in, unless powder-immune.",
 
-		start: "  Mold fills the battlefield!",
+		activate: "  Mold fills the battlefield!",
+	},
+	integrityarena: {
+		name: "Integrity Arena",
+		shortDesc: "While this Pokemon is on the field, all secondary effects are disabled.",
+		
+		activate: "  The battlers are filled with integrity!",
 	},
 };

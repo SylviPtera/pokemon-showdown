@@ -1153,7 +1153,7 @@
         "level": 85,
         "sets": [
             {
-                "role": "Wallbreaker",
+                "role": "Fast Attacker",
                 "movepool": ["Boomburst", "Shadow Ball", "Focus Blast", "Nasty Plot", "U-Turn"],
                 "abilities": ["Rhythmic Beat"],
                 "teraTypes": ["Normal", "Fighting"]
@@ -1541,7 +1541,7 @@
         "level": 88,
         "sets": [
             {
-                "role": "Wallbreaker",
+                "role": "Fast Attacker",
                 "movepool": ["Dark Pulse", "Focus Blast", "Sludge Bomb", "Nasty Plot", "Flamethrower"],
                 "abilities": ["Berserk"],
                 "teraTypes": ["Poison", "Dark"]
@@ -1587,9 +1587,70 @@
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Knock Off", "Defog", "U-Turn", "Encore"],
+                "movepool": ["Knock Off", "Defog", "U-Turn", "Encore", "Omega"],
                 "abilities": ["Prankster"],
                 "teraTypes": ["Ghost"]
+            }
+        ]
+    },
+    "seth": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Psyshock", "Tri-Attack", "Calm Mind", "Omega", "Mystical Fire"],
+                "abilities": ["Perseverance", "Analytic"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "yellow": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Omega", "Iron Will", "Blaze Kick", "U-Turn", "High Horsepower"],
+                "abilities": ["Justice'fied"],
+                "teraTypes": ["Steel", "Ghost"]
+            }
+        ]
+    },
+    "blue": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Moonblast", "Hyper Voice", "Quiver Dance", "Aura Sphere", "Moonlight", "Encore", "Omega"],
+                "abilities": ["Integrity Arena"],
+                "teraTypes": ["Water", "Fairy"]
+            }
+        ]
+    },
+    "orange": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Close Combat", "Omega", "Throat Chop", "Return", "Meteor Mash"],
+                "abilities": ["Brave Appetite"],
+                "teraTypes": ["Fighting"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Fake Out", "Omega", "Meteor Mash", "Return", "Sucker Punch"],
+                "abilities": ["Brave Appetite"],
+                "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "green": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Flamethrower", "Will-O-Wisp", "Stealth Rock", "Giga Drain", "Tri-Attack"],
+                "abilities": ["Kindness"],
+                "teraTypes": ["Water"]
             }
         ]
     },
@@ -1622,7 +1683,7 @@
         ]
     },
     "blasoom": {
-        "level": 82,
+        "level": 81,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -1639,7 +1700,7 @@
         ]
     },
     "scaratar": {
-        "level": 85,
+        "level": 86,
         "sets": [
             {
                 "role": "Bulky Support",

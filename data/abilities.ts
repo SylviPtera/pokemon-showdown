@@ -5684,6 +5684,29 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 143,
 	},
+	braveappetite: {
+		onAfterUseItem(item, pokemon) {
+			if (pokemon !== this.effectState.target) return;
+			pokemon.addVolatile('braveappetite');
+		},
+		onTakeItem(item, pokemon) {
+			pokemon.addVolatile('braveappetite');
+		},
+		onEnd(pokemon) {
+			pokemon.removeVolatile('braveappetite');
+		},
+		condition: {
+			onModifyAtk(atk, pokemon) {
+				if (!pokemon.item && !pokemon.ignoringAbility()) {
+					return this.chainModify(2);
+				}
+			},
+		},
+		flags: {},
+		name: "Brave Appetite",
+		rating: 4,
+		num: 84,
+	},
 	celestialmelodyplant: {
 		onStart(pokemon) { //dark aura
 			if (this.suppressingAbility(pokemon)) return;
@@ -6205,6 +6228,67 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 272,
 	},
+	impatience: {
+		flags: {},
+		name: "Impatience",
+		rating: 2,
+		num: 272,
+	},
+	integrityarena: {
+		onStart(pokemon) { //dark aura
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Integrity Arena');
+			this.field.addPseudoWeather('integrityarena');
+		},
+		condition: { //ion deluge
+			duration: 0,
+			onModifySecondaries(secondaries) {
+				this.debug('Integrity Arena preventing secondary');
+				return secondaries.filter(effect => !!effect.self);
+			},
+		},
+		onEnd(pokemon) { //primordial sea
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('integrityarena')) {
+					return;
+				}
+			}
+			this.field.removePseudoWeather('integrityarena');
+		},
+		flags: { breakable: 1 },
+		name: "Integrity Arena",
+		rating: 2,
+		num: 204,
+	},
+	justicefied: {
+		onBasePower(basePower, source, target, move) {
+			if (target.hasType('Dark')) {
+				return this.chainModify(1.5);
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.type === 'Dark') {
+				this.boost({ atk: -1 });
+			}
+		},
+		flags: {},
+		name: "Justice'fied",
+		rating: 1.5,
+		num: 154,
+	},
+	kindness: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.randomChance(3, 10)) {
+				this.add('-ability', target, 'Kindness');
+				this.boost({ atk: -1 }, source, target, null, true);
+			}
+		},
+		flags: {},
+		name: "Kindness",
+		rating: 2,
+		num: 183,
+	},
 	thelichking: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect?.effectType !== 'Move') {
@@ -6324,6 +6408,28 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		flags: { breakable: 1 },
 		name: "Perfect Shape",
 		rating: 4,
+		num: 272,
+	},
+	perseverance: {
+		onModifyAtkPriority: 6,
+		onModifyAtk(atk, pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				if (moveSlot.pp >= moveSlot.maxpp) return this.chainModify(1);
+			}
+			this.debug('Perseverance Buff');
+			return this.chainModify(1.2);
+		},
+		onModifySpAPriority: 6,
+		onModifySpA(spa, pokemon) {
+			for (const moveSlot of pokemon.moveSlots) {
+				if (moveSlot.pp >= moveSlot.maxpp) return this.chainModify(1);
+			}
+			this.debug('Perseverance Buff');
+			return this.chainModify(1.2);
+		},
+		flags: {},
+		name: "Perseverance",
+		rating: 3,
 		num: 272,
 	},
 	reverttozero: {

@@ -623,7 +623,7 @@ export class RandomTeams {
 			// Wendy
 			['rapidspin', 'trick'],
 			// Noelle
-			['snowgrave', 'freezedry']
+			['snowgrave', 'freezedry'],
 		];
 
 		for (const pair of incompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);
@@ -725,6 +725,13 @@ export class RandomTeams {
 			if (species.name.endsWith("Wellspring")) return "Water";
 			if (species.name.endsWith("Hearthflame")) return "Fire";
 			if (species.name.endsWith("Cornerstone")) return "Rock";
+		}
+
+		if (move.name === "Omega") {
+			if (species.name === "Aqua") return "Dark";
+			if (species.name === "Yellow") return "Steel";
+			if (species.name === "Orange") return "Fighting";
+			if (species.name === "Green") return "Fire";
 		}
 
 		const moveType = move.type;
@@ -838,6 +845,12 @@ export class RandomTeams {
 		// Enforce Masamune Cutter
 		if (movePool.includes('masamunecutter')) {
 			counter = this.addMove('masamunecutter', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		
+		// Enforce Fake Out on non-CC Orange
+		if (movePool.includes('fakeout') && species.id === 'orange') {
+			counter = this.addMove('fakeout', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
 
@@ -1263,6 +1276,10 @@ export class RandomTeams {
 		if (species.id === 'susie' && role === 'Fast Attacker') return 'Choice Scarf';
 		if (moves.has('sexpistols') && moves.has('encore')) return 'Loaded Dice';
 		if (moves.has('snowgrave')) return 'Focus Sash';
+		if (species.id === 'orange' && moves.has('fakeout')) return 'Normal Gem';
+		if (ability === 'Brave Appetite') {
+			return (moves.has('closecombat') || moves.has('leafstorm')) ? 'White Herb' : 'Sitrus Berry';
+		}
 	}
 
 	/** Item generation specific to Random Doubles */
@@ -1615,6 +1632,13 @@ export class RandomTeams {
 		// shuffle moves to add more randomness to camomons
 		const shuffledMoves = Array.from(moves);
 		this.prng.shuffle(shuffledMoves);
+
+		// Z-Conversion Porygon-Z should have Shadow Ball first if no Recover, otherwise Thunderbolt
+		if (species.id === 'seth') {
+			const firstMove = 'psyshock';
+			this.fastPop(shuffledMoves, shuffledMoves.indexOf(firstMove));
+			shuffledMoves.unshift(firstMove);
+		}
 		return {
 			name: species.baseSpecies,
 			species: forme,

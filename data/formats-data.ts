@@ -559,6 +559,22 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "DOU",
 	},
+	seth: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	yellow: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	orange: {
+		tier: "UU",
+		doublesTier: "DUU",
+	},
+	green: {
+		tier: "RU",
+		doublesTier: "DUU",
+	},
 	flowery: {
 		tier: "UU",
 		doublesTier: "DUU",
