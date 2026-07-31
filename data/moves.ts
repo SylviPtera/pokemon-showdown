@@ -23204,10 +23204,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 5,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1, noparentalbond: 1, bullet: 1 },
-		volatileStatus: 'laserfocus',
 		multihit: 2,
 		smartTarget: true,
-		secondary: null,
+		secondary: {
+			self: {
+				volatileStatus: 'laserfocus',
+			},
+		},
 		target: "normal",
 		type: "Steel",
 		maxMove: { basePower: 130 },

@@ -567,6 +567,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
+	blue: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+	},
 	orange: {
 		tier: "UU",
 		doublesTier: "DUU",
