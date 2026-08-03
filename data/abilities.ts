@@ -6598,6 +6598,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 4,
 		num: 2,
 	},
+	shulkershell: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (!target.volatiles['shulkershell'] && move.category === 'Physical') {
+				this.debug('Shulker Shell buff');
+				return this.chainModify(0.66);
+			}
+		},
+		onPrepareHit(source, target, move) {
+			if (source.volatiles['shulkershell']) return;
+			source.addVolatile('shulkershell');
+		},
+		flags: { breakable: 1 },
+		name: "Shulker Shell",
+		rating: 3,
+		num: 168,
+	},
 	superarmour: {
 		onPrepareHit(source, target, move) { //idk
 			if (move.category === 'Physical') {

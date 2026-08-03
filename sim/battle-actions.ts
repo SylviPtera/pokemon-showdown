@@ -671,7 +671,7 @@ export class BattleActions {
 				this.battle.add('-immune', target);
 				hitResults[i] = false;
 			} else if (this.battle.gen >= 7 && move.pranksterBoosted && pokemon.hasAbility('prankster') &&
-				!targets[i].isAlly(pokemon) && !this.dex.getImmunity('prankster', target)) {
+				!targets[i].isAlly(pokemon) && !this.dex.getImmunity('prankster', target) && move.id !== 'omega') {
 				this.battle.debug('natural prankster immunity');
 				if (target.illusion || !(move.status && !this.dex.getImmunity(move.status, target))) {
 					this.battle.hint("Since gen 7, Dark is immune to Prankster moves.");

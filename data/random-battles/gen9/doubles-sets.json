@@ -302,13 +302,13 @@
         "sets": [
             {
                 "role": "Doubles Support",
-                "movepool": ["Protect", "Aurora Veil", "Blizzard", "Moonblast", "Encore"],
+                "movepool": ["Protect", "Aurora Veil", "Blizzard", "Moonblast", "Encore", "Snowgrave"],
                 "abilities": ["Snow Warning"],
                 "teraTypes": ["Steel", "Ghost"]
             },
             {
                 "role": "Doubles Fast Attacker",
-                "movepool": ["Protect", "Blizzard", "Moonblast", "Freeze-Dry", "Encore", "Aurora Veil"],
+                "movepool": ["Protect", "Blizzard", "Moonblast", "Freeze-Dry", "Encore", "Aurora Veil", "Snowgrave"],
                 "abilities": ["Snow Warning"],
                 "teraTypes": ["Steel", "Ice"]
             }
@@ -328,6 +328,39 @@
                 "movepool": ["Protect", "Swords Dance", "Brave Bird", "Channelled Blitz", "Knock Off"],
                 "abilities": ["Moxie"],
                 "teraTypes": ["Flying"]
+            }
+        ]
+    },
+    "rudinn": {
+        "level": 90,
+        "sets": [
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Protect", "Rock Slide", "Swords Dance", "Stomping Tantrum"],
+                "abilities": ["Simple"],
+                "teraTypes": ["Rock", "Grass"]
+            }
+        ]
+    },
+    "rudinnranger": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Protect", "Rock Slide", "Close Combat", "Swords Dance", "Stomping Tantrum"],
+                "abilities": ["Dazzling"],
+                "teraTypes": ["Ghost", "Grass"]
+            }
+        ]
+    },
+    "headhathy": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Protect", "Trick Room", "Ice Beam", "Moonblast", "Helping Hand"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Water"]
             }
         ]
     },
@@ -362,6 +395,175 @@
                 "movepool": ["Dark Pulse", "Aura Sphere", "Sludge Bomb", "Protect", "Nasty Plot"],
                 "abilities": ["Berserk"],
                 "teraTypes": ["Poison", "Dark"]
+            }
+        ]
+    },
+    "aqua": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Omega", "Tailwind", "Taunt", "Encore", "Protect", "Helping Hand"],
+                "abilities": ["Prankster"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Doubles Setup Sweeper",
+                "movepool": ["Omega", "Slash", "Swords Dance", "Encore", "Protect"],
+                "abilities": ["Sharpness", "Prankster"],
+                "teraTypes": ["Ghost", "Dark"]
+            },
+            {
+                "role": "Choice Item user",
+                "movepool": ["Omega", "Slash", "Leaf Blade", "U-turn", "Aerial Ace"],
+                "abilities": ["Sharpness", "Impatience"],
+                "teraTypes": ["Ghost", "Dark"]
+            }
+        ]
+    },
+    "seth": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Psychic", "Helping Hand", "Tri-Attack", "Omega", "Protect"],
+                "abilities": ["Trace"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Psychic", "Tri-Attack", "Calm Mind", "Omega", "Protect"],
+                "abilities": ["Analytic", "Trace", "Perseverance"],
+                "teraTypes": ["Fairy"]
+            }
+        ]
+    },
+    "yellow": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Omega", "Iron Head", "Iron Will", "High Horsepower", "Protect"],
+                "abilities": ["Justice'fied"],
+                "teraTypes": ["Steel", "Ghost"]
+            }
+        ]
+    },
+    "blue": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Doubles Setup Sweeper",
+                "movepool": ["Moonblast", "Hyper Voice", "Quiver Dance", "Aura Sphere", "Protect"],
+                "abilities": ["Integrity Arena"],
+                "teraTypes": ["Steel", "Fairy"]
+            },
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Moonblast", "Hyper Voice", "Draining Kiss", "Quiver Dance", "Moonlight", "Protect"],
+                "abilities": ["Integrity Arena"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "orange": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Fake Out", "Omega", "Protect", "Return", "Sucker Punch"],
+                "abilities": ["Brave Appetite"],
+                "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "green": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Omega", "Tri-Attack", "Protect", "Helping Hand", "Giga Drain"],
+                "abilities": ["Kindness"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
+    "flowery": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Offensive Protect",
+                "movepool": ["Jarona", "Iron Will", "Encore", "Protect", "Close Combat", "Taunt"],
+                "abilities": ["Flower's Dream"],
+                "teraTypes": ["Grass", "Fire"]
+            },
+            {
+                "role": "Choice Item user",
+                "movepool": ["Jarona", "Iron Will", "U-turn", "Close Combat", "Switcheroo"],
+                "abilities": ["Flower's Dream"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
+    "elderguardian": {
+        "level": 82,
+        "sets": [
+            {
+                "role": "Bulky Protect",
+                "movepool": ["Hydro Pump", "Psychic", "Meteor Beam", "Protect", "Thunderbolt", "Ice Beam"],
+                "abilities": ["Transcendent Eye"],
+                "teraTypes": ["Dark", "Psychic"]
+            }
+        ]
+    },
+    "enderdragon": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Draco Meteor", "Tailwind", "Whirling Tornado", "Rock Slide", "Protect", "Flamethrower"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Doubles Setup Sweeper",
+                "movepool": ["Dragon Dance", "Dragon Claw", "Whirling Tornado", "Rock Slide", "Protect"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Dragon", "Fire"]
+            }
+        ]
+    },
+    "lordshen": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Doubles Support",
+                "movepool": ["Protect", "Tailwind", "Firework Cannon", "Heat Wave", "Hurricane", "Parting Shot"],
+                "abilities": ["Intimidate"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Doubles Fast Attacker",
+                "movepool": ["Protect", "Nasty Plot", "Firework Cannon", "Heat Wave", "Hurricane"],
+                "abilities": ["Intimidate", "Steelworker"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "rell": {
+        "level": 79,
+        "sets": [
+            {
+                "role": "Doubles Bulky Attacker",
+                "movepool": ["Protect", "Magnet Storm", "Body Press", "High Horsepower"],
+                "abilities": ["Magnet Pull"],
+                "teraTypes": ["Flying", "Fighting"]
+            },
+            {
+                "role": "Doubles Bulky Setup",
+                "movepool": ["Protect", "Magnet Storm", "Body Press", "Shift Gear", "High Horsepower"],
+                "abilities": ["Magnet Pull"],
+                "teraTypes": ["Flying"]
             }
         ]
     }

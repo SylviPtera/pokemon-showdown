@@ -22988,6 +22988,21 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	levitationshot: {
+		num: 721,
+		accuracy: 95,
+		basePower: 65,
+		category: "Special",
+		name: "Levitation Shot",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1 },
+		volatileStatus: 'telekinesis',
+		secondary: null,
+		target: "any",
+		type: "Psychic",
+		contestType: "Clever",
+	},
 	magicburst: {
 		num: 3011,
 		accuracy: 100,
@@ -23118,7 +23133,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	omegaknife: {
 		num: 7771,
 		accuracy: 90,
-		basePower: 90,
+		basePower: 80,
 		category: "Physical",
 		name: "Omega Knife",
 		pp: 5,
@@ -23139,7 +23154,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Omega Book",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, bypasssub: 1, allyanim: 1, failinstruct: 1 },
+		flags: { bypasssub: 1, allyanim: 1, failinstruct: 1 },
 		onHit(target, source) {
 			//target's move
 			if (target.lastMove && !target.volatiles['dynamax']) {
@@ -23207,8 +23222,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		multihit: 2,
 		smartTarget: true,
 		secondary: {
-			self: {
-				volatileStatus: 'laserfocus',
+			volatileStatus: 'omegaguns',
+		},
+		condition: {
+			duration: 2,
+			onStart(pokemon, source, effect) {
+				if (effect && (['costar', 'imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', pokemon, "move: Omega Gun's", '[silent]');
+				} else {
+					this.add('-start', pokemon, "move: Omega Gun's");
+				}
+			},
+			onRestart(pokemon) {
+				this.effectState.duration = 2;
+				this.add('-start', pokemon, "move: Omega Gun's");
+			},
+			onTryHit(source, target, move) {
+				move.willCrit = true;
+			},
+			onFoeCriticalHit(pokemon, source, move) {
+				pokemon.removeVolatile('omegaguns');
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, "move: Omega Gun's", '[silent]');
 			},
 		},
 		target: "normal",
@@ -23304,16 +23340,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		onHit(target, source, move) {
 			if (source.isAlly(target)) {
-				if (!this.heal(Math.floor(target.baseMaxhp / 3))) {
-					return this.NOT_FAIL;
-				}
 				move.secondaries = [];
 				move.secondaries.push({
-					chance: 100,
 					boosts: {
 						spe: 1,
 					},
 				});
+				this.heal(Math.floor(target.baseMaxhp / 3))
 			}
 		},
 		secondary: {
@@ -23375,7 +23408,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				},
 			},
 		},
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
@@ -23495,7 +23528,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			}
 		},
 		secondary: null,
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Ice",
 		zMove: { basePower: 180 },
 		maxMove: { basePower: 130 },

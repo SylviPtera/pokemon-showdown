@@ -108,7 +108,7 @@ const NO_STAB = [
 	'dragontail', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
 	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'infestation', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit',
 	'quickattack', 'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'trailblaze',
-	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit'
+	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit', 'snowgrave'
 ];
 // Hazard-setting moves
 const HAZARDS = [
@@ -554,6 +554,7 @@ export class RandomTeams {
 				['energyball', 'leafstorm'],
 				['earthpower', 'sandsearstorm'],
 				['coaching', ['helpinghand', 'howl']],
+				['snowgrave', 'freezedry']
 			];
 
 			for (const pair of doublesIncompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);
@@ -624,6 +625,10 @@ export class RandomTeams {
 			['rapidspin', 'trick'],
 			// Noelle
 			['snowgrave', 'freezedry'],
+			// Aqua
+			['knockoff', 'omega'],
+			// Blue
+			['drainingkiss', 'moonlight']
 		];
 
 		for (const pair of incompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);
@@ -848,9 +853,35 @@ export class RandomTeams {
 				movePool, teraType, role);
 		}
 		
-		// Enforce Fake Out on non-CC Orange
+		// Enforce Fake Out on Orange
 		if (movePool.includes('fakeout') && species.id === 'orange') {
 			counter = this.addMove('fakeout', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		
+		// Enforce Firework Cannon
+		if (movePool.includes('fireworkcannon') && species.id === 'lordshen') {
+			counter = this.addMove('fireworkcannon', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		
+		// Enforce Magnet Storm
+		if (movePool.includes('magnetstorm') && species.id === 'rell') {
+			counter = this.addMove('magnetstorm', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+
+		// Enforce Omega
+		if (movePool.includes('omega') && species.id === 'aqua' && role !== 'Fast Support') {
+			counter = this.addMove('omega', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		if (movePool.includes('omega') && species.id === 'yellow' || species.id === 'orange') {
+			counter = this.addMove('omega', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		if (movePool.includes('omega') && species.id === 'green' && role === 'Doubles Support') {
+			counter = this.addMove('omega', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
 
@@ -1120,6 +1151,8 @@ export class RandomTeams {
 			return ((species.id === 'banjokazooie' || species.id === 'kazooie') && !moves.has('dualwingbeat'));
 		case 'Moxie':
 			return (species.id === 'kazooie' && !moves.has('bravebird'));
+		case 'Impatience':
+			return (species.id === 'aqua' && !moves.has('aerialace'));
 		}
 
 		return false;
@@ -1905,7 +1938,7 @@ export class RandomTeams {
 		const natures = this.dex.natures.all();
 		const items = this.dex.items.all();
 
-		const randomN = this.randomNPokemon(this.maxTeamSize, this.forceMonotype, undefined, undefined, true);
+		const randomN = this.randomNPokemon(this.maxTeamSize, this.forceMonotype, 9, undefined, true);
 
 		for (let forme of randomN) {
 			let species = dex.species.get(forme);

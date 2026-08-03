@@ -657,7 +657,7 @@
         "level": 82,
         "sets": [
             {
-                "role": "Setup Sweeper",
+                "role": "Bulky Setup",
                 "movepool": ["Cosmic Power", "Stored Power", "Moonlight", "Moonblast"],
                 "abilities": ["Magic Guard"],
                 "teraTypes": ["Water"]
@@ -1581,7 +1581,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Omega", "Aqua Cutter", "Swords Dance", "Encore", "Slash", "U-Turn"],
+                "movepool": ["Omega Knife", "Aqua Cutter", "Swords Dance", "Encore", "Slash", "U-Turn"],
                 "abilities": ["Sharpness"],
                 "teraTypes": ["Dark", "Fairy"]
             },
@@ -1609,7 +1609,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Omega", "Iron Will", "Blaze Kick", "U-Turn", "High Horsepower"],
+                "movepool": ["Omega Gun's", "Iron Will", "Blaze Kick", "U-Turn", "High Horsepower"],
                 "abilities": ["Justice'fied"],
                 "teraTypes": ["Steel", "Ghost"]
             }
@@ -1631,12 +1631,6 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Close Combat", "Omega", "Throat Chop", "Return", "Meteor Mash"],
-                "abilities": ["Brave Appetite"],
-                "teraTypes": ["Fighting"]
-            },
-            {
-                "role": "Setup Sweeper",
                 "movepool": ["Fake Out", "Omega", "Meteor Mash", "Return", "Sucker Punch"],
                 "abilities": ["Brave Appetite"],
                 "teraTypes": ["Fighting"]
@@ -1644,13 +1638,13 @@
         ]
     },
     "green": {
-        "level": 87,
+        "level": 88,
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Flamethrower", "Will-O-Wisp", "Stealth Rock", "Giga Drain", "Tri-Attack"],
+                "movepool": ["Flamethrower", "Will-O-Wisp", "Giga Drain", "Tri-Attack"],
                 "abilities": ["Kindness"],
-                "teraTypes": ["Water"]
+                "teraTypes": ["Grass"]
             }
         ]
     },
@@ -1662,6 +1656,51 @@
                 "movepool": ["Jarona", "Iron Will", "Close Combat", "U-Turn", "Knock Off", "Encore"],
                 "abilities": ["Flower's Dream"],
                 "teraTypes": ["Grass", "Fire"]
+            }
+        ]
+    },
+    "elderguardian": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Spikes", "Flip Turn", "Psychic", "Scald", "Thunder Wave"],
+                "abilities": ["Rough Skin"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Hydro Pump", "Flip Turn", "Psychic", "Meteor Beam", "Earth Power"],
+                "abilities": ["Transcendent Eye"],
+                "teraTypes": ["Psychic", "Water"]
+            }
+        ]
+    },
+    "shulker": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Psychic", "Body Press", "Recover", "Iron Defense"],
+                "abilities": ["Shulker Shell"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "enderdragon": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Draco Meteor", "Whirling Tornado", "U-Turn", "Flamethrower", "Earthquake"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Draco Meteor", "U-Turn", "Defog", "Earthquake", "Roost", "Dragon Tail", "Whirling Tornado"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Steel"]
             }
         ]
     },
@@ -1817,11 +1856,11 @@
         ]
     },
     "valstrax": {
-        "level": 78,
+        "level": 76,
         "sets": [
             {
                 "role": "Wallbreaker",
-                "movepool": ["Brave Bird", "Flare Blitz", "Dragon Claw", "Double-Edge", "Wild Charge"],
+                "movepool": ["Brave Bird", "Flare Blitz", "Dragon Claw", "Dragon Dance", "Wild Charge"],
                 "abilities": ["Reckless"],
                 "teraTypes": ["Flying", "Fire"]
             },
