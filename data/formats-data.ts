@@ -618,6 +618,21 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		doublesTier: "(DUU)",
 	},
+	guardian: {
+		tier: "NFE",
+	},
+	elderguardian: {
+		tier: "OU",
+		doublesTier: "DUU",
+	},
+	shulker: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	enderdragon: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	gloptic: {
 		tier: "OU",
 		doublesTier: "(DUU)",
@@ -681,6 +696,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	anakin: {
 		tier: "UU",
 		doublesTier: "DOU",
+	},
+	karsultimate: {
+		tier: "Uber",
+		doublesTier: "DUber",
 	},
 	iggy: {
 		tier: "UU",

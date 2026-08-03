@@ -2190,7 +2190,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 150,
 		color: "Black",
 		eggGroups: ["Human-Like"],
-		battleOnly: "Kars",
+		//battleOnly: "Kars",
 	},
 	iggy: {
 		num: 9003,

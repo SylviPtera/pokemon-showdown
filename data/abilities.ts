@@ -6392,6 +6392,44 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 271,
 	},
+	perfection: {
+		onStart(pokemon) {
+			const possibleTypes = [];
+			const newTypes = [];
+			for (const target of pokemon.adjacentFoes()) {
+				if (target.types.length === 1) {
+					const type = target.types[0];
+					for (const typeName of this.dex.types.names()) {
+						const typeCheck = this.dex.types.get(typeName).damageTaken[type];
+						if (typeCheck === 2 || typeCheck === 3) {
+							possibleTypes.push(typeName);
+						}
+					}
+				} else if (target.types.length > 1) {
+					const type1 = target.types[0];
+					const type2 = target.types[1];
+					for (const typeName of this.dex.types.names()) {
+						const typeCheck1 = this.dex.types.get(typeName).damageTaken[type1];
+						const typeCheck2 = this.dex.types.get(typeName).damageTaken[type2];
+						if ((typeCheck1 > 1 && typeCheck2 !== 1) || (typeCheck2 > 1 && typeCheck1 !== 1)) {
+							possibleTypes.push(typeName);
+						}
+					}
+				}
+				if (!possibleTypes.length) continue;
+				else {
+					const randomType = this.sample(possibleTypes);
+					newTypes.push(randomType);
+				}
+			}
+			if (!pokemon.setType(newTypes)) return;
+			this.add('-start', pokemon, 'typechange', '[from] ability: Perfection');
+		},
+		flags: {},
+		name: "Perfection",
+		rating: 4,
+		num: 9001,
+	},
 	perfectshape: {
 		onSetStatus(status, target, source, effect) {
 			if ((effect as Move)?.status) {
