@@ -22145,7 +22145,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		self: {
 			onHit(source) {
 				for (const pokemon of source.alliesAndSelf()) {
-					pokemon.addVolatile('gmaxchistrike');
+					pokemon.addVolatile('bananabonanza');
 				}
 			},
 		},
@@ -22154,14 +22154,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onStart(target, source, effect) {
 				this.effectState.layers = 1;
 				if (!['costar', 'imposter', 'psychup', 'transform'].includes(effect?.id)) {
-					this.add('-start', target, 'move: G-Max Chi Strike');
+					this.add('-start', target, 'move: Banana Bonanza');
 				}
 			},
 			onRestart(target, source, effect) {
 				if (this.effectState.layers >= 3) return false;
 				this.effectState.layers++;
 				if (!['costar', 'imposter', 'psychup', 'transform'].includes(effect?.id)) {
-					this.add('-start', target, 'move: G-Max Chi Strike');
+					this.add('-start', target, 'move: Banana Bonanza');
 				}
 			},
 			onModifyCritRatio(critRatio) {
@@ -22454,7 +22454,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 0,
 		critRatio: 2,
-		flags: {protect: 1, mirror: 1, contact: 1},
+		flags: {protect: 1, mirror: 1},
+		onPrepareHit(target, source, move) {
+			if (!source.isAlly(target)) {
+				if (source.species.name === 'Corrin-Dragon') {
+					this.attrLastMove('[anim] Dragon Lunge Rush');
+				} else {
+					this.attrLastMove('[anim] Dragon Lunge Pin');
+				}
+			}
+		},
 		basePowerCallback(pokemon, target, move) {
 			if (pokemon.species.name === 'Corrin-Dragon') {
 				return move.basePower + 35;
@@ -22473,6 +22482,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 				move.critRatio = 1;
+				move.flags.contact = 1;
 			}
 		},
 		target: "normal",
@@ -23093,6 +23103,60 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
+	},
+	naturalselection: {
+		num: 560,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Natural Selection",
+		pp: 10,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onModifyType(move, pokemon, target) {
+			move.type = pokemon.types[0];
+		},
+		onTryHit(source, target, move) {
+			if (source.types.length > 1) {
+				target.addVolatile(`select${source.types[1]}`);
+				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 1?`);
+			}
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (target) {
+				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 2?`);
+				if (target.volatiles['selectFire']) return typeMod + this.dex.getEffectiveness('Fire', type);
+				if (target.volatiles['selectGround']) return typeMod + this.dex.getEffectiveness('Ground', type);
+				if (target.volatiles['selectRock']) return typeMod + this.dex.getEffectiveness('Rock', type);
+				if (target.volatiles['selectFighting']) return typeMod + this.dex.getEffectiveness('Fighting', type);
+				if (target.volatiles['selectElectric']) return typeMod + this.dex.getEffectiveness('Electric', type);
+				if (target.volatiles['selectGrass']) return typeMod + this.dex.getEffectiveness('Grass', type);
+				if (target.volatiles['selectBug']) return typeMod + this.dex.getEffectiveness('Bug', type);
+				if (target.volatiles['selectWater']) return typeMod + this.dex.getEffectiveness('Water', type);
+				if (target.volatiles['selectIce']) return typeMod + this.dex.getEffectiveness('Ice', type);
+				if (target.volatiles['selectPsychic']) return typeMod + this.dex.getEffectiveness('Psychic', type);
+				if (target.volatiles['selectPoison']) return typeMod + this.dex.getEffectiveness('Poison', type);
+				if (target.volatiles['selectGhost']) return typeMod + this.dex.getEffectiveness('Ghost', type);
+				if (target.volatiles['selectNormal']) return typeMod + this.dex.getEffectiveness('Normal', type);
+				if (target.volatiles['selectFlying']) return typeMod + this.dex.getEffectiveness('Flying', type);
+				if (target.volatiles['selectDark']) return typeMod + this.dex.getEffectiveness('Dark', type);
+				if (target.volatiles['selectSteel']) return typeMod + this.dex.getEffectiveness('Steel', type);
+				if (target.volatiles['selectDragon']) return typeMod + this.dex.getEffectiveness('Dragon', type);
+				if (target.volatiles['selectFairy']) return typeMod + this.dex.getEffectiveness('Fairy', type);
+				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 3?`);
+			}
+		},
+		onHit(target, source, move) {
+			if (source.types.length > 1) {
+				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${source.types[1]}?`);
+				target.removeVolatile(`${source.types[1]}`);
+			}
+		},
+		priority: 0,
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: { basePower: 170 },
+		contestType: "Beautiful",
 	},
 	omega: {
 		num: 7770,

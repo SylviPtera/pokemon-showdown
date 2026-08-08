@@ -6394,9 +6394,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	perfection: {
 		onStart(pokemon) {
-			const possibleTypes = [];
 			const newTypes = [];
 			for (const target of pokemon.adjacentFoes()) {
+				const possibleTypes = [];
 				if (target.types.length === 1) {
 					const type = target.types[0];
 					for (const typeName of this.dex.types.names()) {
@@ -6423,7 +6423,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 			if (!pokemon.setType(newTypes)) return;
-			this.add('-start', pokemon, 'typechange', '[from] ability: Perfection');
+			this.add('-start', pokemon, 'typechange', newTypes.join('/'), '[from] ability: Perfection', );
 		},
 		flags: {},
 		name: "Perfection",
