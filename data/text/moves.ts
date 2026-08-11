@@ -7623,7 +7623,16 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 
 		activate: "  [SOURCE] trapped [POKEMON]!",
 	},
-
+	dragonlunge: {
+		name: "Dragon Lunge",
+		desc: "Has a higher chance for a critical hit. If the user is Corrin-Dragon, this attack has 120BP, no increased critical hit ratio, is not a slicing attack, makes contact, and lowers the user's Defense and Special Defense by 1 stage.",
+		shortDesc: "If Corrin-Dragon, 120BP and -1 Defense and Special Defense for the user.",
+	},
+	infernalclimax: {
+		name: "Infernal Climax",
+		desc: "Power is equal to 25+(X*5), where X is the user's total stat stage changes that are greater than 0. This attack hits 3 times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits",
+		shortDesc: " + 5 power for each of the user's stat boosts. Hits 3 times.",
+	},
 	jarona: {
 		name: "Jarona",
 		desc: "Here I come San Frandisco!!!!",

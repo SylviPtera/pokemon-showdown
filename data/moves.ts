@@ -22451,10 +22451,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 85,
 		category: "Physical",
 		name: "Dragon Lunge",
-		pp: 15,
+		pp: 10,
 		priority: 0,
 		critRatio: 2,
-		flags: {protect: 1, mirror: 1},
+		flags: {protect: 1, mirror: 1, slicing: 1},
 		onPrepareHit(target, source, move) {
 			if (!source.isAlly(target)) {
 				if (source.species.name === 'Corrin-Dragon') {
@@ -22483,6 +22483,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 				move.critRatio = 1;
 				move.flags.contact = 1;
+				move.flags.slicing = undefined;
 			}
 		},
 		target: "normal",

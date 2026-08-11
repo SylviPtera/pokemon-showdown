@@ -628,7 +628,9 @@ export class RandomTeams {
 			// Aqua
 			['knockoff', 'omega'],
 			// Blue
-			['drainingkiss', 'moonlight']
+			['drainingkiss', 'moonlight'],
+			// Corrin (Doubles)
+			['rock slide', ['protect', 'dragonlunge']]
 		];
 
 		for (const pair of incompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);

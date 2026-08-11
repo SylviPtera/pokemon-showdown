@@ -4449,6 +4449,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			dragonbreath: ["9M"],
 			dragonrush: ["9M"],
 			dragoncheer: ["9M"],
+			dragondance: ["9M"],
 		},
 	},
 	gloptic: {

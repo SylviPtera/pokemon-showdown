@@ -952,15 +952,15 @@
         "sets": [
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Infernal Climax", "Play Rough", "Dragon Dance", "Triple Axel", "High Jump Kick"],
+                "movepool": ["Infernal Climax", "Play Rough", "Dragon Dance", "Bullet Storm"],
                 "abilities": ["Skill Link"],
-                "teraTypes": ["Ghost"]
+                "teraTypes": ["Steel", "Dark"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Knock Off", "Play Rough", "High Jump Kick", "Triple Axel", "U-Turn"],
+                "movepool": ["Knock Off", "Play Rough", "High Jump Kick", "Bullet Storm", "U-Turn"],
                 "abilities": ["Skill Link"],
-                "teraTypes": ["Ghost", "Dark"]
+                "teraTypes": ["Steel", "Dark"]
             }
         ]
     },
