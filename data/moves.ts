@@ -22132,14 +22132,14 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			status: 'brn',
 		},
 		onHit(target, pokemon, move) {
-			if (pokemon.baseSpecies.baseSpecies === 'Meloetta') {
+			if (pokemon.species.id === 'pyra' || pokemon.species.id === 'mythra') {
 				move.willChangeForme = true;
 			}
 		},
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (move.willChangeForme) {
 				const aegisForme = pokemon.species.id === 'mythra' ? 'Pyra' : 'Mythra';
-				pokemon.formeChange(aegisForme, this.effect, false, '0', '[msg]');
+				pokemon.formeChange(aegisForme, this.effect, true, '0', '[msg]');
 			}
 		},
 		onPrepareHit(target, source, move) {
@@ -22155,6 +22155,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (pokemon.species.name === "Mythra") {
 				move.secondaries = [];
 				move.critRatio = 2;
+				move.type = "Electric";
 			}
 		},
 		target: "normal",

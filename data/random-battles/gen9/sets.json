@@ -240,6 +240,17 @@
             }
         ]
     },
+    "iceclimbers": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Double Hammer", "Earthquake", "Rapid Spin", "Knock Off"],
+                "abilities": ["Tag Team"],
+                "teraTypes": ["Ice", "Ground"]
+            }
+        ]
+    },
     "sheik": {
         "level": 84,
         "sets": [
@@ -1157,6 +1168,34 @@
                 "movepool": ["Knock Off", "Masamune Cutter", "Swords Dance", "Bomb Blast", "Play Rough"],
                 "abilities": ["Final Phase"],
                 "teraTypes": ["Flying", "Fairy"]
+            }
+        ]
+    },
+    "pyra": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Aegis Slash", "U-Turn", "Channelled Blitz", "Striking Sword", "Swords Dance"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Flying"]
+            }
+        ]
+    },
+    "mythra": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Channelled Blitz", "U-Turn", "Flare Blitz", "Striking Sword", "Swords Dance", "Aegis Slash"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Electric"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Aegis Slash", "U-Turn", "Will-O-Wisp", "Taunt"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Water"]
             }
         ]
     },
