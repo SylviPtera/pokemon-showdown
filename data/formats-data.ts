@@ -346,6 +346,18 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	steve: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	pyra: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	mythra: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	madrat: {
 		tier: "UU",
 		doublesTier: "(DUU)",

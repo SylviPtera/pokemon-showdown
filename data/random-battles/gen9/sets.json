@@ -1,4 +1,15 @@
 {
+    "luinor": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Thunderbolt", "Blizzard", "Nasty Plot", "Volt Switch", "Substitute", "Calm Mind"],
+                "abilities": ["Frostbolt Storm"],
+                "teraTypes": ["Ice"]
+            }
+        ]
+    },
     "titanchor": {
         "level": 80,
         "sets": [

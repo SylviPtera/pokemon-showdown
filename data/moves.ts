@@ -22117,7 +22117,50 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Fire",
 		contestType: "Beautiful",
 	},
-
+	
+	aegisslash: {
+		num: 547,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Aegis Slash",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, slicing: 1 },
+		secondary: {
+			chance: 10,
+			status: 'brn',
+		},
+		onHit(target, pokemon, move) {
+			if (pokemon.baseSpecies.baseSpecies === 'Meloetta') {
+				move.willChangeForme = true;
+			}
+		},
+		onAfterMoveSecondarySelf(pokemon, target, move) {
+			if (move.willChangeForme) {
+				const aegisForme = pokemon.species.id === 'mythra' ? 'Pyra' : 'Mythra';
+				pokemon.formeChange(aegisForme, this.effect, false, '0', '[msg]');
+			}
+		},
+		onPrepareHit(target, source, move) {
+			if (!source.isAlly(target)) {
+				if (source.species.name === 'Mythra') {
+					this.attrLastMove('[anim] Aegis Slash Mythra');
+				} else {
+					this.attrLastMove('[anim] Aegis Slash Pyra');
+				}
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.species.name === "Mythra") {
+				move.secondaries = [];
+				move.critRatio = 2;
+			}
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Cool",
+	},
 	aircutter: {
 		num: 314,
 		accuracy: 95,
@@ -22374,6 +22417,24 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Steel",
 		contestType: "Cool",
+	},
+	diamondpickaxe: {
+		num: 4001,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Diamond Pickaxe",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Clever",
 	},
 	dimensionalcage: {
 		num: 3012,

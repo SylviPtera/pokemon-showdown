@@ -6470,6 +6470,18 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 272,
 	},
+	poweroftheaegis: {
+		/*onResidualOrder: 29,
+		onResidual(pokemon) {
+			if (pokemon.species.baseSpecies !== 'Morpeko' || pokemon.terastallized) return;
+			const targetForme = pokemon.species.name === 'Morpeko' ? 'Morpeko-Hangry' : 'Morpeko';
+			pokemon.formeChange(targetForme);
+		},*/
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1 },
+		name: "Power of the Aegis",
+		rating: 1,
+		num: 258,
+	},
 	reverttozero: {
 		// Ability suppression implemented in sim/pokemon.ts:Pokemon#ignoringAbility
 		onSwitchInPriority: 2,
@@ -6679,27 +6691,16 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	tagteam: {
 		//parental bond
 		onModifyMove(move, pokemon, target) {
-
-			if (!move.multihit) {
-				newvarpb = 1
-			}
-			if (move.multihit) {
-				newvarpb = 0
-			}
-
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (move.category === 'Status' || move.multihit) return;
 			if (!target) return;
-			// singles, or single-target move
-			if (this.activePerHalf === 1 || ['any', 'normal', 'randomNormal'].includes(move.target)) {
-				move.multihit = 2;
-				//move.multihitType = 'parentalbond';
-				pokemon.addVolatile('parentalbond');
-			}
+			move.multihit = 2;
+			//move.multihitType = 'parentalbond';
+			//pokemon.addVolatile('parentalbond');
 		},
 
 		//tough claws (damage multiplier)
 		onBasePower(basePower, attacker, defender, move) {
-			if (newvarpb === 1) {
+			if (!move.multihit) {
 				return this.chainModify([0.5]);
 			}
 			else {
@@ -6707,40 +6708,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			}
 		},
 
-		onModifyCritRatio(critRatio) {
-			if (newvarpb === 0) {
+		onModifyCritRatio(critRatio, source, target, move) {
+			if (move.multihit) {
 				return critRatio + 1;
 			}
 		},
 		
 
-		//other parental bond script:
+		/*other parental bond script:
+		condition: {
+			duration: 1,
+			onBasePowerPriority: 8,
+			onBasePower(basePower) {
+				return this.chainModify(0.25);
+			},
+		},*/
 
-		//condition: {
-			//duration: 1,
-			//onBasePowerPriority: 8,
-			//onBasePower(basePower) {
-				//return this.chainModify(0.25);
-			//},
-		//},
-
-
-		//Original Symbiosis:
-
-		//onAllyAfterUseItem(item, pokemon) {
-			//if (pokemon.switchFlag) return;
-			//const source = this.effectState.target;
-			//const myItem = source.takeItem();
-			//if (!myItem) return;
-			//if (
-				//!this.singleEvent('TakeItem', myItem, source.itemState, pokemon, source, this.effect, myItem) ||
-				//!pokemon.setItem(myItem)
-			//) {
-				//source.item = myItem.id;
-				//return;
-			//}
-			//this.add('-activate', source, 'ability: Symbiosis', myItem, '[of] ' + pokemon);
-		//},
 		name: "Tag Team",
 		rating: 0,
 		num: 180,

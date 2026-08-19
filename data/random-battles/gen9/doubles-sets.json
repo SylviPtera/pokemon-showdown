@@ -109,12 +109,6 @@
         "level": 83,
         "sets": [
             {
-                "role": "Choice Item user",
-                "movepool": ["High Jump Kick", "Extreme Speed", "U-turn", "Ice Spinner"],
-                "abilities": ["Adaptability"],
-                "teraTypes": ["Normal"]
-            },
-            {
                 "role": "Offensive Protect",
                 "movepool": ["High Jump Kick", "Extreme Speed", "Protect", "Ice Spinner"],
                 "abilities": ["Adaptability"],
