@@ -22402,6 +22402,53 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Beautiful",
 	},
+	cream: {
+		num: 210,
+		accuracy: 40,
+		basePower: 200,
+		category: "Physical",
+		name: "Cream",
+		pp: 10,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onModifyMove(move, pokemon, target) {
+			let acc = 40.0;
+			if (pokemon.volatiles['cream']) {
+				acc = 40 + 30/(2**((pokemon.volatiles['cream'].n)-1));
+			}
+			if (!pokemon.volatiles['cream'] || move.hit === 1) {
+				pokemon.addVolatile('cream');
+			}
+			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${pokemon.volatiles['cream'].n}?`);
+			move.accuracy = acc;
+		},
+		condition: {
+			duration: 10,
+			onStart(target, pokemon) {
+				if (pokemon.lastMoveUsed) {
+					if (pokemon.lastMoveUsed.id !== 'cream') {
+						pokemon.removeVolatile('cream');
+					} else {
+						if (!this.effectState.n) {
+							this.effectState.n = 1;
+						} else {
+							this.effectState.n += 1;
+						}
+					}
+				}
+			},
+			/*onRestart() {
+				if (this.effectState.n) {
+					this.effectState.n += 1;
+				}
+				this.effectState.duration = 2;
+			},*/
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Tough",
+	},
 	crossslash: {
 		num: 3011,
 		accuracy: 100,
@@ -23026,7 +23073,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	jarona: {
 		num: 210,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Jarona",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		basePowerCallback(pokemon, target, move) {
 			if (!pokemon.volatiles['jarona'] || move.hit === 1) {
 				pokemon.addVolatile('jarona');
@@ -23039,11 +23091,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my Jarona?`);
 			//this.add('message', "Heh, how'd you like my Jarona?");
 		},
-		category: "Physical",
-		name: "Jarona",
-		pp: 15,
-		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
 		condition: {
 			duration: 2,
 			onStart() {

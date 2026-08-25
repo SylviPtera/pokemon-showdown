@@ -576,6 +576,7 @@ export class RandomTeams {
 			['dragondance', 'dracometeor'],
 			['yawn', 'roar'],
 			['trick', 'uturn'],
+			[PIVOT_MOVES, 'substitute'],
 
 			// These attacks are redundant with each other
 			[['psychic', 'psychicnoise'], ['psyshock', 'psychicnoise']],
@@ -664,6 +665,8 @@ export class RandomTeams {
 		if (species.id === 'puccinewmoon') this.incompatibleMoves(moves, movePool, 'playrough', 'zenheadbutt');
 		// Noelle
 		if (species.id === 'noelle') this.incompatibleMoves(moves, movePool, 'calmmind', 'uturn');
+		// IC's flex moveslot
+		if (species.id === 'iceclimbers') this.incompatibleMoves(moves, movePool, 'knockoff', 'iceshard');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -739,6 +742,11 @@ export class RandomTeams {
 			if (species.name === "Yellow") return "Steel";
 			if (species.name === "Orange") return "Fighting";
 			if (species.name === "Green") return "Fire";
+		}
+
+		if (move.name === "Aegis Slash") {
+			if (species.name === "Pyra") return "Fire";
+			if (species.name === "Mythra") return "Electric";
 		}
 
 		const moveType = move.type;
@@ -1437,7 +1445,7 @@ export class RandomTeams {
 			);
 			return (scarfReqs && this.randomChance(1, 2)) ? 'Choice Scarf' : 'Choice Specs';
 		}
-		if (counter.get('speedsetup') && !counter.get('physicalsetup') && role === 'Bulky Setup') return 'Weakness Policy';
+		if (counter.get('speedsetup') && !counter.get('physicalsetup') && role === 'Bulky Setup' && species.id !== 'ghostrat') return 'Weakness Policy';
 		if (
 			!counter.get('Status') &&
 			!['Fast Attacker', 'Wallbreaker', 'Tera Blast user'].includes(role)
@@ -1583,14 +1591,18 @@ export class RandomTeams {
 		const ivs = { hp: 31, atk: 31, def: 31, spa: 31, spd: 31, spe: 31 };
 
 		const types = species.types;
-		const abilities = set.abilities!;
+		//const abilities = set.abilities!;
+		const baseAbilities = set.abilities!;
+		// Use the mega's ability for moveset generation
+		const abilities = (species.battleOnly && !species.requiredAbility) ? Object.values(species.abilities) : baseAbilities; //new
+
 
 		// Get moves
 		const moves = this.randomMoveset(types, abilities, teamDetails, species, isLead, isDoubles, movePool, teraType, role);
 		const counter = this.queryMoves(moves, species, teraType, abilities);
 
 		// Get ability
-		ability = this.getAbility(types, moves, abilities, counter, teamDetails, species, isLead, isDoubles, teraType, role);
+		ability = this.getAbility(types, moves, baseAbilities, counter, teamDetails, species, isLead, isDoubles, teraType, role);
 
 		// Get items
 		// First, the priority items
@@ -1746,6 +1758,7 @@ export class RandomTeams {
 		const potd = usePotD ? this.dex.species.get(Config.potd) : null;
 
 		const baseFormes: { [k: string]: number } = {};
+		let hasMega = false; //new
 
 		const typeCount: { [k: string]: number } = {};
 		const typeComboCount: { [k: string]: number } = {};
@@ -1760,7 +1773,26 @@ export class RandomTeams {
 		let leadsRemaining = this.format.gameType === 'doubles' ? 2 : 1;
 		while (baseSpeciesPool.length && pokemon.length < this.maxTeamSize) {
 			const baseSpecies = this.sampleNoReplace(baseSpeciesPool);
-			let species = this.dex.species.get(this.sample(pokemonPool[baseSpecies]));
+			//new start
+			const currentSpeciesPool: Species[] = [];
+			// Check if the base species has a mega forme available
+			let canMega = false;
+			for (const poke of pokemonPool[baseSpecies]) {
+				const species = this.dex.species.get(poke);
+				if (!hasMega && species.isMega) canMega = true;
+			}
+			for (const poke of pokemonPool[baseSpecies]) {
+				const species = this.dex.species.get(poke);
+				// Prevent multiple megas
+				if (hasMega && species.isMega) continue;
+				// Prevent base forme, if a mega is available
+				if (canMega && !species.isMega) continue;
+				currentSpeciesPool.push(species);
+			}
+			//const species = this.sample(currentSpeciesPool);
+			//new end
+			//let species = this.dex.species.get(this.sample(pokemonPool[baseSpecies]));
+			let species = this.dex.species.get(this.sample(currentSpeciesPool)); //new
 			if (!species.exists) continue;
 
 			// Limit to one of each species (Species Clause)
@@ -1899,7 +1931,10 @@ export class RandomTeams {
 			// Increment level 100 counter
 			if (set.level === 100) numMaxLevelPokemon++;
 
+			const item = this.dex.items.get(set.item); //new
+			
 			// Track what the team has
+			if (item.megaStone || species.name === 'Rayquaza-Mega') hasMega = true; //new
 			if (set.ability === 'Drizzle' || set.moves.includes('raindance')) teamDetails.rain = 1;
 			if (set.ability === 'Drought' || set.ability === 'Orichalcum Pulse' || set.moves.includes('sunnyday')) {
 				teamDetails.sun = 1;
@@ -2506,6 +2541,7 @@ export class RandomTeams {
 			const allowedItems: string[] = [];
 			for (const itemString of set.item) {
 				const itemId = toID(itemString);
+				if (teamData.megaCount && teamData.megaCount > 0 && this.dex.items.get(itemString).megaStone) continue; //new reject 2+ mega stones
 				if (itemsLimited.includes(itemId) && teamData.has[itemId]) continue;
 				allowedItems.push(itemString);
 			}
@@ -2608,6 +2644,7 @@ export class RandomTeams {
 			typeCount: {},
 			typeComboCount: {},
 			baseFormes: {},
+			megaCount: 0,
 			has: {},
 			wantsTeraCount: 0,
 			forceResult,
@@ -2663,9 +2700,14 @@ export class RandomTeams {
 			) continue;
 
 			if (this.forceMonotype && !species.types.includes(this.forceMonotype)) continue;
-
+			
 			// Limit to one of each species (Species Clause)
 			if (teamData.baseFormes[species.baseSpecies]) continue;
+
+			//newstart Limit the number of Megas to one
+			if (!teamData.megaCount) teamData.megaCount = 0;
+			if (teamData.megaCount >= 1) continue;
+			//newend
 
 			// Limit 2 of any type (most of the time)
 			const types = species.types;
@@ -2723,6 +2765,9 @@ export class RandomTeams {
 			}
 
 			teamData.baseFormes[species.baseSpecies] = 1;
+			
+			const itemData = this.dex.items.get(set.item); //new
+			if (itemData.megaStone) teamData.megaCount++; //new
 
 			teamData.has[toID(set.item)] = 1;
 

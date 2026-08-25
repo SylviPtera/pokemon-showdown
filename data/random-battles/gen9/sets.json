@@ -81,7 +81,7 @@
         "level": 85,
         "sets": [
             {
-                "role": "Wallbreaker",
+                "role": "Fast Attacker",
                 "movepool": ["Thunderbolt", "Dark Pulse", "Ice Beam", "Volt Switch"],
                 "abilities": ["Neuroforce"],
                 "teraTypes": ["Dark", "Electric"]
@@ -185,19 +185,13 @@
         ]
     },
     "peach": {
-        "level": 82,
+        "level": 83,
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Moonblast", "Knock Off", "Wish", "Protect", "Aromatherapy"],
+                "movepool": ["Moonblast", "Toxic", "Wish", "Protect"],
                 "abilities": ["Queenly Majesty"],
                 "teraTypes": ["Steel"]
-            },
-            {
-                "role": "Bulky Setup",
-                "movepool": ["Moonblast", "Calm Mind", "Psychic", "Wish", "Protect"],
-                "abilities": ["Queenly Majesty"],
-                "teraTypes": ["Poison"]
             }
         ]
     },
@@ -245,7 +239,7 @@
         "sets": [
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Double Hammer", "Earthquake", "Rapid Spin", "Knock Off"],
+                "movepool": ["Double Hammer", "Earthquake", "Rapid Spin", "Knock Off", "Ice Shard"],
                 "abilities": ["Tag Team"],
                 "teraTypes": ["Ice", "Ground"]
             }
@@ -1136,8 +1130,14 @@
         "level": 86,
         "sets": [
             {
-                "role": "Bulky Attacker",
+                "role": "Wallbreaker",
                 "movepool": ["Striking Sword", "Psycho Cut", "Brilliant Arrow", "Swords Dance", "Power Whip"],
+                "abilities": ["Analytic"],
+                "teraTypes": ["Fairy"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Striking Sword", "Psychic", "Brilliant Arrow", "Focus Blast"],
                 "abilities": ["Analytic"],
                 "teraTypes": ["Fairy"]
             }
@@ -1176,24 +1176,30 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Aegis Slash", "U-Turn", "Channelled Blitz", "Striking Sword", "Swords Dance"],
+                "movepool": ["Aegis Slash", "U-Turn", "Channelled Blitz", "Flare Blitz", "Swords Dance"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Flying"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Aegis Slash", "U-Turn", "Will-O-Wisp", "Encore"],
                 "abilities": ["Power of the Aegis"],
                 "teraTypes": ["Flying"]
             }
         ]
     },
     "mythra": {
-        "level": 81,
+        "level": 82,
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Channelled Blitz", "U-Turn", "Flare Blitz", "Striking Sword", "Swords Dance", "Aegis Slash"],
+                "movepool": ["Channelled Blitz", "U-Turn", "Aegis Slash", "Swords Dance", "Wild Charge"],
                 "abilities": ["Power of the Aegis"],
                 "teraTypes": ["Electric"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Aegis Slash", "U-Turn", "Will-O-Wisp", "Taunt"],
+                "movepool": ["Aegis Slash", "U-Turn", "Thunder Wave", "Taunt"],
                 "abilities": ["Power of the Aegis"],
                 "teraTypes": ["Water"]
             }
@@ -1631,7 +1637,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Omega Knife", "Aqua Cutter", "Swords Dance", "Encore", "Slash", "U-Turn"],
+                "movepool": ["Omega", "Aqua Cutter", "Swords Dance", "Encore", "Slash", "U-Turn"],
                 "abilities": ["Sharpness"],
                 "teraTypes": ["Dark", "Fairy"]
             },
@@ -1670,7 +1676,13 @@
         "sets": [
             {
                 "role": "Fast Bulky Setup",
-                "movepool": ["Moonblast", "Hyper Voice", "Quiver Dance", "Aura Sphere", "Moonlight", "Encore", "Omega"],
+                "movepool": ["Moonblast", "Hyper Voice", "Quiver Dance", "Aura Sphere", "Moonlight", "Encore"],
+                "abilities": ["Integrity Arena"],
+                "teraTypes": ["Water", "Fairy"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Draining Kiss", "Hyper Voice", "Quiver Dance", "Aura Sphere", "Encore"],
                 "abilities": ["Integrity Arena"],
                 "teraTypes": ["Water", "Fairy"]
             }
@@ -1681,7 +1693,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Fake Out", "Omega", "Meteor Mash", "Return", "Sucker Punch"],
+                "movepool": ["Fake Out", "Omega", "Throat Chop", "Return"],
                 "abilities": ["Brave Appetite"],
                 "teraTypes": ["Fighting"]
             }
@@ -1727,7 +1739,7 @@
         ]
     },
     "shulker": {
-        "level": 88,
+        "level": 85,
         "sets": [
             {
                 "role": "Bulky Setup",
@@ -1759,7 +1771,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Sludge Bomb", "Psyshock", "Knock Off", "Recover", "Toxic", "Toxic Spikes"],
+                "movepool": ["Sludge Bomb", "Psyshock", "Recover", "Toxic", "Toxic Spikes"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Flying", "Dark"]
             },

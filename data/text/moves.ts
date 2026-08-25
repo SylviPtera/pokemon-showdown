@@ -7613,6 +7613,16 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		},
 	},
 
+	bombblast: {
+		name: "Bomb Blast",
+		desc: "Has a 20% chance to make the target flinch.",
+		shortDesc: "20% chance to make the target flinch.",
+	},
+	brilliantarrow: {
+		name: "Brilliant Arrow",
+		desc: "Has a 100% chance to lower the target's Special Defense by 1 stage.",
+		shortDesc: "100% chance to lower the target's Sp. Def by 1.",
+	},
 	dimensionalcage: {
 		name: "Dimensional Cage",
 		desc: "Prevents the target from switching for four or five turns. During this time, they cannot dodge attacks and take 1.5x damage from bullet and bomb-based attacks. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Shed Tail, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Mortal Spin, Rapid Spin, or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
@@ -7636,5 +7646,10 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	jarona: {
 		name: "Jarona",
 		desc: "Here I come San Frandisco!!!!",
-	}
+	},
+	strikingsword: {
+		name: "Striking Sword",
+		desc: "Ignores the target's stat stage changes, including evasiveness.",
+		shortDesc: "Ignores the target's stat stage changes.",
+	},
 };

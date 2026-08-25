@@ -32,7 +32,7 @@ Ratings and how they work:
 
 */
 
-let newvarpb = 0;
+import { changeMoves, changeSet } from "./mods/gen9ssb/scripts";
 
 export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
@@ -6477,6 +6477,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const targetForme = pokemon.species.name === 'Morpeko' ? 'Morpeko-Hangry' : 'Morpeko';
 			pokemon.formeChange(targetForme);
 		},*/
+		
 		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1 },
 		name: "Power of the Aegis",
 		rating: 1,
@@ -6652,7 +6653,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (!target.volatiles['shulkershell'] && move.category === 'Physical') {
 				this.debug('Shulker Shell buff');
-				return this.chainModify(0.66);
+				return this.chainModify(0.8);
 			}
 		},
 		onPrepareHit(source, target, move) {
@@ -6694,17 +6695,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (move.category === 'Status' || move.multihit) return;
 			if (!target) return;
 			move.multihit = 2;
-			//move.multihitType = 'parentalbond';
+			move.multihitType = 'tagteam';
 			//pokemon.addVolatile('parentalbond');
 		},
 
 		//tough claws (damage multiplier)
 		onBasePower(basePower, attacker, defender, move) {
-			if (!move.multihit) {
-				return this.chainModify([0.5]);
-			}
-			else {
-				return this.chainModify([1.2]);
+			if (move.multihit) {
+				if (move.multihitType === 'tagteam') {
+					return this.chainModify(0.5);
+				}
+				else {
+					return this.chainModify(1.2);
+				}
 			}
 		},
 
