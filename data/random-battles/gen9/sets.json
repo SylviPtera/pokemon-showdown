@@ -1714,10 +1714,33 @@
         "level": 81,
         "sets": [
             {
+                "role": "Wallbreaker",
+                "movepool": ["Jarona", "Iron Will", "Close Combat", "U-Turn", "Encore"],
+                "abilities": ["Flower's Dream"],
+                "teraTypes": ["Grass"]
+            },
+            {
                 "role": "Fast Attacker",
-                "movepool": ["Jarona", "Iron Will", "Close Combat", "U-Turn", "Knock Off", "Encore"],
+                "movepool": ["Jarona", "Iron Will", "Close Combat", "U-Turn", "Knock Off", "Encore", "Moonblast"],
                 "abilities": ["Flower's Dream"],
                 "teraTypes": ["Grass", "Fire"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Jarona", "Leech Seed", "Protect", "Encore", "Iron Will"],
+                "abilities": ["Flower's Dream"],
+                "teraTypes": ["Fire"]
+            }
+        ]
+    },
+    "flowerymega": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Jarona", "Iron Will", "Close Combat", "U-Turn", "Encore", "Knock Off", "Moonblast"],
+                "abilities": ["Flower's Dream"],
+                "teraTypes": ["Grass"]
             }
         ]
     },

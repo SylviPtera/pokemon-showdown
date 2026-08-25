@@ -23097,7 +23097,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				this.effectState.multiplier = 1;
 			},
 			onRestart() {
-				if (this.effectState.multiplier < 4) {
+				if (this.effectState.multiplier < 5) {
 					this.effectState.multiplier <<= 1;
 				}
 				this.effectState.duration = 2;

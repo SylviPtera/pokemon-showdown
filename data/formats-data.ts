@@ -592,8 +592,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 	},
 	flowery: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DUU",
+	},
+	flowerymega: {
+		tier: "Uber",
+		doublesTier: "DUber",
 	},
 	blooper: {
 		tier: "LC",
