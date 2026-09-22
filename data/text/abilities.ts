@@ -2304,4 +2304,9 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		
 		activate: "  The battlers are filled with integrity!",
 	},
+	reverttozero: {
+		name: "Revert to Zero",
+		desc: "This Pokemon is immune to the secondary effects of attacks. Upon targetting this Pokemon with an attack, the attacker's ability is nullified before damage.",
+		shortDesc: "Immune to secondary effects. Nullifies abilities before taking damage.",
+	},
 };

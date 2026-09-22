@@ -721,6 +721,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
+	giorno: {
+		tier: "UU",
+		doublesTier: "(DUU)",
+	},
+	giornomega: {
+		tier: "OU",
+		doublesTier: "DUU",
+	},
 	pucci: {
 		tier: "UU",
 		doublesTier: "(DUU)",

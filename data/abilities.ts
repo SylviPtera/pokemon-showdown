@@ -32,7 +32,7 @@ Ratings and how they work:
 
 */
 
-import { changeMoves, changeSet } from "./mods/gen9ssb/scripts";
+import { changeMoves, changeSet, getName } from "./mods/gen9ssb/scripts";
 
 export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
@@ -6455,7 +6455,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (moveSlot.pp >= moveSlot.maxpp) return this.chainModify(1);
 			}
 			this.debug('Perseverance Buff');
-			return this.chainModify(1.2);
+			return this.chainModify(1.3);
 		},
 		onModifySpAPriority: 6,
 		onModifySpA(spa, pokemon) {
@@ -6463,7 +6463,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				if (moveSlot.pp >= moveSlot.maxpp) return this.chainModify(1);
 			}
 			this.debug('Perseverance Buff');
-			return this.chainModify(1.2);
+			return this.chainModify(1.3);
 		},
 		flags: {},
 		name: "Perseverance",
@@ -6477,6 +6477,124 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			const targetForme = pokemon.species.name === 'Morpeko' ? 'Morpeko-Hangry' : 'Morpeko';
 			pokemon.formeChange(targetForme);
 		},*/
+
+		onResidualOrder: -1,
+		onResidual(pokemon) {
+			if (pokemon.species.id !== 'pyra' && pokemon.species.id !== 'mythra') return;
+			const newMoves = [];
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(this.toID(moveSlot));
+				// Mythra -> Pyra Moves
+				if (move.id === 'thunderwave' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Will-O-Wisp");
+				} else if (move.id === 'disable' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Encore");
+				} else if (move.id === 'wildcharge' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Flare Blitz");
+				} else if (move.id === 'taunt' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Helping Hand");
+				} else if (move.id === 'nastyplot' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Calm Mind");
+				} else if (move.id === 'switcheroo' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Trick");
+				} else if (move.id === 'brilliantarrow' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Play Rough");
+				} else if (move.id === 'thunderbolt' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Flamethrower");
+				} else if (move.id === 'thunder' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Fire Blast");
+				} else if (move.id === 'lightscreen' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Reflect");
+				} else if (move.id === 'discharge' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Heat Wave");
+				} else if (move.id === 'dazzlinggleam' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Alluring Voice");
+				} else if (move.id === 'extremespeed' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Flame Charge");
+				} else if (move.id === 'faketears' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Charm");
+				} else if (move.id === 'shockwave' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Ember");
+				} else if (move.id === 'vacuumwave' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Focus Blast");
+				} else if (move.id === 'electroweb' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Life Dew");
+				} else if (move.id === 'flashcannon' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Power Gem");
+				} else if (move.id === 'magiccoat' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Wish");
+				} else if (move.id === 'acrobatics' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Air Slash");
+				} else if (move.id === 'foulplay' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Psyshock");
+				} else if (move.id === 'partingshot' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("Healing Wish");
+				} else if (move.id === 'suckerpunch' && (pokemon.species.id === 'pyra' || (pokemon.species.id === 'mythra' && pokemon.transformed))) {
+					newMoves.push("After You");
+				}
+				// Pyra -> Mythra Moves
+				else if (move.id === 'willowisp' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Thunder Wave");
+				} else if (move.id === 'encore' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Disable");
+				} else if (move.id === 'flareblitz' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Wild Charge");
+				} else if (move.id === 'helpinghand' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Taunt");
+				} else if (move.id === 'calmmind' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Nasty Plot");
+				} else if (move.id === 'trick' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Switcheroo");
+				} else if (move.id === 'playrough' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Brilliant Arrow");
+				} else if (move.id === 'flamethrower' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Thunderbolt");
+				} else if (move.id === 'fireblast' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Thunder");
+				} else if (move.id === 'reflect' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Light Screen");
+				} else if (move.id === 'heatwave' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Discharge");
+				} else if (move.id === 'alluringvoice' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Dazzling Gleam");
+				} else if (move.id === 'flamecharge' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Extreme Speed");
+				} else if (move.id === 'charm' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Fake Tears");
+				} else if (move.id === 'ember' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Shock Wave");
+				} else if (move.id === 'focusblast' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Vacuum Wave");
+				} else if (move.id === 'lifedew' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Electroweb");
+				} else if (move.id === 'powergem' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Flash Cannon");
+				} else if (move.id === 'wish' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Magic Coat");
+				} else if (move.id === 'airslash' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Acrobatics");
+				} else if (move.id === 'psyshock' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Foul Play");
+				} else if (move.id === 'healingwish' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Parting Shot");
+				} else if (move.id === 'afteryou' && (pokemon.species.id === 'mythra' || (pokemon.species.id === 'pyra' && pokemon.transformed))) {
+					newMoves.push("Sucker Punch");
+				} else {
+					newMoves.push(moveSlot.move);
+				}
+			}
+			const changedSet = changeMoves(this, pokemon, newMoves);
+			pokemon.moveSlots = changedSet;
+			// Necessary so pokemon doesn't get 8 moves
+			(pokemon as any).baseMoveSlots = changedSet;
+
+			/*changeMoves(this, pokemon, newMoves);
+			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${newMoves[0]}?`);
+			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${newMoves[1]}?`);
+			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${newMoves[2]}?`);
+			this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${newMoves[3]}?`);
+			*/
+		},
 		
 		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1 },
 		name: "Power of the Aegis",
@@ -6484,6 +6602,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 258,
 	},
 	reverttozero: {
+		/*
 		// Ability suppression implemented in sim/pokemon.ts:Pokemon#ignoringAbility
 		onSwitchInPriority: 2,
 		onSwitchIn(pokemon) {
@@ -6543,9 +6662,20 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				}
 			}
 		},
-		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1 },
+		*/
+		onFoeTryMove(foe, target, move) {
+			if (target === this.effectState.target) {
+				this.add('-ability', this.effectState.target, 'Revert to Zero');
+				foe.addVolatile('gastroacid');
+			}
+		},
+		onModifySecondaries(secondaries) {
+			this.debug('Revert to Zero prevent secondary');
+			return secondaries.filter(effect => !!effect.self);
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1, breakable: 1 },
 		name: "Revert To Zero",
-		rating: 4.5,
+		rating: 3.5,
 		num: 256,
 	},
 	rhythmicbeat: {

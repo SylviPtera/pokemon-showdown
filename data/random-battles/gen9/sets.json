@@ -1176,15 +1176,21 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Aegis Slash", "U-Turn", "Channelled Blitz", "Flare Blitz", "Swords Dance"],
+                "movepool": ["Aegis Slash", "U-Turn", "Flare Blitz", "Swords Dance", "Striking Sword"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Aegis Slash", "Flame Charge", "Swords Dance", "Striking Sword"],
                 "abilities": ["Power of the Aegis"],
                 "teraTypes": ["Flying"]
             },
             {
-                "role": "Fast Support",
-                "movepool": ["Aegis Slash", "U-Turn", "Will-O-Wisp", "Encore"],
+                "role": "Bulky Support",
+                "movepool": ["Aegis Slash", "U-Turn", "Will-O-Wisp", "Encore", "Wish", "Protect", "Energy Ball"],
                 "abilities": ["Power of the Aegis"],
-                "teraTypes": ["Flying"]
+                "teraTypes": ["Grass"]
             }
         ]
     },
@@ -1192,16 +1198,28 @@
         "level": 82,
         "sets": [
             {
+                "role": "Wallbreaker",
+                "movepool": ["Extreme Speed", "U-Turn", "Striking Sword", "Swords Dance", "Wild Charge"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Electric"]
+            },
+            {
                 "role": "Fast Attacker",
-                "movepool": ["Channelled Blitz", "U-Turn", "Aegis Slash", "Swords Dance", "Wild Charge"],
+                "movepool": ["Extreme Speed", "U-Turn", "Brilliant Arrow", "Aegis Slash", "Aura Sphere", "Destiny Bond"],
                 "abilities": ["Power of the Aegis"],
                 "teraTypes": ["Electric"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Aegis Slash", "U-Turn", "Thunder Wave", "Taunt"],
+                "movepool": ["Aegis Slash", "U-Turn", "Thunder Wave", "Disable", "Taunt", "Destiny Bond"],
                 "abilities": ["Power of the Aegis"],
-                "teraTypes": ["Water"]
+                "teraTypes": ["Flying"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Thunderbolt", "Energy Ball", "Dazzling Gleam", "Nasty Plot"],
+                "abilities": ["Power of the Aegis"],
+                "teraTypes": ["Grass"]
             }
         ]
     },
@@ -1919,7 +1937,7 @@
         ]
     },
     "ff": {
-        "level": 83,
+        "level": 85,
         "sets": [
             {
                 "role": "Fast Attacker",
