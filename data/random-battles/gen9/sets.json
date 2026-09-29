@@ -1885,7 +1885,7 @@
         "sets": [
             {
                 "role": "Fast Bulky Setup",
-                "movepool": ["Gold Experience", "Dazzling Gleam", "Calm Mind", "Focus Blast"],
+                "movepool": ["Gold Experience", "Dazzling Gleam", "Calm Mind", "Earth Power"],
                 "abilities": ["Grassy Surge"],
                 "teraTypes": ["Poison", "Fighting"]
             },
@@ -1894,6 +1894,23 @@
                 "movepool": ["Wood Hammer", "Grassy Glide", "Play Rough", "Close Combat", "U-Turn"],
                 "abilities": ["Grassy Surge"],
                 "teraTypes": ["Grass", "Fighting"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Gold Experience", "Dazzling Gleam", "Leech Seed", "Protect"],
+                "abilities": ["Grassy Surge"],
+                "teraTypes": ["Poison"]
+            }
+        ]
+    },
+    "giornomega": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Gold Experience", "Dazzling Gleam", "Calm Mind", "Earth Power", "U-Turn"],
+                "abilities": ["Grassy Surge"],
+                "teraTypes": ["Poison", "Fighting"]
             },
             {
                 "role": "Bulky Support",

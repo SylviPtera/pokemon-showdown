@@ -6145,9 +6145,11 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	flowersdream: {
 		onStart(pokemon) {
-			if (pokemon.side.totalFainted < 5) {
+			const numAllies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted);
+			const friends = numAllies.length - 1;
+			if (pokemon.side.totalFainted < 5 && friends !== 0) {
 				this.add('-activate', pokemon, "ability: Flower's Dream");
-				const friends = Math.max(5 - pokemon.side.totalFainted, 0);
+				//const friends = Math.max(5 - pokemon.side.totalFainted, 0);
 				this.add('-start', pokemon, `friends${friends}`, '[silent]');
 				this.effectState.friends = friends;
 			}
@@ -6664,7 +6666,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		*/
 		onFoeTryMove(foe, target, move) {
-			if (target === this.effectState.target) {
+			if (target === this.effectState.target && !target.volatiles['protect'] && move.category !== "Status") {
 				this.add('-ability', this.effectState.target, 'Revert to Zero');
 				foe.addVolatile('gastroacid');
 			}
