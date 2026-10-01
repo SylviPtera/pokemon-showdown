@@ -7636,7 +7636,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	dragonlunge: {
 		name: "Dragon Lunge",
 		desc: "Has a higher chance for a critical hit. If the user is Corrin-Dragon, this attack has 120BP, no increased critical hit ratio, is not a slicing attack, makes contact, and lowers the user's Defense and Special Defense by 1 stage.",
-		shortDesc: "If Corrin-Dragon, 120BP and -1 Defense and Special Defense for the user.",
+		shortDesc: "If Corrin-Dragon, 120BP and user: -1 Def & Sp. Def.",
 	},
 	infernalclimax: {
 		name: "Infernal Climax",
@@ -7645,7 +7645,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	jarona: {
 		name: "Jarona",
-		desc: "Here I come San Frandisco!!!!",
+		desc: "Jarona",
 	},
 	strikingsword: {
 		name: "Striking Sword",

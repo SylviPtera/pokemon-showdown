@@ -2284,6 +2284,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 
 	
+	dimensiond: {
+		name: "Dimension D",
+		shortDesc: "1.3x power in Trick Room, Magic Room, Wonder Room, or Gravity.",
+	},
 	flowersdream: {
 		name: "Flower's Dream",
 		desc: "Nothing is stronger than a flower's dream. JARONA",
@@ -2307,6 +2311,6 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	reverttozero: {
 		name: "Revert to Zero",
 		desc: "This Pokemon is immune to the secondary effects of attacks. Upon targetting this Pokemon with an attack, the attacker's ability is nullified before damage.",
-		shortDesc: "Immune to secondary effects. Nullifies abilities before taking damage.",
+		shortDesc: "Nullifies an attacker's ability before taking damage.",
 	},
 };

@@ -610,6 +610,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "DUU",
 	},
+	dimentiomega: {
+		tier: "OU",
+		doublesTier: "DOU",
+	},
 	fracktail: {
 		tier: "OU",
 		doublesTier: "(DUU)",

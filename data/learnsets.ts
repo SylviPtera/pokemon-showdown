@@ -4351,7 +4351,9 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			nightslash: ["9M"],
 			explosivescheme: ["9M"],
 			doomdesire: ["9M"],
+			heavyslam: ["9M"],
 			dazzlinggleam: ["9M"],
+			openheart: ["9M"],
 		},
 	},
 	fracktail: {

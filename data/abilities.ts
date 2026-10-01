@@ -6059,13 +6059,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyAtkPriority: 5,
 		onModifyAtk(spa, pokemon) {
 			if (this.field.getPseudoWeather('trickroom') || this.field.getPseudoWeather('magicroom') || this.field.getPseudoWeather('wonderroom') || this.field.getPseudoWeather('gravity')) {
-				return this.chainModify(1.5);
+				return this.chainModify(1.3);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, pokemon) {
 			if (this.field.getPseudoWeather('trickroom') || this.field.getPseudoWeather('magicroom') || this.field.getPseudoWeather('wonderroom') || this.field.getPseudoWeather('gravity')) {
-				return this.chainModify(1.5);
+				return this.chainModify(1.3);
 			}
 		},
 		flags: {},
