@@ -797,6 +797,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "DOU",
 	},
+	maleniamega: {
+		tier: "Uber",
+		doublesTier: "DOU",
+	},
 	maliketh: {
 		tier: "UU",
 		doublesTier: "DUU",

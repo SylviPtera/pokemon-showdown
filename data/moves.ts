@@ -22277,7 +22277,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	bloomstrike: {
 		num: 3011,
 		accuracy: 95,
-		basePower: 60,
+		basePower: 80,
 		category: "Physical",
 		name: "Bloom Strike",
 		pp: 10,
