@@ -2409,7 +2409,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		types: ["Grass", "Fairy"],
 		baseSpecies: "Giorno",
 		forme: "Mega",
-		baseStats: { hp: 75, atk: 105, def: 65, spa: 160, spd: 90, spe: 135 },
+		baseStats: { hp: 75, atk: 115, def: 65, spa: 155, spd: 90, spe: 130 },
 		abilities: { 0: "Revert to Zero" },
 		heightm: 1.7,
 		weightkg: 70,
