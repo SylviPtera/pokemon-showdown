@@ -1762,6 +1762,46 @@
             }
         ]
     },
+    "dimentio": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Fast Support",
+                "movepool": ["Psychic", "U-Turn", "Strength Sap", "Encore", "Recover"],
+                "abilities": ["Levitate"],
+                "teraTypes": ["Psychic"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Psychic", "Nasty Plot", "Shadow Ball", "Focus Blast"],
+                "abilities": ["Levitate"],
+                "teraTypes": ["Psychic"]
+            },
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Psychic", "Calm Mind", "Strength Sap", "Focus Blast"],
+                "abilities": ["Levitate"],
+                "teraTypes": ["Psychic"]
+            }
+        ]
+    },
+    "dimentiomega": {
+        "level": 82,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Psychic", "Dark Pulse", "Strength Sap", "Calm Mind"],
+                "abilities": ["Levitate"],
+                "teraTypes": ["Psychic"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Psychic", "Dark Pulse", "Trick Room", "Focus Blast"],
+                "abilities": ["Levitate"],
+                "teraTypes": ["Psychic"]
+            }
+        ]
+    },
     "elderguardian": {
         "level": 80,
         "sets": [
@@ -1908,7 +1948,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Gold Experience", "Dazzling Gleam", "Calm Mind", "Earth Power", "U-Turn"],
+                "movepool": ["Gold Experience", "Dazzling Gleam", "Calm Mind", "Earth Power"],
                 "abilities": ["Grassy Surge"],
                 "teraTypes": ["Poison", "Fighting"]
             },

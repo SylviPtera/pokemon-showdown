@@ -22823,6 +22823,35 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		zMove: { effect: 'clearnegativeboost' },
 		contestType: "Beautiful",
 	},
+	idletransfiguration: {
+		num: 753,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Idle Transfiguration",
+		pp: 15,
+		priority: 0,
+		flags: { protect: 1, metronome: 1 },
+		volatileStatus: 'idletransfiguration',
+		condition: {
+			noCopy: true,
+			onStart(pokemon, source) {
+				this.add('-start', pokemon, 'Idle Transfiguration');
+			},
+			onResidualOrder: 13,
+			onResidual(pokemon) {
+				const source = this.effectState.source;
+				this.damage(pokemon.baseMaxhp / 8);
+				this.boost({ atk: -1, spa: -1 }, pokemon, source, this.dex.getActiveMove('idletransfiguration'));
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Idle Transfiguration');
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+	},
 	infernalclimax: {
 		num: 844,
 		accuracy: 100,

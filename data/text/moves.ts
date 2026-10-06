@@ -7638,6 +7638,14 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a higher chance for a critical hit. If the user is Corrin-Dragon, this attack has 120BP, no increased critical hit ratio, is not a slicing attack, makes contact, and lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "If Corrin-Dragon, 120BP and user: -1 Def & Sp. Def.",
 	},
+	idletransfiguration: {
+		name: "Idle Transfiguration",
+		desc: "Causes damage to the target equal to 1/8 of its maximum HP rounded down at the end of each turn during effect. Additionally, the affected Pokemon will have its Attack and Special Attack lowered by one stage at the end of each turn. This effect ends when the target is no longer active.",
+		shortDesc: "Deals 1/8 max HP and -1 Atk. and SpA. each turn.",
+
+		start: "  [POKEMON] is being transfigured!",
+		damage: "  [POKEMON] is hurt by Idle Transfiguration!",
+	},
 	infernalclimax: {
 		name: "Infernal Climax",
 		desc: "Power is equal to 25+(X*5), where X is the user's total stat stage changes that are greater than 0. This attack hits 3 times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits",
