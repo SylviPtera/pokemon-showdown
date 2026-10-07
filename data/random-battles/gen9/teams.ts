@@ -600,6 +600,7 @@ export class RandomTeams {
 			['alluringvoice', 'dazzlinggleam'],
 			['acrobatics', 'whirlingtornado'],
 			['dualwingbeat', 'bravebird'],
+			['uturn', 'partingshot'],
 
 			// These status moves are redundant with each other
 			['taunt', 'disable'],
@@ -896,6 +897,11 @@ export class RandomTeams {
 		}
 		if (movePool.includes('omega') && species.id === 'green' && role === 'Doubles Support') {
 			counter = this.addMove('omega', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		
+		if (movePool.includes('aurasphere') && species.id === 'mahito' && role === 'Setup Sweeper') {
+			counter = this.addMove('aurasphere', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
 

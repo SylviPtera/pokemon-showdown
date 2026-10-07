@@ -22276,7 +22276,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	bloomstrike: {
 		num: 3011,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 80,
 		category: "Physical",
 		name: "Bloom Strike",
@@ -22285,7 +22285,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		flags: {protect: 1, mirror: 1, metronome: 1, slicing: 1},
 		secondary: {
 			chance: 100,
-			status: 'tox',
+			status: 'psn',
 		},
 		target: "normal",
 		type: "Poison",

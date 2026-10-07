@@ -2060,6 +2060,29 @@
             }
         ]
     },
+    "mahito": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Shadow Ball", "Aura Sphere", "Nasty Plot", "Encore", "Substitute", "Destiny Bond"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Fighting"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Shadow Ball", "Focus Blast", "Dark Pulse", "Encore", "Destiny Bond", "Parting Shot", "U-Turn"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Fighting"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Shadow Ball", "Toxic", "Encore", "Destiny Bond", "Parting Shot", "U-Turn"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Fairy"]
+            }
+        ]
+    },
     "meruem": {
         "level": 76,
         "sets": [

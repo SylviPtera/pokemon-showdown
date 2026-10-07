@@ -787,8 +787,12 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	mahito: {
 		tier: "RU",
-		doublesTier: "(DUU)",
+		doublesTier: "DUU",
 	},
+	// mahitomega: {
+	// 	tier: "RU",
+	// 	doublesTier: "(DUU)",
+	// },
 	meruem: {
 		tier: "Uber",
 		doublesTier: "DUber",
