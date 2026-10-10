@@ -22952,6 +22952,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			move.secondaries = [];
 
 			if (move.type === "Normal") {
+				this.attrLastMove('[anim] Inhale Normal');
 				move.basePower = 50;
 				move.secondaries.push({
 					self: {
@@ -22963,11 +22964,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Fire") {
+				this.attrLastMove('[anim] Inhale Fire');
 				move.secondaries.push({
 					chance: 100,
 					status: 'brn',
 				});
 			} else if (move.type === "Ground") {
+				this.attrLastMove('[anim] Inhale Ground');
 				move.secondaries.push({
 					chance: 100,
 					self: {
@@ -22977,11 +22980,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Rock") {
+				this.attrLastMove('[anim] Inhale Rock');
 				move.secondaries.push({
 					chance: 30,
 					volatileStatus: 'flinch',
 				});
 			} else if (move.type === "Fighting") {
+				this.attrLastMove('[anim] Inhale Fighting');
 				move.secondaries.push({
 					chance: 100,
 					self: {
@@ -22991,15 +22996,18 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Electric") {
+				this.attrLastMove('[anim] Inhale Electric');
 				move.secondaries.push({
 					chance: 100,
 					status: 'par',
 				});
 			} else if (move.type === "Grass") {
+				this.attrLastMove('[anim] Inhale Grass');
 				move.secondaries.push({
 					volatileStatus: 'leechseed',
 				});
 			} else if (move.type === "Bug") {
+				this.attrLastMove('[anim] Inhale Bug');
 				move.secondaries.push({
 					chance: 100,
 					boosts: {
@@ -23007,6 +23015,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Water") {
+				this.attrLastMove('[anim] Inhale Water');
 				move.secondaries.push({
 					chance: 100,
 					boosts: {
@@ -23014,6 +23023,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Ice") {
+				this.attrLastMove('[anim] Inhale Ice');
 				move.secondaries.push({
 					weather: 'snowscape',
 					
@@ -23021,6 +23031,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					//status: 'frz',
 				});
 			} else if (move.type === "Psychic") {
+				this.attrLastMove('[anim] Inhale Psychic');
 				move.secondaries.push({
 					chance: 100,
 					self: {
@@ -23030,11 +23041,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Poison") {
+				this.attrLastMove('[anim] Inhale Poison');
 				move.secondaries.push({
 					chance: 100,
 					status: 'psn',
 				});
 			} else if (move.type === "Ghost") {
+				this.attrLastMove('[anim] Inhale Ghost');
 				move.secondaries.push({
 					chance: 100,
 					boosts: {
@@ -23042,6 +23055,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Flying") {
+				this.attrLastMove('[anim] Inhale Flying');
 				move.secondaries.push({
 					chance: 100,
 					self: {
@@ -23051,6 +23065,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Dark") {
+				this.attrLastMove('[anim] Inhale Dark');
 				move.secondaries.push({
 					chance: 100,
 					boosts: {
@@ -23058,6 +23073,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Steel") {
+				this.attrLastMove('[anim] Inhale Steel');
 				move.secondaries.push({
 					chance: 100,
 					self: {
@@ -23067,6 +23083,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Dragon") {
+				this.attrLastMove('[anim] Inhale Dragon');
 				move.secondaries.push({
 					chance: 100,
 					boosts: {
@@ -23074,6 +23091,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 					},
 				});
 			} else if (move.type === "Fairy") {
+				this.attrLastMove('[anim] Inhale Fairy');
 				move.secondaries.push({
 					self: {
 						sideCondition: 'safeguard'
@@ -23081,7 +23099,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				});
 			}
 		},
-		drain: [drainvar, 2],
 		secondary: null,
 		target: "normal",
 		type: "Normal",
