@@ -105,7 +105,7 @@ const SPEED_CONTROL = [
 // Moves that shouldn't be the only STAB moves:
 const NO_STAB = [
 	'acidspray', 'accelerock', 'aquajet', 'bounce', 'breakingswipe', 'bulletpunch', 'chatter', 'chloroblast', 'clearsmog', 'covet',
-	'dragontail', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
+	'dragontail', 'drainingkiss', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
 	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'infestation', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit',
 	'quickattack', 'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'trailblaze',
 	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit', 'snowgrave'
@@ -672,6 +672,7 @@ export class RandomTeams {
 		if (species.id === 'mythra') this.incompatibleMoves(moves, movePool, 'disable', 'taunt');
 		// Pyra
 		if (species.id === 'pyra') this.incompatibleMoves(moves, movePool, 'flareblitz', 'flamecharge');
+		if (species.id === 'sonicmega') this.incompatibleMoves(moves, movePool, 'ironwill', 'doubleedge');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.

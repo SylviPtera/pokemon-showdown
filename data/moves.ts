@@ -22850,7 +22850,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Dark",
+		type: "Ghost",
 	},
 	infernalclimax: {
 		num: 844,
@@ -22940,6 +22940,12 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		//photon geyser
 		onModifyMove(move, pokemon) {
 			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+
+			//ghost hunting
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true && !pokemon.volatiles['copying']) {
+				move.ignoreImmunity['Normal'] = true;
+			}
 
 			//secret power
 			if (move.type === "Normal" && !pokemon.volatiles['copying']) return;
@@ -23646,7 +23652,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	sexpistols: {
 		num: 331,
-		accuracy: 90,
+		accuracy: 85,
 		basePower: 15,
 		category: "Physical",
 		name: "Sex Pistols",

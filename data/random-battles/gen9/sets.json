@@ -533,7 +533,7 @@
             },
             {
                 "role": "Bulky Support",
-                "movepool": ["PK Love", "Reflect", "Light Screen", "Thunder Wave", "Recover", "Will-O-Wisp"],
+                "movepool": ["PK Love", "Focus Blast", "Recover", "Will-O-Wisp"],
                 "abilities": ["Psychic Surge"],
                 "teraTypes": ["Fairy"]
             }
@@ -555,7 +555,13 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Extreme Speed", "Wild Charge", "Rapid Spin", "U-Turn", "Double-Edge"],
+                "movepool": ["Wild Charge", "High Horsepower", "U-Turn", "Double-Edge", "Iron Will"],
+                "abilities": ["Quick Feet"],
+                "teraTypes": ["Normal"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Iron Will", "Wild Charge", "Rapid Spin", "U-Turn", "Double-Edge", "Spikes"],
                 "abilities": ["Quick Feet"],
                 "teraTypes": ["Normal"]
             }
@@ -657,7 +663,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Stealth Rock", "Knock Off", "Toxic", "Drain Punch", "Morning Sun", "Thunder Wave", "Reflect", "Light Screen"],
+                "movepool": ["Stealth Rock", "Knock Off", "Toxic", "Drain Punch", "Morning Sun", "Thunder Wave"],
                 "abilities": ["Perfect Shape"],
                 "teraTypes": ["Fairy"]
             },
@@ -715,11 +721,11 @@
         ]
     },
     "palutena": {
-        "level": 80,
+        "level": 78,
         "sets": [
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Moonblast", "Calm Mind", "Taunt", "Roost", "Substitute"],
+                "movepool": ["Dazzling Gleam", "Calm Mind", "Taunt", "Draining Kiss", "Substitute"],
                 "abilities": ["Fairy Aura"],
                 "teraTypes": ["Fairy", "Poison"]
             }
@@ -811,7 +817,7 @@
         ]
     },
     "wendy": {
-        "level": 88,
+        "level": 87,
         "sets": [
             {
                 "role": "Setup Sweeper",
@@ -1786,7 +1792,7 @@
         ]
     },
     "dimentiomega": {
-        "level": 82,
+        "level": 83,
         "sets": [
             {
                 "role": "Bulky Setup",
@@ -1799,6 +1805,29 @@
                 "movepool": ["Psychic", "Dark Pulse", "Trick Room", "Focus Blast"],
                 "abilities": ["Levitate"],
                 "teraTypes": ["Psychic"]
+            }
+        ]
+    },
+    "peteypiranha": {
+        "level": 82,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Power Whip", "Gunk Shot", "Earthquake", "Knock Off", "Fire Blast"],
+                "abilities": ["Corrosion"],
+                "teraTypes": ["Fire", "Grass"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Power Whip", "Poison Jab", "Belly Drum", "Earthquake"],
+                "abilities": ["Gluttony"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Sludge Bomb", "Leech Seed", "Defog", "Synthesis", "Dragon Tail", "Toxic", "Toxic Spikes", "Power Whip"],
+                "abilities": ["Corrosion"],
+                "teraTypes": ["Fire"]
             }
         ]
     },
@@ -1965,7 +1994,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Sex Pistols", "Rock Blast", "U-Turn", "Double-Edge", "Encore"],
+                "movepool": ["Sex Pistols", "Rock Blast", "U-Turn", "Iron Will", "Encore"],
                 "abilities": ["Artillery"],
                 "teraTypes": ["Steel", "Ghost"]
             }
@@ -2096,6 +2125,34 @@
                 "role": "Fast Bulky Setup",
                 "movepool": ["Extreme Speed", "Fell Stinger", "Power Trip", "Heal Order"],
                 "abilities": ["Stamina"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "malenia": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Bloom Strike", "Swords Dance", "Close Combat", "Throat Chop"],
+                "abilities": ["Poison Touch"],
+                "teraTypes": ["Dark"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Bloom Strike", "Close Combat", "Throat Chop", "U-Turn"],
+                "abilities": ["Poison Touch"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "maleniamega": {
+        "level": 78,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Bloom Strike", "Swords Dance", "Close Combat", "Play Rough", "U-Turn"],
+                "abilities": ["Poison Touch"],
                 "teraTypes": ["Dark"]
             }
         ]
