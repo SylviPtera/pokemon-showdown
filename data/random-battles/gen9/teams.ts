@@ -673,6 +673,7 @@ export class RandomTeams {
 		// Pyra
 		if (species.id === 'pyra') this.incompatibleMoves(moves, movePool, 'flareblitz', 'flamecharge');
 		if (species.id === 'sonicmega') this.incompatibleMoves(moves, movePool, 'ironwill', 'doubleedge');
+		if (species.id === 'mahito') this.incompatibleMoves(moves, movePool, 'idletransfiguration', 'toxic');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.

@@ -783,16 +783,20 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	toji: {
 		tier: "UU",
-		doublesTier: "(DUU)",
+		doublesTier: "DOU",
 	},
 	mahito: {
 		tier: "RU",
 		doublesTier: "DUU",
 	},
-	// mahitomega: {
-	// 	tier: "RU",
-	// 	doublesTier: "(DUU)",
-	// },
+	mahitomega: {
+		tier: "RU",
+		doublesTier: "DUU",
+	},
+	sukuna: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	meruem: {
 		tier: "Uber",
 		doublesTier: "DUber",

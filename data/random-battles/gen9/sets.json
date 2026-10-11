@@ -1768,6 +1768,23 @@
             }
         ]
     },
+    "bowserdry": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Blue Flare", "Spikes", "Rapid Spin", "Shadow Ball", "Toxic", "Stealth Rock", "Dragon Tail"],
+                "abilities": ["Vengeful Spirit"],
+                "teraTypes": ["Water"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Blue Flare", "Shadow Ball", "Earth Power", "Nasty Plot"],
+                "abilities": ["Vengeful Spirit"],
+                "teraTypes": ["Water", "Fire"]
+            }
+        ]
+    },
     "dimentio": {
         "level": 84,
         "sets": [
@@ -2100,15 +2117,49 @@
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Shadow Ball", "Focus Blast", "Encore", "Destiny Bond", "Parting Shot", "U-Turn"],
+                "movepool": ["Shadow Ball", "Focus Blast", "Encore", "Destiny Bond", "Parting Shot"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fighting"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Shadow Ball", "Toxic", "Encore", "Pain Split", "Parting Shot", "U-Turn"],
+                "movepool": ["Shadow Ball", "Toxic", "Encore", "Pain Split", "Parting Shot", "Idle Transfiguration"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fairy"]
+            }
+        ]
+    },
+    "mahitomega": {
+        "level": 82,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Poltergeist", "Shadow Sneak", "U-Turn", "Encore", "Will-O-Wisp"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Poltergeist", "Shadow Sneak", "Swords Dance", "Hammer Arm"],
+                "abilities": ["Regenerator"],
+                "teraTypes": ["Ghost"]
+            }
+        ]
+    },
+    "sukuna": {
+        "level": 75,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Night Slash", "Flare Blitz", "U-Turn", "Spikes", "Leaf Blade", "Sucker Punch"],
+                "abilities": ["Sharpness"],
+                "teraTypes": ["Dark"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Night Slash", "Flare Blitz", "Swords Dance", "Leaf Blade", "Sucker Punch"],
+                "abilities": ["Sharpness"],
+                "teraTypes": ["Dark", "Grass"]
             }
         ]
     },
