@@ -8212,6 +8212,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 669,
 		gen: 6,
 	},
+	mahitonite: {
+		name: "Mahitonite",
+		spritenum: 577,
+		megaStone: { "Mahito": "Mahito-Mega" },
+		itemUser: ["Mahtio"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 672,
+		gen: 6,
+	},
 	malenite: {
 		name: "Malenite",
 		spritenum: 614,

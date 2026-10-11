@@ -887,6 +887,11 @@ export class RandomTeams {
 			counter = this.addMove('magnetstorm', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
+		
+		if (movePool.includes('flashcannon') && species.id === 'rob') {
+			counter = this.addMove('flashcannon', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
 
 		// Enforce Omega
 		if (movePool.includes('omega') && species.id === 'aqua' && role !== 'Fast Support') {

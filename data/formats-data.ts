@@ -606,6 +606,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "OU",
 		doublesTier: "(DUU)",
 	},
+	peteypiranha: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	dimentio: {
 		tier: "UU",
 		doublesTier: "DUU",
@@ -814,7 +818,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DOU",
 	},
 	malenia: {
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "DOU",
 	},
 	maleniamega: {

@@ -425,7 +425,7 @@
         "sets": [
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Electrowhip", "High Jump Kick", "Swords Dance", "Triple Axel", "Acrobatics", "Substitute"],
+                "movepool": ["Electrowhip", "Channelled Blitz", "High Jump Kick", "Swords Dance", "Triple Axel", "Acrobatics", "Substitute"],
                 "abilities": ["Unburden"],
                 "teraTypes": ["Flying", "Electric"]
             },
@@ -2181,7 +2181,7 @@
         ]
     },
     "malenia": {
-        "level": 80,
+        "level": 78,
         "sets": [
             {
                 "role": "Setup Sweeper",
@@ -2198,7 +2198,7 @@
         ]
     },
     "maleniamega": {
-        "level": 78,
+        "level": 76,
         "sets": [
             {
                 "role": "Setup Sweeper",

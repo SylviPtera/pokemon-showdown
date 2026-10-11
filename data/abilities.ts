@@ -6666,7 +6666,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		},
 		*/
 		onFoeTryMove(foe, target, move) {
-			if (target === this.effectState.target && !target.volatiles['protect'] && move.category !== "Status") {
+			if (target === this.effectState.target && !target.volatiles['protect'] && move.category !== "Status" && !target.volatiles['gastroacid']) {
 				this.add('-ability', this.effectState.target, 'Revert to Zero');
 				foe.addVolatile('gastroacid');
 			}
