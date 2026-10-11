@@ -22883,6 +22883,88 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1},
+		onPrepareHit(target, source, move) {
+			if (!source.isAlly(target)) {
+				if (source.volatiles['copying']) {
+					switch (source.getTypes()[0]) {						
+						case "Fire":
+							this.attrLastMove('[anim] Inhale Fire');
+							break;
+						
+						case "Ground":
+							this.attrLastMove('[anim] Inhale Ground');
+							break;
+						
+						case "Rock":
+							this.attrLastMove('[anim] Inhale Rock');
+							break;
+						
+						case "Fighting":
+							this.attrLastMove('[anim] Inhale Fighting');
+							break;
+						
+						case "Electric":
+							this.attrLastMove('[anim] Inhale Electric');
+							break;
+						
+						case "Grass":
+							this.attrLastMove('[anim] Inhale Grass');
+							break;
+						
+						case "Bug":
+							this.attrLastMove('[anim] Inhale Bug');
+							break;
+						
+						case "Water":
+							this.attrLastMove('[anim] Inhale Water');
+							break;
+						
+						case "Ice":
+							this.attrLastMove('[anim] Inhale Ice');
+							break;
+						
+						case "Psychic":
+							this.attrLastMove('[anim] Inhale Psychic');
+							break;
+						
+						case "Poison":
+							this.attrLastMove('[anim] Inhale Poison');
+							break;
+						
+						case "Ghost":
+							this.attrLastMove('[anim] Inhale Ghost');
+							break;
+							
+						case "Normal":
+							this.attrLastMove('[anim] Inhale Normal');
+							break;
+						
+						case "Flying":
+							this.attrLastMove('[anim] Inhale Flying');
+							break;
+						
+						case "Dark":
+							this.attrLastMove('[anim] Inhale Dark');
+							break;
+						
+						case "Steel":
+							this.attrLastMove('[anim] Inhale Normal');
+							break;
+						
+						case "Dragon":
+							this.attrLastMove('[anim] Inhale Dragon');
+							break;
+						
+						case "Fairy":
+							this.attrLastMove('[anim] Inhale Fairy');
+							break;
+						
+						default:
+							break;
+					}
+				}
+			}
+		},
 		/*onTryHit(target, source) {
 			if (target.ability === source.ability) return false;
 			if (target.getAbility().flags['failroleplay'] || source.getAbility().flags['cantsuppress']) return false;

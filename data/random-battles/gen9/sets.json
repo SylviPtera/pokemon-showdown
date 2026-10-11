@@ -2100,13 +2100,13 @@
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Shadow Ball", "Focus Blast", "Dark Pulse", "Encore", "Destiny Bond", "Parting Shot", "U-Turn"],
+                "movepool": ["Shadow Ball", "Focus Blast", "Encore", "Destiny Bond", "Parting Shot", "U-Turn"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fighting"]
             },
             {
                 "role": "Fast Support",
-                "movepool": ["Shadow Ball", "Toxic", "Encore", "Destiny Bond", "Parting Shot", "U-Turn"],
+                "movepool": ["Shadow Ball", "Toxic", "Encore", "Pain Split", "Parting Shot", "U-Turn"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fairy"]
             }
