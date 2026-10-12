@@ -6111,20 +6111,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	fairfight: {
 		onStart(pokemon) { //dark aura
 			if (this.suppressingAbility(pokemon)) return;
-			this.add('-ability', pokemon, 'Fair Fight');
 			this.field.addPseudoWeather('fairfight');
 		},
-		condition: { //ion deluge
+		condition: {
 			duration: 0,
-			onStart(pokemon) {
-				this.add('-start', pokemon, 'Embargo');
-				this.singleEvent('End', pokemon.getItem(), pokemon.itemState, pokemon);
+			onFieldStart(target, source) {
+				this.add('-ability', source, 'Fair Fight');
+				for (const mon of this.getAllActive()) {
+					this.singleEvent('End', mon.getItem(), mon.itemState, mon);
+				}
 			},
+			// onFieldRestart(target, source) {
+			// 	this.field.removePseudoWeather('fairfight');
+			// },
 			// Item suppression implemented in Pokemon.ignoringItem() within sim/pokemon.js
-			onResidualOrder: 21,
-			onEnd(pokemon) {
-				this.add('-end', pokemon, 'Embargo');
-			},
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 6,
 		},
 		onEnd(pokemon) { //primordial sea
 			for (const target of this.getAllActive()) {
