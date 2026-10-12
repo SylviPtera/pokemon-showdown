@@ -516,7 +516,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "LC",
 	},
 	werewerewire: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	virovirokun: {
@@ -567,6 +567,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	hammerofjustice: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	aqua: {
 		tier: "UU",
 		doublesTier: "DOU",
@@ -607,6 +611,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 	},
 	peteypiranha: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	lavabubble: {
+		tier: "LC",
+	},
+	firesnake: {
+		tier: "NFE",
+	},
+	flamechomp: {
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
@@ -7504,6 +7518,21 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "Uber",
 	},
 	ogerponcornerstonetera: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "UUBL",
+	},
+	palafinhero: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "UUBL",
+	},
+	tatsugiristretchy: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "UUBL",
+	},
+	tatsugiridroopy: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 		natDexTier: "UUBL",

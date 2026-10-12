@@ -893,6 +893,11 @@ export class RandomTeams {
 				movePool, teraType, role);
 		}
 
+		if (movePool.includes('weatherball') && species.id === 'lanino') {
+			counter = this.addMove('weatherball', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+
 		// Enforce Omega
 		if (movePool.includes('omega') && species.id === 'aqua' && role !== 'Fast Support') {
 			counter = this.addMove('omega', moves, types, abilities, teamDetails, species, isLead, isDoubles,
