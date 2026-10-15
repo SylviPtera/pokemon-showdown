@@ -1961,6 +1961,34 @@
             }
         ]
     },
+    "entbrat": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Wood Hammer", "Earthquake", "Superpower", "Heavy Slam", "Stone Edge"],
+                "abilities": ["Overgrow"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Wood Hammer", "Earthquake", "Toxic", "Synthesis", "Leech Seed"],
+                "abilities": ["Overgrow"],
+                "teraTypes": ["Poison"]
+            }
+        ]
+    },
+    "fwog": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Earthquake", "Flip Turn", "Stealth Rock", "Spikes", "Liquidation", "Toxic"],
+                "abilities": ["Dry Skin"],
+                "teraTypes": ["Poison"]
+            }
+        ]
+    },
     "gloptic": {
         "level": 80,
         "sets": [
@@ -1975,6 +2003,46 @@
                 "movepool": ["Sludge Bomb", "Psyshock", "Calm Mind", "Recover"],
                 "abilities": ["Regenerator"],
                 "teraTypes": ["Fairy", "Flying"]
+            }
+        ]
+    },
+    "poewk": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Spikes", "Stealth Rock", "Pain Split", "Knock Off", "Sludge Bomb", "Toxic Spikes", "Thunder Wave"],
+                "abilities": ["Tinted Lens"],
+                "teraTypes": ["Flying"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Dark Pulse", "Sludge Bomb", "Earth Power", "Switcheroo"],
+                "abilities": ["Tinted Lens"],
+                "teraTypes": ["Poison"]
+            }
+        ]
+    },
+    "pixolotl": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Thunderbolt", "Draco Meteor", "Overheat", "Encore", "Substitute"],
+                "abilities": ["Contrary"],
+                "teraTypes": ["Dragon", "Fire"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Draco Meteor", "Encore", "Shed Tail", "Taunt", "Discharge"],
+                "abilities": ["Prankster", "Contrary"],
+                "teraTypes": ["Dragon", "Steel"]
+            },
+            {
+                "role": "Wallbreaker",
+                "movepool": ["Draco Meteor", "Thunderbolt", "Overheat", "Volt Switch"],
+                "abilities": ["Beast Boost", "Contrary"],
+                "teraTypes": ["Dragon"]
             }
         ]
     },

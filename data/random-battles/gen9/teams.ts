@@ -916,6 +916,11 @@ export class RandomTeams {
 			counter = this.addMove('aurasphere', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
+		
+		if (movePool.includes('shedtail') && species.id === 'pixolotl' && role === 'Fast Support') {
+			counter = this.addMove('shedtail', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
 
 		// Enforce moves in doubles
 		if (isDoubles) {

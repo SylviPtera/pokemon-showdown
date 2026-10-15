@@ -671,8 +671,15 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	potbelly: {
+		tier: "LC",
+	},
 	entbrat: {
-		tier: "UU",
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	fwog: {
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	sneyser: {
