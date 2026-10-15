@@ -1910,7 +1910,7 @@
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Fire Blast", "Overheat", "Dark Pulse", "Energy Ball", "Sludge Bomb"],
+                "movepool": ["Flamethrower", "Overheat", "Dark Pulse", "Energy Ball", "Sludge Bomb"],
                 "abilities": ["Levitate"],
                 "teraTypes": ["Fire", "Poison"]
             }

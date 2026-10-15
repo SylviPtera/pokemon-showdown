@@ -600,8 +600,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUU",
 	},
 	flowerymega: {
-		tier: "Uber",
-		doublesTier: "DUber",
+		tier: "OU",
+		doublesTier: "DOU",
 	},
 	blooper: {
 		tier: "LC",
@@ -820,8 +820,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUber",
 	},
 	vaalhazak: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
+	},
+	goremagala: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	goremagalamega: {
+		tier: "Uber",
+		doublesTier: "(DUU)",
 	},
 	namielle: {
 		tier: "UU",
@@ -840,36 +848,40 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DOU",
 	},
 	maliketh: {
-		tier: "UU",
-		doublesTier: "DUU",
+		tier: "RU",
+		doublesTier: "(DUU)",
 	},
 	messmer: {
-		tier: "UU",
-		doublesTier: "DUU",
+		tier: "RU",
+		doublesTier: "(DUU)",
 	},
 	caligo: {
-		tier: "UU",
-		doublesTier: "DUU",
+		tier: "RU",
+		doublesTier: "(DUU)",
 	},
 	godfrey: {
 		tier: "UU",
-		doublesTier: "DUU",
+		doublesTier: "(DUU)",
 	},
 	azura: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	tailung: {
-		tier: "UU",
-		doublesTier: "DUU",
+		tier: "RU",
+		doublesTier: "(DUU)",
 	},
 	lordshen: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DOU",
 	},
 	rell: {
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
+	},
+	satoruumezawa: {
+		tier: "RU",
+		doublesTier: "(DUU)",
 	},
 	bulbasaur: {
 		isNonstandard: "Past",
