@@ -1292,7 +1292,7 @@ export class RandomTeams {
 		if (species.id === 'palkia' && counter.get('Status')) return 'Lustrous Orb';
 		if (
 			moves.has('courtchange') ||
-			!isDoubles && (species.id === 'luvdisc' || (species.id === 'terapagos' && !moves.has('rest')))
+			!isDoubles && (species.id === 'luvdisc' || (species.id === 'asriel' && !moves.has('meteorbeam')) || (species.id === 'terapagos' && !moves.has('rest')))
 		) return 'Heavy-Duty Boots';
 		if (
 			(['Cheek Pouch', 'Cud Chew', 'Harvest', 'Ripen'].some(m => ability === m) ||
@@ -1525,7 +1525,7 @@ export class RandomTeams {
 		}
 		if (role === 'Tera Blast user' && DEFENSIVE_TERA_BLAST_USERS.includes(species.id)) return 'Leftovers';
 		if (
-			lifeOrbReqs && ['Fast Attacker', 'Setup Sweeper', 'Tera Blast user', 'Wallbreaker'].some(m => role === (m))
+			lifeOrbReqs && ability !== 'Multiscale' && ['Fast Attacker', 'Setup Sweeper', 'Tera Blast user', 'Wallbreaker'].some(m => role === (m))
 		) return 'Life Orb';
 		return 'Leftovers';
 	}

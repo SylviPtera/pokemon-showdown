@@ -890,6 +890,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
+	sarahkerrigan: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	sarahkerriganmega: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	bulbasaur: {
 		isNonstandard: "Past",
 		tier: "Illegal",

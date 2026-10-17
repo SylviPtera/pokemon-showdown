@@ -704,6 +704,48 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 			this.add('-weather', 'none');
 		},
 	},
+	deepnight: {
+		name: 'deepnight',
+		effectType: 'Weather',
+		duration: 5,
+		durationCallback(source, effect) {
+			if (source?.hasItem('crescentrock') && !this.field.getPseudoWeather('madeinheaven')) {
+				return 8;
+			} else if (source?.hasItem('crescentrock') && this.field.getPseudoWeather('madeinheaven')) {
+				return 4;
+			} else if (this.field.getPseudoWeather('madeinheaven')) {
+				return 2;
+			}
+			return 5;
+		},
+		onWeatherModifyDamage(damage, attacker, defender, move) {
+			if (defender.hasItem('utilityumbrella')) return;
+			if (move.type === 'Dark') {
+				this.debug('Deep Night dark boost');
+				return this.chainModify(1.5);
+			}
+			if (move.type === 'Fairy') {
+				this.debug('Deep Night fairy suppress');
+				return this.chainModify(0.5);
+			}
+		},
+		onFieldStart(battle, source, effect) {
+			if (effect?.effectType === 'Ability') {
+				if (this.gen <= 5) this.effectState.duration = 0;
+				this.add('-weather', 'DeepNight', '[from] ability: ' + effect.name, `[of] ${source}`);
+			} else {
+				this.add('-weather', 'DeepNight');
+			}
+		},
+		onFieldResidualOrder: 1,
+		onFieldResidual() {
+			this.add('-weather', 'DeepNight', '[upkeep]');
+			this.eachEvent('Weather');
+		},
+		onFieldEnd() {
+			this.add('-weather', 'none');
+		},
+	},
 	sandstorm: {
 		name: 'Sandstorm',
 		effectType: 'Weather',

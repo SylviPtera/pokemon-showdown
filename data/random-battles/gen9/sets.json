@@ -1702,7 +1702,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Close Combat", "Iron Head", "U-Turn", "Knock Off", "Rapid Spin"],
-                "abilities": ["Justified", "Fair Fight"],
+                "abilities": ["Justified"],
                 "teraTypes": ["Fighting", "Flying"]
             }
         ]
@@ -1786,7 +1786,7 @@
         ]
     },
     "flowery": {
-        "level": 81,
+        "level": 82,
         "sets": [
             {
                 "role": "Wallbreaker",
@@ -1809,7 +1809,7 @@
         ]
     },
     "flowerymega": {
-        "level": 76,
+        "level": 80,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -2203,6 +2203,34 @@
             }
         ]
     },
+    "sarahkerrigan": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Shadow Claw", "Zen Headbutt", "Swords Dance", "Leech Life", "Encore", "Shadow Sneak"],
+                "abilities": ["Illusion"],
+                "teraTypes": ["Dark"]
+            }
+        ]
+    },
+    "sarahkerriganmega": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Zen Headbutt", "Leech Life", "Swords Dance", "Encore"],
+                "abilities": ["Illusion"],
+                "teraTypes": ["Psychic"]
+            },
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Psychic", "Bug Buzz", "Calm Mind", "Heal Order"],
+                "abilities": ["Illusion"],
+                "teraTypes": ["Psychic"]
+            }
+        ]
+    },
     "valstrax": {
         "level": 76,
         "sets": [
@@ -2228,6 +2256,17 @@
                 "movepool": ["Close Combat", "High Horsepower", "Stone Axe", "Iron Head"],
                 "abilities": ["Tough Claws"],
                 "teraTypes": ["Fighting"]
+            }
+        ]
+    },
+    "vaalhazak": {
+        "level": 86,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Dragon Pulse", "Sludge Bomb", "Toxic", "Effluvium", "Dragon Tail", "Toxic Spikes"],
+                "abilities": ["Poison Point"],
+                "teraTypes": ["Steel"]
             }
         ]
     },

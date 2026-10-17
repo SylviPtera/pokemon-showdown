@@ -22466,6 +22466,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
+	stargaze: {
+		num: 241,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stargaze",
+		pp: 5,
+		priority: 0,
+		flags: { metronome: 1 },
+		weather: 'deepnight',
+		secondary: null,
+		target: "all",
+		type: "Dark",
+		zMove: { boost: { spe: 1 } },
+		contestType: "Beautiful",
+	},
+	darkfurs: {
+		num: 1390,
+		accuracy: 75,
+		basePower: 0,
+		category: "Status",
+		name: "Dark Furs",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1 },
+		onModifyMove(move, pokemon, target) {
+			switch (target?.effectiveWeather()) {
+			case 'deepnight':
+				move.accuracy = true;
+				break;
+			}
+		},
+		status: 'tox',
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Poison",
+		zMove: { boost: { def: 1 } },
+		contestType: "Clever",
+	},
 	diamondpickaxe: {
 		num: 4001,
 		accuracy: 100,
@@ -22598,6 +22637,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Dragon",
 		contestType: "Cool",
+	},
+	effluvium: {
+		num: 6680,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Effluvium",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, heal: 1, metronome: 1 },
+		onHit(target, source) {
+			if (target.boosts.def === -6 && target.boosts.spd === -6) return false;
+			if (target.status === 'psn' || target.status === 'tox') {
+				const def = target.getStat('def', false, true) / 2;
+				const spd = target.getStat('spd', false, true) / 2;
+				const success = this.boost({ def: -1, spd: -1 }, target, source, null, false, true);
+				return !!(this.heal(def+spd, source, target) || success);
+			}
+			return false;
+		},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Poison",
+		contestType: "Clever",
 	},
 	electrowhip: {
 		num: 3006,

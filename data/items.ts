@@ -8179,6 +8179,15 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 753,
 		gen: 6,
 	},
+	crescentrock: {
+		name: "Crescent Rock",
+		spritenum: 295,
+		fling: {
+			basePower: 60,
+		},
+		num: 284,
+		gen: 4,
+	},
 	dimentionite: {
 		name: "Dimentionite",
 		spritenum: 628,
@@ -8201,8 +8210,19 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	goremagalite: {
-		name: "Gore Magalite",
+	kerrganite: {
+		name: "Kerriganite",
+		spritenum: 614,
+		megaStone: { "Sarah Kerrigan": "Sarah Kerrigan-Mega" },
+		itemUser: ["Sarah Kerrigan"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 754,
+		gen: 6,
+	},
+	magalite: {
+		name: "Magalite",
 		spritenum: 626,
 		megaStone: { "Gore Magala": "Gore Magala-Mega" },
 		itemUser: ["Gore Magala"],
@@ -8212,8 +8232,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 768,
 		gen: 6,
 	},
-	littlemacinite: {
-		name: "Little Macinite",
+	macinite: {
+		name: "Macinite",
 		spritenum: 607,
 		megaStone: { "Little Mac": "Little Mac-Mega" },
 		itemUser: ["Little Mac"],

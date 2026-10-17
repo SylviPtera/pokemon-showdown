@@ -6392,6 +6392,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 204,
 	},
+	nightfall: {
+		onStart(source) {
+			this.field.setWeather('deepnight');
+		},
+		flags: {},
+		name: "Nightfall",
+		rating: 4,
+		num: 70,
+	},
 	northwinds: {
 		onDamage(damage, target, source, effect) {
 			if (
@@ -6759,6 +6768,21 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Rune of Death",
 		rating: 2,
 		num: 143,
+	},
+	scarletrot: {
+		onModifyMove(move, pokemon, target) {
+			if (move.type === "Poison" && !move.flags['heal']) {
+				move.flags['heal'] = 1;
+				move.drain = [1, 3];
+			} else {
+				move.flags['heal'] = undefined;
+				move.drain = undefined;
+			}
+		},
+		flags: {},
+		name: "Scarlet Rot",
+		rating: 3,
+		num: 2050,
 	},
 	shadowmantle: {
 		onSourceModifyAtkPriority: 6,
