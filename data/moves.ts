@@ -3732,13 +3732,13 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (type === 'sandstorm' || type === 'hail') return false;
 			},
 			onInvulnerability(target, source, move) {
-				if (['earthquake', 'magnitude'].includes(move.id)) {
+				if (['earthquake', 'magnitude', 'gaiawave'].includes(move.id)) {
 					return;
 				}
 				return false;
 			},
 			onSourceModifyDamage(damage, source, target, move) {
-				if (move.id === 'earthquake' || move.id === 'magnitude') {
+				if (move.id === 'earthquake' || move.id === 'magnitude' || move.id === 'gaiawave') {
 					return this.chainModify(2);
 				}
 			},
@@ -7972,7 +7972,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 			onBasePowerPriority: 6,
 			onBasePower(basePower, attacker, defender, move) {
-				const weakenedMoves = ['earthquake', 'bulldoze', 'magnitude'];
+				const weakenedMoves = ['earthquake', 'bulldoze', 'magnitude', 'gaiawave'];
 				if (weakenedMoves.includes(move.id) && defender.isGrounded() && !defender.isSemiInvulnerable()) {
 					this.debug('move weakened by grassy terrain');
 					return this.chainModify(0.5);
@@ -22342,6 +22342,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
+	busterwolf: {
+		num: 533,
+		accuracy: 100,
+		basePower: 130,
+		category: "Physical",
+		name: "Buster Wolf",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		ignoreEvasion: true,
+		ignoreDefensive: true,
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Cool",
+	},
 	channelledblitz: {
 		num: 3014,
 		accuracy: 100,
@@ -22466,22 +22482,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
-	stargaze: {
-		num: 241,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Stargaze",
-		pp: 5,
-		priority: 0,
-		flags: { metronome: 1 },
-		weather: 'deepnight',
-		secondary: null,
-		target: "all",
-		type: "Dark",
-		zMove: { boost: { spe: 1 } },
-		contestType: "Beautiful",
-	},
 	darkfurs: {
 		num: 1390,
 		accuracy: 75,
@@ -22501,7 +22501,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		status: 'tox',
 		secondary: null,
 		target: "allAdjacentFoes",
-		type: "Poison",
+		type: "Dark",
 		zMove: { boost: { def: 1 } },
 		contestType: "Clever",
 	},
@@ -22753,7 +22753,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	fireworkcannon: {
 		num: 893,
-		accuracy: 95,
+		accuracy: 90,
 		basePower: 110,
 		category: "Special",
 		name: "Firework Cannon",
@@ -22807,6 +22807,20 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "normal",
 		type: "Ghost",
 		contestType: "Cool",
+	},
+	gaiawave: {
+		num: 9800,
+		accuracy: 100,
+		basePower: 40,
+		category: "Special",
+		name: "Gaia Wave",
+		pp: 30,
+		priority: 1,
+		flags: { protect: 1, mirror: 1, metronome: 1, nonsky: 1 },
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Cute",
 	},
 	ghosthunting: {
 		num: 3007,
@@ -23395,18 +23409,16 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	mindmeltingtoxin: {
 		num: 3001,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 75,
 		category: "Special",
 		name: "Mind-Melting Toxin",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1},
-		secondary: {
-			boosts: {
-				spa: -1,
-				spd: -1,
-			},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Psychic') return 1;
 		},
+		secondary: null,
 		target: "normal",
 		type: "Poison",
 		contestType: "Clever",
@@ -23422,42 +23434,52 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		onModifyType(move, pokemon, target) {
 			move.type = pokemon.types[0];
 		},
-		onTryHit(source, target, move) {
-			if (source.types.length > 1) {
-				target.addVolatile(`select${source.types[1]}`);
-				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 1?`);
+		onModifyMove(move, pokemon, target) {
+			if (pokemon.types.length > 1) {
+				move.multihit = 2;
+			} else {
+				move.multihit = undefined;
 			}
 		},
-		onEffectiveness(typeMod, target, type, move) {
-			if (target) {
-				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 2?`);
-				if (target.volatiles['selectFire']) return typeMod + this.dex.getEffectiveness('Fire', type);
-				if (target.volatiles['selectGround']) return typeMod + this.dex.getEffectiveness('Ground', type);
-				if (target.volatiles['selectRock']) return typeMod + this.dex.getEffectiveness('Rock', type);
-				if (target.volatiles['selectFighting']) return typeMod + this.dex.getEffectiveness('Fighting', type);
-				if (target.volatiles['selectElectric']) return typeMod + this.dex.getEffectiveness('Electric', type);
-				if (target.volatiles['selectGrass']) return typeMod + this.dex.getEffectiveness('Grass', type);
-				if (target.volatiles['selectBug']) return typeMod + this.dex.getEffectiveness('Bug', type);
-				if (target.volatiles['selectWater']) return typeMod + this.dex.getEffectiveness('Water', type);
-				if (target.volatiles['selectIce']) return typeMod + this.dex.getEffectiveness('Ice', type);
-				if (target.volatiles['selectPsychic']) return typeMod + this.dex.getEffectiveness('Psychic', type);
-				if (target.volatiles['selectPoison']) return typeMod + this.dex.getEffectiveness('Poison', type);
-				if (target.volatiles['selectGhost']) return typeMod + this.dex.getEffectiveness('Ghost', type);
-				if (target.volatiles['selectNormal']) return typeMod + this.dex.getEffectiveness('Normal', type);
-				if (target.volatiles['selectFlying']) return typeMod + this.dex.getEffectiveness('Flying', type);
-				if (target.volatiles['selectDark']) return typeMod + this.dex.getEffectiveness('Dark', type);
-				if (target.volatiles['selectSteel']) return typeMod + this.dex.getEffectiveness('Steel', type);
-				if (target.volatiles['selectDragon']) return typeMod + this.dex.getEffectiveness('Dragon', type);
-				if (target.volatiles['selectFairy']) return typeMod + this.dex.getEffectiveness('Fairy', type);
-				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 3?`);
+		onTryHit(target, source, move) {
+			if (!move.multihit || source.types.length < 2) return;
+			if (move.hit === 1) {
+				move.type = source.types[0];
+			}
+			if (move.hit === 2) {
+				move.type = source.types[1];
 			}
 		},
-		onHit(target, source, move) {
-			if (source.types.length > 1) {
-				this.add(`c:|${getName('Flowery')}|Heh, how'd you like my ${source.types[1]}?`);
-				target.removeVolatile(`${source.types[1]}`);
-			}
-		},
+		// onTryHit(source, target, move) {
+		// 	if (source.types.length > 1) {
+		// 		target.addVolatile(`select${source.types[1]}`);
+		// 		this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 1?`);
+		// 	}
+		// },
+		// onEffectiveness(typeMod, target, type, move) {
+		// 	if (target) {
+		// 		this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 2?`);
+		// 		if (target.volatiles['selectFire']) return typeMod + this.dex.getEffectiveness('Fire', type);
+		// 		if (target.volatiles['selectGround']) return typeMod + this.dex.getEffectiveness('Ground', type);
+		// 		if (target.volatiles['selectRock']) return typeMod + this.dex.getEffectiveness('Rock', type);
+		// 		if (target.volatiles['selectFighting']) return typeMod + this.dex.getEffectiveness('Fighting', type);
+		// 		if (target.volatiles['selectElectric']) return typeMod + this.dex.getEffectiveness('Electric', type);
+		// 		if (target.volatiles['selectGrass']) return typeMod + this.dex.getEffectiveness('Grass', type);
+		// 		if (target.volatiles['selectBug']) return typeMod + this.dex.getEffectiveness('Bug', type);
+		// 		if (target.volatiles['selectWater']) return typeMod + this.dex.getEffectiveness('Water', type);
+		// 		if (target.volatiles['selectIce']) return typeMod + this.dex.getEffectiveness('Ice', type);
+		// 		if (target.volatiles['selectPsychic']) return typeMod + this.dex.getEffectiveness('Psychic', type);
+		// 		if (target.volatiles['selectPoison']) return typeMod + this.dex.getEffectiveness('Poison', type);
+		// 		if (target.volatiles['selectGhost']) return typeMod + this.dex.getEffectiveness('Ghost', type);
+		// 		if (target.volatiles['selectNormal']) return typeMod + this.dex.getEffectiveness('Normal', type);
+		// 		if (target.volatiles['selectFlying']) return typeMod + this.dex.getEffectiveness('Flying', type);
+		// 		if (target.volatiles['selectDark']) return typeMod + this.dex.getEffectiveness('Dark', type);
+		// 		if (target.volatiles['selectSteel']) return typeMod + this.dex.getEffectiveness('Steel', type);
+		// 		if (target.volatiles['selectDragon']) return typeMod + this.dex.getEffectiveness('Dragon', type);
+		// 		if (target.volatiles['selectFairy']) return typeMod + this.dex.getEffectiveness('Fairy', type);
+		// 		this.add(`c:|${getName('Flowery')}|Heh, how'd you like my 3?`);
+		// 	}
+		// },
 		priority: 0,
 		secondary: null,
 		target: "normal",
@@ -23783,6 +23805,23 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
+	powergeyser: {
+		num: 2570,
+		accuracy: 100,
+		basePower: 130,
+		category: "Special",
+		name: "Power Geyser",
+		pp: 10,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		secondary: {
+			chance: 20,
+			status: 'brn',
+		},
+		target: "allAdjacentFoes",
+		type: "Ground",
+		contestType: "Cool",
+	},
 	rudebuster: {
 		num: 3010,
 		accuracy: 90,
@@ -23903,6 +23942,22 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ice",
 		zMove: { basePower: 180 },
 		maxMove: { basePower: 130 },
+		contestType: "Beautiful",
+	},
+	stargaze: {
+		num: 241,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stargaze",
+		pp: 5,
+		priority: 0,
+		flags: { metronome: 1 },
+		weather: 'deepnight',
+		secondary: null,
+		target: "all",
+		type: "Dark",
+		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful",
 	},
 	strikingsword: {

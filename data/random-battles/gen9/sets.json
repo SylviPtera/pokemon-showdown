@@ -572,14 +572,20 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Stealth Rock", "Spikes", "Return", "Whirlwind", "Toxic", "Protect", "Earthquake"],
+                "movepool": ["Stealth Rock", "Spikes", "Whirling Tornado", "Whirlwind", "Toxic", "Protect", "Earthquake"],
                 "abilities": ["Thick Fat"],
-                "teraTypes": ["Ghost", "Ground", "Fairy"]
+                "teraTypes": ["Ghost", "Ground"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Belly Drum", "Whirling Tornado", "Earthquake", "Return"],
+                "abilities": ["Gluttony"],
+                "teraTypes": ["Ground"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Belly Drum", "Return", "Earthquake", "Ice Hammer"],
-                "abilities": ["Gluttony"],
+                "movepool": ["Bulk Up", "Whirling Tornado", "Earthquake", "Ice Hammer"],
+                "abilities": ["Thick Fat"],
                 "teraTypes": ["Ground"]
             }
         ]
@@ -721,13 +727,30 @@
         ]
     },
     "palutena": {
-        "level": 78,
+        "level": 77,
         "sets": [
             {
                 "role": "Setup Sweeper",
                 "movepool": ["Dazzling Gleam", "Calm Mind", "Taunt", "Draining Kiss", "Substitute"],
                 "abilities": ["Fairy Aura"],
                 "teraTypes": ["Fairy", "Poison"]
+            }
+        ]
+    },
+    "pacman": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Double-Edge", "U-Turn", "Knock Off", "Encore", "Low Kick"],
+                "abilities": ["Cheek Pouch"],
+                "teraTypes": ["Fairy", "Normal"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Return", "U-Turn", "Knock Off", "Encore", "Thunder Wave", "Toxic", "Super Fang"],
+                "abilities": ["Cheek Pouch"],
+                "teraTypes": ["Poison"]
             }
         ]
     },
@@ -1132,6 +1155,29 @@
             }
         ]
     },
+    "terry": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Close Combat", "Earth Power", "Gaia Wave", "Flare Blitz", "Knock Off"],
+                "abilities": ["Max Mode"],
+                "teraTypes": ["Ground"]
+            },
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Close Combat", "Earthquake", "Bulk Up", "Knock Off", "Drain Punch", "Flame Charge"],
+                "abilities": ["Max Mode"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Earth Power", "Gaia Wave", "Calm Mind", "Aura Sphere", "Flame Charge"],
+                "abilities": ["Max Mode"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
     "byleth": {
         "level": 86,
         "sets": [
@@ -1264,19 +1310,25 @@
         ]
     },
     "ratgod": {
-        "level": 76,
+        "level": 75,
         "sets": [
             {
-                "role": "Wallbreaker",
-                "movepool": ["Moonblast", "Mind-Melting Toxin", "Psyshock", "Aura Sphere", "U-Turn"],
+                "role": "Fast Attacker",
+                "movepool": ["Moonblast", "Mind-Melting Toxin", "Sludge Wave", "Psyshock", "Encore", "Gaia Wave", "Aura Sphere", "U-Turn"],
                 "abilities": ["Adaptability"],
                 "teraTypes": ["Fairy"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Moonblast", "Mind-Melting Toxin", "Psyshock", "Nasty Plot", "Substitute"],
+                "movepool": ["Moonblast", "Mind-Melting Toxin", "Sludge Wave", "Psyshock", "Nasty Plot", "Gaia Wave"],
                 "abilities": ["Adaptability"],
                 "teraTypes": ["Fairy", "Psychic"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Moonblast", "U-Turn", "Encore", "Destiny Bond", "Taunt", "Roost", "Toxic Spikes", "Sludge Bomb", "Thunder Wave"],
+                "abilities": ["Adaptability"],
+                "teraTypes": ["Water"]
             }
         ]
     },
@@ -1285,7 +1337,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Crunch", "Sucker Punch", "Toxic", "Pain Split", "Return"],
+                "movepool": ["Crunch", "Sucker Punch", "Toxic", "Pain Split", "Return", "Super Fang"],
                 "abilities": ["Unaware"],
                 "teraTypes": ["Ghost", "Fairy"]
             }
@@ -1667,6 +1719,29 @@
             }
         ]
     },
+    "eram": {
+        "level": 82,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Flamethrower", "Shadow Ball", "Nasty Plot", "Focus Blast", "Substitute"],
+                "abilities": ["Shadow Mantle"],
+                "teraTypes": ["Grass"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Flamethrower", "Shadow Ball", "U-Turn", "Focus Blast", "Will-O-Wisp", "Destiny Bond", "Overheat"],
+                "abilities": ["Shadow Mantle"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Flamethrower", "Hex", "U-Turn", "Focus Blast", "Will-O-Wisp", "Destiny Bond"],
+                "abilities": ["Shadow Mantle"],
+                "teraTypes": ["Fire"]
+            }
+        ]
+    },
     "roaringknight": {
         "level": 76,
         "sets": [
@@ -1704,6 +1779,23 @@
                 "movepool": ["Close Combat", "Iron Head", "U-Turn", "Knock Off", "Rapid Spin"],
                 "abilities": ["Justified"],
                 "teraTypes": ["Fighting", "Flying"]
+            }
+        ]
+    },
+    "titan": {
+        "level": 77,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Dark Pulse", "Meteor Beam", "Power Gem", "Focus Blast", "Psychic", "Nasty Plot"],
+                "abilities": ["Nyctophobia"],
+                "teraTypes": ["Ghost"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Dark Pulse", "Power Gem", "Glare", "Earth Power", "Ice Beam"],
+                "abilities": ["Nyctophobia"],
+                "teraTypes": ["Ghost"]
             }
         ]
     },
@@ -1904,15 +1996,15 @@
         "sets": [
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Flamethrower", "Dark Pulse", "Energy Ball", "Nasty Plot"],
-                "abilities": ["Levitate"],
+                "movepool": ["Flamethrower", "Hurricane", "Energy Ball", "Nasty Plot"],
+                "abilities": ["Flash Fire"],
                 "teraTypes": ["Fire", "Grass"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Flamethrower", "Overheat", "Dark Pulse", "Energy Ball", "Sludge Bomb"],
+                "movepool": ["Flamethrower", "Overheat", "Hurricane", "Energy Ball", "Sludge Bomb"],
                 "abilities": ["Levitate"],
-                "teraTypes": ["Fire", "Poison"]
+                "teraTypes": ["Fire", "Grass"]
             }
         ]
     },
@@ -2024,7 +2116,7 @@
         ]
     },
     "pixolotl": {
-        "level": 80,
+        "level": 79,
         "sets": [
             {
                 "role": "Fast Attacker",
@@ -2209,7 +2301,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Shadow Claw", "Zen Headbutt", "Swords Dance", "Leech Life", "Encore", "Shadow Sneak"],
-                "abilities": ["Illusion"],
+                "abilities": ["Infiltrator"],
                 "teraTypes": ["Dark"]
             }
         ]
@@ -2220,13 +2312,13 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Zen Headbutt", "Leech Life", "Swords Dance", "Encore"],
-                "abilities": ["Illusion"],
+                "abilities": ["Infiltrator"],
                 "teraTypes": ["Psychic"]
             },
             {
                 "role": "Fast Bulky Setup",
                 "movepool": ["Psychic", "Bug Buzz", "Calm Mind", "Heal Order"],
-                "abilities": ["Illusion"],
+                "abilities": ["Infiltrator"],
                 "teraTypes": ["Psychic"]
             }
         ]
@@ -2267,6 +2359,64 @@
                 "movepool": ["Dragon Pulse", "Sludge Bomb", "Toxic", "Effluvium", "Dragon Tail", "Toxic Spikes"],
                 "abilities": ["Poison Point"],
                 "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "goremagala": {
+        "level": 80,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Draco Meteor", "Sludge Bomb", "Dark Pulse", "Nasty Plot", "Dragon Pulse"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Dragon Pulse", "Sludge Bomb", "Dark Pulse", "Calm Mind"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Draco Meteor", "Sludge Bomb", "Dark Pulse", "Toxic Spikes", "Taunt"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Dragon Claw", "Crunch", "Dragon Dance", "Poison Jab"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            }
+        ]
+    },
+    "goremagalamega": {
+        "level": 78,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Draco Meteor", "Sludge Bomb", "Dark Pulse", "Nasty Plot"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Fast Bulky Setup",
+                "movepool": ["Dragon Pulse", "Sludge Bomb", "Dark Pulse", "Calm Mind"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Draco Meteor", "Sludge Bomb", "Dark Pulse", "Dragon Tail", "Taunt"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Dragon Claw", "Crunch", "Dragon Dance", "Poison Jab"],
+                "abilities": ["Nightfall"],
+                "teraTypes": ["Poison"]
             }
         ]
     },

@@ -6392,6 +6392,40 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 204,
 	},
+	maxmode: {
+		onResidualOrder: -1,
+		onResidual(pokemon) {
+			if (pokemon.species.id !== 'terry') return;
+			const newMoves = [];
+			for (const moveSlot of pokemon.moveSlots) {
+				const move = this.dex.moves.get(this.toID(moveSlot));
+				if (move.id === 'closecombat' && (pokemon.species.id === 'terry' && pokemon.hp <= pokemon.maxhp / 2)) {
+					newMoves.push("Buster Wolf");
+				}
+				else if (move.id === 'earthpower' && (pokemon.species.id === 'terry' && pokemon.hp <= pokemon.maxhp / 2)) {
+					newMoves.push("Power Geyser");
+				}
+
+				else if (move.id === 'busterwolf' && (pokemon.species.id === 'terry' && pokemon.hp > pokemon.maxhp / 2)) {
+					newMoves.push("Close Combat");
+				}
+				else if (move.id === 'powergeyser' && (pokemon.species.id === 'terry' && pokemon.hp > pokemon.maxhp / 2)) {
+					newMoves.push("Earth Power");
+				} else {
+					newMoves.push(moveSlot.move);
+				}
+			}
+			const changedSet = changeMoves(this, pokemon, newMoves);
+			pokemon.moveSlots = changedSet;
+			// Necessary so pokemon doesn't get 8 moves
+			(pokemon as any).baseMoveSlots = changedSet;
+		},
+		
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1 },
+		name: "Max Mode",
+		rating: 2.5,
+		num: 258,
+	},
 	nightfall: {
 		onStart(source) {
 			this.field.setWeather('deepnight');
@@ -6436,6 +6470,24 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "North Winds",
 		rating: 3,
 		num: 271,
+	},
+	nyctophobia: {
+		onStart(pokemon) {
+			if (this.suppressingAbility(pokemon)) return;
+			this.add('-ability', pokemon, 'Nyctophobia');
+		},
+		onAnyModifySpA(spa, source, target, move) {
+			const abilityHolder = this.effectState.target;
+			if (source.hasAbility('Nyctophobia')) return;
+			if (!move.ruinedSpA) move.ruinedSpA = abilityHolder;
+			if (move.ruinedSpA !== abilityHolder) return;
+			this.debug('Nyctophobia SpA drop');
+			return this.chainModify(0.75);
+		},
+		flags: {},
+		name: "Nyctophobia",
+		rating: 4.5,
+		num: 284,
 	},
 	perfection: {
 		onStart(pokemon) {

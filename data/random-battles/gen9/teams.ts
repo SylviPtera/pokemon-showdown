@@ -674,6 +674,9 @@ export class RandomTeams {
 		if (species.id === 'pyra') this.incompatibleMoves(moves, movePool, 'flareblitz', 'flamecharge');
 		if (species.id === 'sonicmega') this.incompatibleMoves(moves, movePool, 'ironwill', 'doubleedge');
 		if (species.id === 'mahito') this.incompatibleMoves(moves, movePool, 'idletransfiguration', 'toxic');
+		if (species.id === 'titan') this.incompatibleMoves(moves, movePool, 'meteorbeam', 'nastyplot');
+		if (species.id === 'terry') this.incompatibleMoves(moves, movePool, 'gaiawave', 'flamecharge');
+		if (species.id === 'ratgod') this.incompatibleMoves(moves, movePool, 'sludgewave', 'mindmeltingtoxin');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -897,6 +900,11 @@ export class RandomTeams {
 			counter = this.addMove('weatherball', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
+		
+		if (movePool.includes('sludgebomb') && species.id === 'goremagala') {
+			counter = this.addMove('sludgebomb', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
 
 		// Enforce Omega
 		if (movePool.includes('omega') && species.id === 'aqua' && role !== 'Fast Support') {
@@ -919,6 +927,11 @@ export class RandomTeams {
 		
 		if (movePool.includes('shedtail') && species.id === 'pixolotl' && role === 'Fast Support') {
 			counter = this.addMove('shedtail', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		
+		if (movePool.includes('willowisp') && species.id === 'eram' && role === 'Fast Support') {
+			counter = this.addMove('willowisp', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
 

@@ -8210,7 +8210,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 674,
 		gen: 6,
 	},
-	kerrganite: {
+	kerriganite: {
 		name: "Kerriganite",
 		spritenum: 614,
 		megaStone: { "Sarah Kerrigan": "Sarah Kerrigan-Mega" },

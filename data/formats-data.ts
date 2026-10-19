@@ -571,6 +571,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},
+	titan: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
 	aqua: {
 		tier: "UU",
 		doublesTier: "DOU",
