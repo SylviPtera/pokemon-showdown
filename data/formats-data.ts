@@ -303,8 +303,7 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 	},
 	piranhaplant: {
-		tier: "RU",
-		doublesTier: "(DUU)",
+		tier: "LC",
 	},
 	joker: {
 		tier: "UU",
@@ -572,6 +571,29 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 	},
 	balthizard: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	mizzle: {
+		tier: "LC",
+	},
+	missmizzle: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	jackenstein: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	organikk: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	wicabel: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	winglade: {
 		tier: "RU",
 		doublesTier: "(DUU)",
 	},

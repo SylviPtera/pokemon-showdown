@@ -1793,6 +1793,74 @@
             }
         ]
     },
+    "mizzle": {
+        "level": 90,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Scald", "Draining Kiss", "Calm Mind", "Ice Beam"],
+                "abilities": ["Holy Veil"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Scald", "Moonblast", "Flip Turn", "Toxic"],
+                "abilities": ["Holy Veil"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "missmizzle": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Scald", "Draining Kiss", "Calm Mind", "Ice Beam"],
+                "abilities": ["Water Absorb"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Scald", "Moonblast", "Flip Turn", "Toxic", "Encore"],
+                "abilities": ["Water Absorb"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "jackenstein": {
+        "level": 85,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Poltergeist", "Earthquake", "Sucker Punch", "Superpower", "Ice Punch"],
+                "abilities": ["Pressure"],
+                "teraTypes": ["Steel", "Ghost"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Poltergeist", "Sucker Punch", "Drain Punch", "Bulk Up"],
+                "abilities": ["Pressure"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "wicabel": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Steel Beam", "Psyshock", "Calm Mind", "Mystical Fire", "Trick"],
+                "abilities": ["Magic Guard"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Steel Beam", "Flash Cannon", "Psychic Noise", "Stealth Rock", "Thunder Wave"],
+                "abilities": ["Magic Guard", "Levitate"],
+                "teraTypes": ["Fairy"]
+            }
+        ]
+    },
     "hammerofjustice": {
         "level": 80,
         "sets": [

@@ -677,6 +677,7 @@ export class RandomTeams {
 		if (species.id === 'titan') this.incompatibleMoves(moves, movePool, 'meteorbeam', 'nastyplot');
 		if (species.id === 'terry') this.incompatibleMoves(moves, movePool, 'gaiawave', 'flamecharge');
 		if (species.id === 'ratgod') this.incompatibleMoves(moves, movePool, 'sludgewave', 'mindmeltingtoxin');
+		if (species.id === 'wicabel') this.incompatibleMoves(moves, movePool, 'steelbeam', 'flashcannon');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -1203,6 +1204,8 @@ export class RandomTeams {
 			return (species.id === 'kazooie' && !moves.has('bravebird'));
 		case 'Impatience':
 			return (species.id === 'aqua' && !moves.has('aerialace'));
+		case 'Magic Guard':
+			return (species.id === 'wicabel' && !moves.has('steelbeam'));
 		}
 
 		return false;
