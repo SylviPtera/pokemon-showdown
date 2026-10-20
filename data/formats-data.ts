@@ -567,6 +567,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	guei: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	balthizard: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	hammerofjustice: {
 		tier: "RU",
 		doublesTier: "(DUU)",

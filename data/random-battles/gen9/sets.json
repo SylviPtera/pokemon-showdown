@@ -1759,6 +1759,40 @@
             }
         ]
     },
+    "guei": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Flamethrower", "Shadow Ball", "Pain Split", "Calm Mind", "Will-O-Wisp"],
+                "abilities": ["Cursed Body"],
+                "teraTypes": ["Grass"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Flamethrower", "Hex", "Pain Split", "Will-O-Wisp"],
+                "abilities": ["Cursed Body"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
+    "balthizard": {
+        "level": 83,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Flamethrower", "Flash Cannon", "Stealth Rock", "Rapid Spin", "Toxic"],
+                "abilities": ["Flash Fire"],
+                "teraTypes": ["Grass"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Flamethrower", "Body Press", "Iron Defense", "Stealth Rock", "Flash Cannon", "Defog"],
+                "abilities": ["Flash Fire"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
     "hammerofjustice": {
         "level": 80,
         "sets": [
@@ -2003,7 +2037,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Flamethrower", "Overheat", "Hurricane", "Energy Ball", "Sludge Bomb"],
-                "abilities": ["Levitate"],
+                "abilities": ["Flash Fire"],
                 "teraTypes": ["Fire", "Grass"]
             }
         ]
