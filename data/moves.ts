@@ -9993,7 +9993,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (
 				lastMove.flags['failinstruct'] || lastMove.isZ || lastMove.isMax ||
 				lastMove.flags['charge'] || lastMove.flags['recharge'] ||
-				target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap'] ||
+				target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap'] || target.volatiles['proximitytrap'] ||
 				(moveSlot && moveSlot.pp <= 0)
 			) {
 				return false;
@@ -23555,7 +23555,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 				if (!(
 					lastMove_Target.flags['failinstruct'] || lastMove_Target.isZ || lastMove_Target.isMax ||
 					lastMove_Target.flags['charge'] || lastMove_Target.flags['recharge'] ||
-					target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap'])
+					target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap'] || target.volatiles['proximitytrap'])
 				) { this.actions.useMove(lastMove_Target, source); }
 				/*
 				this.add('-singleturn', target, 'move: Instruct', `[of] ${source}`);
@@ -23574,7 +23574,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			if (
 				firstMove.flags['failinstruct'] || firstMove.isZ || firstMove.isMax ||
 				firstMove.flags['charge'] || firstMove.flags['recharge'] ||
-				target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap']
+				target.volatiles['beakblast'] || target.volatiles['focuspunch'] || target.volatiles['shelltrap'] || target.volatiles['proximitytrap']
 			) {
 				return false;
 			}
@@ -23821,6 +23821,45 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		target: "allAdjacentFoes",
 		type: "Ground",
 		contestType: "Cool",
+	},
+	proximitytrap: {
+		num: 704,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Proximity Trap",
+		pp: 20,
+		priority: -3,
+		flags: { protect: 1, failmefirst: 1, nosleeptalk: 1, noassist: 1, failcopycat: 1, failinstruct: 1 },
+		priorityChargeCallback(pokemon) {
+			pokemon.addVolatile('proximitytrap');
+		},
+		onTryMove(pokemon) {
+			if (!pokemon.volatiles['proximitytrap']?.gotHit) {
+				this.attrLastMove('[still]');
+				this.add('cant', pokemon, 'Proximity Trap', 'Proximity Trap');
+				return null;
+			}
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Proximity Trap');
+			},
+			onHit(pokemon, source, move) {
+				if (move.flags['contact']) {
+					this.effectState.gotHit = true;
+					const action = this.queue.willMove(pokemon);
+					if (action) {
+						this.queue.prioritizeAction(action);
+					}
+				}
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+		contestType: "Tough",
 	},
 	rudebuster: {
 		num: 3010,

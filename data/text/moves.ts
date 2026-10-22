@@ -2716,7 +2716,7 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	},
 	grassyterrain: {
 		name: "Grassy Terrain",
-		desc: "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.3, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain.",
+		desc: "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.3, the power of Bulldoze, Gaia Wave, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain.",
 		shortDesc: "5 turns. Grounded: +Grass power, +1/16 max HP.",
 		gen7: {
 			desc: "For 5 turns, the terrain becomes Grassy Terrain. During the effect, the power of Grass-type attacks used by grounded Pokemon is multiplied by 1.5, the power of Bulldoze, Earthquake, and Magnitude used against grounded Pokemon is multiplied by 0.5, and grounded Pokemon have 1/16 of their maximum HP, rounded down, restored at the end of each turn, including the last turn. Camouflage transforms the user into a Grass type, Nature Power becomes Energy Ball, and Secret Power has a 30% chance to cause sleep. Fails if the current terrain is Grassy Terrain.",
@@ -7638,6 +7638,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 		desc: "Has a higher chance for a critical hit. If the user is Corrin-Dragon, this attack has 120BP, no increased critical hit ratio, is not a slicing attack, makes contact, and lowers the user's Defense and Special Defense by 1 stage.",
 		shortDesc: "If Corrin-Dragon, 120BP and user: -1 Def & Sp. Def.",
 	},
+	gaiawave: {
+		name: "Gaia Wave",
+		desc: "Damage doubles if the target is using Dig.",
+		shortDesc: "Usually goes first. Double damage on Dig.",
+	},
 	idletransfiguration: {
 		name: "Idle Transfiguration",
 		desc: "Causes damage to the target equal to 1/8 of its maximum HP rounded down at the end of each turn during effect. Additionally, the affected Pokemon will have its Attack and Special Attack lowered by one stage at the end of each turn. This effect ends when the target is no longer active.",
@@ -7654,6 +7659,11 @@ export const MovesText: { [id: IDEntry]: MoveText } = {
 	jarona: {
 		name: "Jarona",
 		desc: "Jarona",
+	},
+	shortcircuit: {
+		name: "Gaia Wave",
+		desc: "This move cannot be redirected to a different target by any effect.",
+		shortDesc: "Usually goes first. Cannot be redirected.",
 	},
 	strikingsword: {
 		name: "Striking Sword",

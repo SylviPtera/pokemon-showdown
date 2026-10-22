@@ -6177,6 +6177,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 208,
 	},
+	flatzone: {
+		onResidualOrder: 29,
+		onResidual(pokemon) {
+			this.add('-activate', pokemon, "ability: Flat Zone");
+			this.field.addPseudoWeather('wonderroom');
+		},
+		flags: {},
+		name: "Flat Zone",
+		rating: 3,
+		num: 258,
+	},
 	flowersdream: {
 		onStart(pokemon) {
 			const numAllies = pokemon.side.pokemon.filter(ally => ally === pokemon || !ally.fainted);

@@ -2288,6 +2288,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Dimension D",
 		shortDesc: "1.3x power in Trick Room, Magic Room, Wonder Room, or Gravity.",
 	},
+	flatzone: {
+		name: "Flat Zone",
+		desc: "At the end of every turn, toggles Wonder Room.",
+		shortDesc: "At the end of every turn, toggles Wonder Room.",
+
+		activate: "  [POKEMON] flipped the field!",
+	},
 	flowersdream: {
 		name: "Flower's Dream",
 		desc: "Nothing is stronger than a flower's dream. JARONA",
@@ -2302,6 +2309,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		activate: "  Mold fills the battlefield!",
 	},
+	holyveil: {
+		name: "Holy Veil",
+		desc: "If a Pokemon uses a Dark or Ghost-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+		shortDesc: "Ghost and Dark damage to this Pokemon dealt with a halved offensive stat.",
+	},
 	integrityarena: {
 		name: "Integrity Arena",
 		shortDesc: "While this Pokemon is on the field, all secondary effects are disabled.",
@@ -2312,5 +2324,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Revert to Zero",
 		desc: "This Pokemon is immune to the secondary effects of attacks. Upon targetting this Pokemon with an attack, the attacker's ability is nullified before damage.",
 		shortDesc: "Nullifies an attacker's ability before taking damage.",
+	},
+	rhythmicbeat: {
+		name: "Rhythmic Beat",
+		desc: "Each consecutive use of an attack will increase its power, up to a maximum of 2x damage after 5 uses.",
+		shortDesc: "Consecutive use of an attack increases damage. Max 2x after 5 turns.",
 	},
 };
