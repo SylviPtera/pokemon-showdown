@@ -91,13 +91,13 @@ const MIXED_SETUP = [
 ];
 // Some moves that only boost Speed:
 const SPEED_SETUP = [
-	'agility', 'autotomize', 'flamecharge', 'rockpolish', 'snowscape', 'trailblaze',
+	'agility', 'autotomize', 'flamecharge', 'rockpolish', 'snowscape', 'trailblaze', 'barrelroll',
 ];
 // Conglomerate for ease of access
 const SETUP = [
 	'acidarmor', 'agility', 'autotomize', 'bellydrum', 'bulkup', 'calmmind', 'clangoroussoul', 'coil', 'cosmicpower', 'curse', 'dragondance',
 	'flamecharge', 'growth', 'honeclaws', 'howl', 'irondefense', 'meditate', 'nastyplot', 'noretreat', 'poweruppunch', 'quiverdance',
-	'rockpolish', 'shellsmash', 'shiftgear', 'swordsdance', 'tailglow', 'takeheart', 'tidyup', 'trailblaze', 'workup', 'victorydance',
+	'rockpolish', 'shellsmash', 'shiftgear', 'swordsdance', 'tailglow', 'takeheart', 'tidyup', 'trailblaze', 'workup', 'victorydance', 'barrelroll',
 ];
 const SPEED_CONTROL = [
 	'electroweb', 'glare', 'icywind', 'lowsweep', 'nuzzle', 'quash', 'tailwind', 'thunderwave', 'trickroom',
@@ -108,7 +108,7 @@ const NO_STAB = [
 	'dragontail', 'drainingkiss', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
 	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'infestation', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit',
 	'quickattack', 'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'trailblaze',
-	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit', 'snowgrave'
+	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit', 'snowgrave', 'barrelroll'
 ];
 // Hazard-setting moves
 const HAZARDS = [
@@ -681,6 +681,8 @@ export class RandomTeams {
 		if (species.id === 'terry') this.incompatibleMoves(moves, movePool, 'knockoff', 'flareblitz');
 		if (species.id === 'netskie') this.incompatibleMoves(moves, movePool, 'encore', 'substitute');
 		if (species.id === 'terakota') this.incompatibleMoves(moves, movePool, 'earthquake', 'highhorsepower');
+		if (species.id === 'donkeykong') this.incompatibleMoves(moves, movePool, 'closecombat', 'drainpunch');
+		if (species.id === 'banjokazooie') this.incompatibleMoves(moves, movePool, 'barrelroll', 'quickattack');
 	}
 
 	// Checks for and removes incompatible moves, starting with the first move in movesA.
@@ -1469,7 +1471,7 @@ export class RandomTeams {
 
 		if (
 			species.id !== 'jirachi' && (counter.get('Physical') >= moves.size) &&
-			['dragontail', 'fakeout', 'firstimpression', 'flamecharge', 'rapidspin', 'trailblaze'].every(m => !moves.has(m))
+			['dragontail', 'fakeout', 'firstimpression', 'flamecharge', 'rapidspin', 'barrelroll', 'trailblaze'].every(m => !moves.has(m))
 		) {
 			const scarfReqs = (
 				role !== 'Wallbreaker' && species.id !== 'pyra' &&

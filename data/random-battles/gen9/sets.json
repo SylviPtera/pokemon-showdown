@@ -49,9 +49,15 @@
         "sets": [
             {
                 "role": "Wallbreaker",
-                "movepool": ["Close Combat", "Headlong Rush", "Stone Edge", "Ice Punch", "Wild Charge"],
-                "abilities": ["Rhythmic Beat"],
-                "teraTypes": ["Fighting"]
+                "movepool": ["Close Combat", "Headlong Rush", "Ice Punch", "Thunder Punch", "Drain Punch"],
+                "abilities": ["Iron Fist", "Rhythmic Beat"],
+                "teraTypes": ["Ground"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Barrel Roll", "Headlong Rush", "Ice Punch", "Bulk Up", "Drain Punch"],
+                "abilities": ["Iron Fist"],
+                "teraTypes": ["Ground"]
             }
         ]
     },
@@ -1138,7 +1144,7 @@
         "sets": [
             {
                 "role": "Fast Bulky Setup",
-                "movepool": ["Quick Attack", "Dual Wingbeat", "Earthquake", "Bulk Up", "Drain Punch"],
+                "movepool": ["Quick Attack", "Dual Wingbeat", "Earthquake", "Barrel Roll", "Bulk Up", "Drain Punch"],
                 "abilities": ["Technician"],
                 "teraTypes": ["Ground"]
             },
@@ -2173,6 +2179,17 @@
             }
         ]
     },
+    "cageberry": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Iron Head", "Spikes", "Earthquake", "Super Fang", "Toxic", "Roar"],
+                "abilities": ["Iron Barbs"],
+                "teraTypes": ["Ghost"]
+            }
+        ]
+    },
     "elderguardian": {
         "level": 80,
         "sets": [
@@ -2587,6 +2604,17 @@
                 "movepool": ["Knock Off", "Spirit Shackle", "Swords Dance", "Hypnosis"],
                 "abilities": ["Bad Dreams"],
                 "teraTypes": ["Dark", "Steel"]
+            }
+        ]
+    },
+    "gojo": {
+        "level": 72,
+        "sets": [
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Psychic", "Aura Sphere", "Calm Mind", "Substitute"],
+                "abilities": ["Wonder Guard"],
+                "teraTypes": ["Fairy"]
             }
         ]
     },

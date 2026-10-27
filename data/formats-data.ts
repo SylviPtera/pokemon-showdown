@@ -702,6 +702,21 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
+	toothberry: {
+		tier: "LC",
+	},
+	ack: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	cageberry: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	ackstack: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
 	mangoruby: {
 		tier: "UU",
 		doublesTier: "DOU",
@@ -861,6 +876,10 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "DUber",
 	},
 	pucciheaven: {
+		tier: "Uber",
+		doublesTier: "DUber",
+	},
+	gojo: {
 		tier: "Uber",
 		doublesTier: "DUber",
 	},

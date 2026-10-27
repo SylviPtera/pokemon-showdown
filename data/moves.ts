@@ -22217,6 +22217,27 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Grass",
 		contestType: "Cool",
 	},
+	barrelroll: {
+		num: 885,
+		accuracy: 90,
+		basePower: 70,
+		category: "Physical",
+		name: "Barrel Roll",
+		pp: 15,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1 },
+		secondary: {
+			chance: 50,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool",
+	},
 	bigshot: {
 		num: 143,
 		accuracy: 90,
