@@ -2365,6 +2365,23 @@
             }
         ]
     },
+    "karsultimate": {
+        "level": 76,
+        "sets": [
+            {
+                "role": "Fast Support",
+                "movepool": ["Natural Selection", "Toxic", "Stealth Rock", "Taunt", "Brilliant Arrow"],
+                "abilities": ["Perfection"],
+                "teraTypes": ["Ground"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Natural Selection", "Swords Dance", "Striking Sword", "Substitute", "Brilliant Arrow"],
+                "abilities": ["Perfection"],
+                "teraTypes": ["Ground"]
+            }
+        ]
+    },
     "iggy": {
         "level": 83,
         "sets": [
@@ -2663,13 +2680,13 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Night Slash", "Flare Blitz", "U-Turn", "Spikes", "Leaf Blade", "Sucker Punch"],
+                "movepool": ["Ceaseless Edge", "Flare Blitz", "U-Turn", "Leaf Blade", "Sucker Punch"],
                 "abilities": ["Sharpness"],
                 "teraTypes": ["Dark"]
             },
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Night Slash", "Flare Blitz", "Swords Dance", "Leaf Blade", "Sucker Punch"],
+                "movepool": ["Ceaseless Edge", "Flare Blitz", "Swords Dance", "Leaf Blade", "Sucker Punch"],
                 "abilities": ["Sharpness"],
                 "teraTypes": ["Dark", "Grass"]
             }
