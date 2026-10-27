@@ -22363,6 +22363,26 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Steel",
 		contestType: "Cool",
 	},
+	burialblade: {
+		num: 844,
+		accuracy: 100,
+		basePower: 75,
+		basePowerCallback(pokemon, target, move) {
+			if (target.status === 'slp' || target.hasAbility('comatose')) return move.basePower * 2;
+			return move.basePower;
+		},
+		category: "Special",
+		name: "Burial Blade",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, slicing: 1 },
+		secondary: {
+			chance: 30,
+			status: 'slp',
+		},
+		target: "normal",
+		type: "Dark",
+	},
 	busterwolf: {
 		num: 533,
 		accuracy: 100,
@@ -24019,6 +24039,33 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Dark",
 		zMove: { boost: { spe: 1 } },
 		contestType: "Beautiful",
+	},
+	stormhand: {
+		num: 830,
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Storm Hand",
+		pp: 5,
+		priority: 0,
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		onAfterHit(target, source, move) {
+			if (this.field.effectiveWeather() === 'snowscape') {
+				this.field.setWeather('raindance');
+			} else {
+				this.field.setWeather('snowscape');
+			}
+		},
+		onAfterSubDamage(damage, target, source, move) {
+			if (this.field.effectiveWeather() === 'snowscape') {
+				this.field.setWeather('raindance');
+			} else {
+				this.field.setWeather('snowscape');
+			}
+		},
+		secondary: {}, // Sheer Force-boosted
+		target: "normal",
+		type: "Electric",
 	},
 	strikingsword: {
 		num: 3003,
