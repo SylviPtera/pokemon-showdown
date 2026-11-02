@@ -1551,15 +1551,15 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Psychic Noise", "Moonblast", "Will-O-Wisp", "Heal Prayer"],
+                "movepool": ["Psychic Noise", "Flamethrower", "Toxic", "Heal Prayer"],
                 "abilities": ["Transcendent Eye"],
-                "teraTypes": ["Steel"]
+                "teraTypes": ["Water"]
             },
             {
                 "role": "Bulky Setup",
-                "movepool": ["Psyshock", "Moonblast", "Calm Mind", "Heal Prayer"],
+                "movepool": ["Psyshock", "Flamethrower", "Calm Mind", "Heal Prayer"],
                 "abilities": ["Transcendent Eye"],
-                "teraTypes": ["Steel"]
+                "teraTypes": ["Water"]
             }
         ]
     },
@@ -2174,7 +2174,7 @@
             {
                 "role": "Fast Attacker",
                 "movepool": ["Flamethrower", "Overheat", "Hurricane", "Energy Ball", "Sludge Bomb"],
-                "abilities": ["Flash Fire"],
+                "abilities": ["Flash Fire", "Aftermath"],
                 "teraTypes": ["Fire", "Grass"]
             }
         ]
@@ -2184,7 +2184,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Iron Head", "Spikes", "Earthquake", "Super Fang", "Toxic", "Roar"],
+                "movepool": ["Iron Head", "Spikes", "Megahorn", "Super Fang", "Toxic", "Roar"],
                 "abilities": ["Iron Barbs"],
                 "teraTypes": ["Ghost"]
             }
@@ -2202,7 +2202,7 @@
             {
                 "role": "Bulky Attacker",
                 "movepool": ["Hydro Pump", "Flip Turn", "Psychic", "Meteor Beam", "Earth Power"],
-                "abilities": ["Transcendent Eye"],
+                "abilities": ["Transcendent Eye", "Rough Skin"],
                 "teraTypes": ["Psychic", "Water"]
             }
         ]
@@ -2281,17 +2281,23 @@
         ]
     },
     "poewk": {
-        "level": 85,
+        "level": 86,
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Spikes", "Stealth Rock", "Pain Split", "Knock Off", "Sludge Bomb", "Toxic Spikes", "Thunder Wave"],
+                "movepool": ["Spikes", "Stealth Rock", "Pain Split", "Knock Off", "First Impression", "Sludge Bomb", "Toxic Spikes", "Thunder Wave"],
                 "abilities": ["Tinted Lens"],
                 "teraTypes": ["Flying"]
             },
             {
+                "role": "Bulky Attacker",
+                "movepool": ["Bug Buzz", "Sludge Bomb", "Earth Power", "First Impression"],
+                "abilities": ["Tinted Lens"],
+                "teraTypes": ["Bug"]
+            },
+            {
                 "role": "Wallbreaker",
-                "movepool": ["Dark Pulse", "Sludge Bomb", "Earth Power", "Switcheroo"],
+                "movepool": ["Bug Buzz", "Sludge Bomb", "Earth Power", "Switcheroo"],
                 "abilities": ["Tinted Lens"],
                 "teraTypes": ["Poison"]
             }

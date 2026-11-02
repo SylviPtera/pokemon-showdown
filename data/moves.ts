@@ -23902,6 +23902,30 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Rock",
 		contestType: "Tough",
 	},
+	psychosoniclaser: {
+		num: 3150,
+		accuracy: 85,
+		basePower: 135,
+		category: "Special",
+		name: "Psychosonic Laser",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
+		self: {
+			boosts: {
+				spa: -2,
+			},
+		},
+		secondary: {
+			chance: 10,
+			boosts: {
+				spd: -1,
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Beautiful",
+	},
 	rudebuster: {
 		num: 3010,
 		accuracy: 90,
@@ -24001,6 +24025,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: null,
 		target: "normal",
 		type: "Electric",
+	},
+	sinisterlaugh: {
+		num: 4300,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Sinister Laugh",
+		pp: 20,
+		priority: 0,
+		flags: { protect: 1, reflectable: 1, mirror: 1, metronome: 1 },
+		boosts: {
+			def: -1,
+		},
+		self: {
+			boosts: {
+				atk: 1,
+			},
+		},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Dark",
+		zMove: { boost: { spe: 1 } },
+		contestType: "Tough",
 	},
 	snowgrave: {
 		num: 329,
