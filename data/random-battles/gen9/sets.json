@@ -913,7 +913,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Psychic", "Draco Meteor", "Focus Blast", "Nasty Plot", "Trick"],
+                "movepool": ["Psychic", "Psychosonic Laser", "Draco Meteor", "Focus Blast", "Nasty Plot", "Trick"],
                 "abilities": ["Levitate"],
                 "teraTypes": ["Dragon", "Fighting"]
             }
@@ -1026,7 +1026,7 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Hyper Voice", "Sludge Bomb", "U-Turn", "Hydro Pump", "Encore"],
+                "movepool": ["Hyper Voice", "Sludge Bomb", "U-Turn", "Hydro Pump", "Psychosonic Laser", "Encore"],
                 "abilities": ["Amplifier"],
                 "teraTypes": ["Water", "Normal"]
             },
@@ -2099,6 +2099,40 @@
             }
         ]
     },
+    "banzaibill": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Stealth Rock", "Iron Head", "Toxic", "Body Press", "Iron Defense"],
+                "abilities": ["Clear Body"],
+                "teraTypes": ["Fighting"]
+            },
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Meteor Mash", "Bullet Punch", "Aerial Ace", "Flare Blitz", "Stealth Rock"],
+                "abilities": ["Clear Body"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "banzaibillmega": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Meteor Mash", "Flare Blitz", "Wild Charge", "Head Smash", "Bullet Punch"],
+                "abilities": ["Clear Body"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Meteor Mash", "Flare Blitz", "Stealth Rock", "Toxic"],
+                "abilities": ["Clear Body"],
+                "teraTypes": ["Steel"]
+            }
+        ]
+    },
     "dimentio": {
         "level": 84,
         "sets": [
@@ -2179,6 +2213,23 @@
             }
         ]
     },
+    "scurvycrew": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Crabhammer", "Bomb Blast", "Swords Dance", "Knock Off", "Aqua Jet"],
+                "abilities": ["Intimidate"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Fast Attacker",
+                "movepool": ["Liquidation", "Bomb Blast", "Flip Turn", "Knock Off"],
+                "abilities": ["Intimidate"],
+                "teraTypes": ["Fire"]
+            }
+        ]
+    },
     "cageberry": {
         "level": 87,
         "sets": [
@@ -2195,13 +2246,13 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Spikes", "Flip Turn", "Psychic", "Scald", "Thunder Wave"],
+                "movepool": ["Spikes", "Flip Turn", "Psychic", "Psychosonic Laser", "Scald", "Thunder Wave"],
                 "abilities": ["Rough Skin"],
                 "teraTypes": ["Steel"]
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Hydro Pump", "Flip Turn", "Psychic", "Meteor Beam", "Earth Power"],
+                "movepool": ["Hydro Pump", "Flip Turn", "Psychic", "Psychosonic Laser", "Meteor Beam", "Earth Power"],
                 "abilities": ["Transcendent Eye", "Rough Skin"],
                 "teraTypes": ["Psychic", "Water"]
             }

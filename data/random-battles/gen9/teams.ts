@@ -554,7 +554,8 @@ export class RandomTeams {
 				['energyball', 'leafstorm'],
 				['earthpower', 'sandsearstorm'],
 				['coaching', ['helpinghand', 'howl']],
-				['snowgrave', 'freezedry']
+				['snowgrave', 'freezedry'],
+				['psychic', 'psychosoniclaser']
 			];
 
 			for (const pair of doublesIncompatiblePairs) this.incompatibleMoves(moves, movePool, pair[0], pair[1]);

@@ -8168,6 +8168,17 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		isNonstandard: "CAP",
 	},
 	
+	banzaite: {
+		name: "Banzaite",
+		spritenum: 625,
+		megaStone: { "Banzai Bill": "Banzai Bill-Mega" },
+		itemUser: ["Banzai Bill"],
+		onTakeItem(item, source) {
+			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+		},
+		num: 7670,
+		gen: 6,
+	},
 	bowserite: {
 		name: "Bowserite",
 		spritenum: 613,

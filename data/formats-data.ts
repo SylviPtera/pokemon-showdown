@@ -657,8 +657,19 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "UU",
 		doublesTier: "(DUU)",
 	},
-	whomp: {
+	bowserdry: {
+		tier: "Uber",
+		doublesTier: "DUber"
+	},
+	bulletbill: {
+		tier: "LC",
+	},
+	banzaibill: {
 		tier: "NU",
+		doublesTier: "(DUU)"
+	},
+	banzaibillmega: {
+		tier: "RU",
 		doublesTier: "(DUU)"
 	},
 	blooper: {
@@ -699,6 +710,16 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		doublesTier: "(DUU)",
 	},
 	mimic: {
+		tier: "NU",
+		doublesTier: "(DUU)",
+	},
+	snippy: {
+		tier: "LC",
+	},
+	pinchly: {
+		tier: "NFE",
+	},
+	scurvycrew: {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
