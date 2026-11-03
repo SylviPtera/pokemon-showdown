@@ -2113,7 +2113,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	banzaibillmega: {
 		num: 6012,
-		name: "Banzai Bill",
+		name: "Banzai Bill-Mega",
 		types: ["Steel", "Flying"],
 		forme: "Mega",
 		baseSpecies: "Banzai Bill",
