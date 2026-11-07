@@ -2320,6 +2320,15 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		
 		activate: "  The battlers are filled with integrity!",
 	},
+	requiem: {
+		name: "Requiem",
+		shortDesc: "This Pokemon skips every other turn. Puts all others to sleep.",
+		gen3: {
+			desc: "This Pokemon skips every other turn instead of using a move. If this Pokemon replaces a Pokemon that fainted during end-of-turn effects, its first turn will be skipped.",
+		},
+
+		cant: "[POKEMON] is loafing around!",
+	},
 	reverttozero: {
 		name: "Revert to Zero",
 		desc: "This Pokemon is immune to the secondary effects of attacks. Upon targetting this Pokemon with an attack, the attacker's ability is nullified before damage.",

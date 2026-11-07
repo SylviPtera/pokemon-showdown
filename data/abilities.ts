@@ -6709,6 +6709,42 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 258,
 	},
+	requiem: {
+		onStart(pokemon) {
+			if (pokemon.syrupTriggered) return;
+			pokemon.syrupTriggered = true;
+			this.add('-ability', pokemon, 'Requiem');
+			for (const target of this.getAllActive()) {
+				if (pokemon === target || pokemon.fainted) continue;
+				target.trySetStatus('slp', pokemon);
+				target.statusState.time = 3;
+				target.statusState.startTime = 3;
+			}
+			pokemon.removeVolatile('truant');
+			if (pokemon.activeTurns && (pokemon.moveThisTurnResult !== undefined || !this.queue.willMove(pokemon))) {
+				pokemon.addVolatile('truant');
+			}
+		},
+		// onResidual(pokemon, target) {
+		// 	for (const othermon of this.getAllActive()) {
+		// 		if (othermon === pokemon || othermon.fainted) continue;
+		// 		pokemon.trySetStatus('slp', target);
+		// 	}
+		// },
+		onBeforeMovePriority: 9,
+		onBeforeMove(pokemon) {
+			if (pokemon.removeVolatile('truant')) {
+				this.add('cant', pokemon, 'ability: Requiem');
+				return false;
+			}
+			pokemon.addVolatile('truant');
+		},
+		condition: {},
+		flags: {},
+		name: "Requiem",
+		rating: 2,
+		num: 5400,
+	},
 	reverttozero: {
 		onFoeTryMove(foe, target, move) {
 			if ((target === this.effectState.target || move.target === 'all' || move.target === 'allAdjacentFoes')
@@ -6717,9 +6753,13 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				foe.addVolatile('gastroacid');
 			}
 		},
-		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, notransform: 1, breakable: 1 },
+		onModifySecondaries(secondaries) {
+			this.debug('Revert to Zero prevent secondary');
+			return secondaries.filter(effect => !!effect.self);
+		},
+		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, cantsuppress: 1, notrace: 1, failskillswap: 1, notransform: 1, breakable: 1 },
 		name: "Revert To Zero",
-		rating: 4,
+		rating: 4.5,
 		num: 2560,
 	},
 	rhythmicbeat: {

@@ -23904,28 +23904,77 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	psychosoniclaser: {
 		num: 3150,
-		accuracy: 85,
-		basePower: 135,
+		accuracy: 90,
+		basePower: 140,
 		category: "Special",
 		name: "Psychosonic Laser",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1, sound: 1 },
-		self: {
-			boosts: {
-				spa: -2,
-			},
+		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1, sound: 1, nosleeptalk: 1, failinstruct: 1 },
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id) || attacker.volatiles['chargedlaser']) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (attacker.volatiles['chargedlaser']) {
+				this.attrLastMove('[still]');
+				this.addMove('-anim', attacker, move.name, defender);
+				return;
+			}
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				attacker.addVolatile('chargedlaser');
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			attacker.addVolatile('chargedlaser');
+			return null;
 		},
-		secondary: {
-			chance: 10,
-			boosts: {
-				spd: -1,
-			},
-		},
+		// self: {
+		// 	boosts: {
+		// 		spa: -2,
+		// 	},
+		// },
+		// secondary: {
+		// 	chance: 10,
+		// 	boosts: {
+		// 		spd: -1,
+		// 	},
+		// },
 		target: "normal",
 		type: "Psychic",
 		contestType: "Beautiful",
 	},
+	// electroshot: {
+	// 	num: 905,
+	// 	accuracy: 100,
+	// 	basePower: 130,
+	// 	category: "Special",
+	// 	name: "Electro Shot",
+	// 	pp: 10,
+	// 	priority: 0,
+	// 	flags: { charge: 1, protect: 1, mirror: 1, metronome: 1 },
+	// 	onTryMove(attacker, defender, move) {
+	// 		if (attacker.removeVolatile(move.id)) {
+	// 			return;
+	// 		}
+	// 		this.add('-prepare', attacker, move.name);
+	// 		this.boost({ spa: 1 }, attacker, attacker, move);
+	// 		if (['raindance', 'primordialsea'].includes(attacker.effectiveWeather())) {
+	// 			this.attrLastMove('[still]');
+	// 			this.addMove('-anim', attacker, move.name, defender);
+	// 			return;
+	// 		}
+	// 		if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+	// 			return;
+	// 		}
+	// 		attacker.addVolatile('twoturnmove', defender);
+	// 		return null;
+	// 	},
+	// 	secondary: null,
+	// 	hasSheerForce: true,
+	// 	target: "normal",
+	// 	type: "Electric",
+	// },
 	rudebuster: {
 		num: 3010,
 		accuracy: 90,

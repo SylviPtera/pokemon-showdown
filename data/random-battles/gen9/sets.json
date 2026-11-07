@@ -1907,7 +1907,7 @@
             },
             {
                 "role": "Bulky Attacker",
-                "movepool": ["Dark Pulse", "Power Gem", "Glare", "Earth Power", "Ice Beam"],
+                "movepool": ["Dark Pulse", "Power Gem", "Glare", "Earth Power", "Ice Beam", "Psychosonic Laser"],
                 "abilities": ["Nyctophobia"],
                 "teraTypes": ["Ghost"]
             }
@@ -2235,7 +2235,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Iron Head", "Spikes", "Megahorn", "Super Fang", "Toxic", "Roar"],
+                "movepool": ["Iron Head", "Spikes", "Megahorn", "Super Fang", "Toxic"],
                 "abilities": ["Iron Barbs"],
                 "teraTypes": ["Ghost"]
             }

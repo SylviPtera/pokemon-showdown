@@ -872,6 +872,14 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	polnareff: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
+	polnareffmega: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	iggy: {
 		tier: "UU",
 		doublesTier: "(DUU)",

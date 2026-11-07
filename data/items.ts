@@ -8279,8 +8279,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	requiemarrow: {
 		name: "Requiem Arrow",
 		spritenum: 0,
-		megaStone: { "Giorno": "Giorno-Mega" },
-		itemUser: ["Giorno"],
+		megaStone: { "Giorno": "Giorno-Mega", "Polnareff": "Polnareff-Mega" },
+		itemUser: ["Giorno", "Polnareff"],
 		onTakeItem(item, source) {
 			return !item.megaStone?.[source.baseSpecies.baseSpecies];
 		},
