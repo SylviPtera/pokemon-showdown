@@ -1308,13 +1308,13 @@
                 "teraTypes": ["Fairy"]
             },
             {
-                "role": "Bulky Setup",
-                "movepool": ["Shadow Ball", "Boomburst", "Calm Mind", "Recover"],
+                "role": "Bulky Attacker",
+                "movepool": ["Shadow Ball", "Boomburst", "Calm Mind", "Recover", "Psychosonic Laser"],
                 "abilities": ["Regenerator", "Amplifier"],
                 "teraTypes": ["Fairy", "Normal"]
             },
             {
-                "role": "Bulky Attacker",
+                "role": "Fast Attacker",
                 "movepool": ["Shadow Ball", "Open Heart", "Boomburst", "Psyshock"],
                 "abilities": ["Rhythmic Beat", "Regenerator"],
                 "teraTypes": ["Fairy"]
@@ -1856,6 +1856,23 @@
             }
         ]
     },
+    "organikk": {
+        "level": 87,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Flash Cannon", "Psychic Noise", "Toxic", "Thunderbolt"],
+                "abilities": ["Unaware"],
+                "teraTypes": ["Water"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Psychosonic Laser", "Flash Cannon", "Calm Mind", "Thunderbolt"],
+                "abilities": ["Unaware"],
+                "teraTypes": ["Water"]
+            }
+        ]
+    },
     "wicabel": {
         "level": 84,
         "sets": [
@@ -1901,7 +1918,7 @@
         "sets": [
             {
                 "role": "Bulky Setup",
-                "movepool": ["Dark Pulse", "Meteor Beam", "Power Gem", "Focus Blast", "Psychic", "Nasty Plot"],
+                "movepool": ["Dark Pulse", "Meteor Beam", "Power Gem", "Focus Blast", "Psychosonic Laser", "Nasty Plot"],
                 "abilities": ["Nyctophobia"],
                 "teraTypes": ["Ghost"]
             },
@@ -1910,6 +1927,17 @@
                 "movepool": ["Dark Pulse", "Power Gem", "Glare", "Earth Power", "Ice Beam", "Psychosonic Laser"],
                 "abilities": ["Nyctophobia"],
                 "teraTypes": ["Ghost"]
+            }
+        ]
+    },
+    "floradinn": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Sunny Day", "Power Whip", "Weather Ball", "Growth"],
+                "abilities": ["Chlorophyll"],
+                "teraTypes": ["Fire"]
             }
         ]
     },
@@ -2117,7 +2145,7 @@
         ]
     },
     "banzaibillmega": {
-        "level": 84,
+        "level": 82,
         "sets": [
             {
                 "role": "Bulky Attacker",
@@ -2130,6 +2158,57 @@
                 "movepool": ["Meteor Mash", "Flare Blitz", "Stealth Rock", "Toxic"],
                 "abilities": ["Clear Body"],
                 "teraTypes": ["Steel"]
+            }
+        ]
+    },
+    "whomp": {
+        "level": 88,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Stone Edge", "Heat Crash", "Earthquake", "Stealth Rock", "Heavy Slam"],
+                "abilities": ["Sturdy"],
+                "teraTypes": ["Rock", "Grass"]
+            }
+        ]
+    },
+    "gooperblooper": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Flip Turn", "Gunk Shot", "Poison Jab", "Earthquake", "Wave Crash", "Liquidation", "Power Whip", "Aqua Jet", "Knock Off"],
+                "abilities": ["Poison Touch", "Rhythmic Beat"],
+                "teraTypes": ["Water"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Flip Turn", "Scald", "Recover", "Gunk Shot", "Poison Jab", "Toxic Spikes", "Knock Off"],
+                "abilities": ["Poison Touch"],
+                "teraTypes": ["Grass"]
+            }
+        ]
+    },
+    "peteypiranha": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Attacker",
+                "movepool": ["Power Whip", "Gunk Shot", "Earthquake", "Knock Off", "Fire Blast"],
+                "abilities": ["Corrosion"],
+                "teraTypes": ["Fire", "Grass"]
+            },
+            {
+                "role": "Bulky Setup",
+                "movepool": ["Power Whip", "Poison Jab", "Belly Drum", "Earthquake"],
+                "abilities": ["Gluttony"],
+                "teraTypes": ["Fire"]
+            },
+            {
+                "role": "Bulky Support",
+                "movepool": ["Sludge Bomb", "Leech Seed", "Defog", "Synthesis", "Dragon Tail", "Toxic", "Toxic Spikes", "Power Whip"],
+                "abilities": ["Corrosion"],
+                "teraTypes": ["Fire"]
             }
         ]
     },
@@ -2173,29 +2252,6 @@
             }
         ]
     },
-    "peteypiranha": {
-        "level": 82,
-        "sets": [
-            {
-                "role": "Bulky Attacker",
-                "movepool": ["Power Whip", "Gunk Shot", "Earthquake", "Knock Off", "Fire Blast"],
-                "abilities": ["Corrosion"],
-                "teraTypes": ["Fire", "Grass"]
-            },
-            {
-                "role": "Bulky Setup",
-                "movepool": ["Power Whip", "Poison Jab", "Belly Drum", "Earthquake"],
-                "abilities": ["Gluttony"],
-                "teraTypes": ["Fire"]
-            },
-            {
-                "role": "Bulky Support",
-                "movepool": ["Sludge Bomb", "Leech Seed", "Defog", "Synthesis", "Dragon Tail", "Toxic", "Toxic Spikes", "Power Whip"],
-                "abilities": ["Corrosion"],
-                "teraTypes": ["Fire"]
-            }
-        ]
-    },
     "flamechomp": {
         "level": 86,
         "sets": [
@@ -2218,13 +2274,13 @@
         "sets": [
             {
                 "role": "Setup Sweeper",
-                "movepool": ["Crabhammer", "Bomb Blast", "Swords Dance", "Knock Off", "Aqua Jet"],
+                "movepool": ["Liquidation", "Bomb Blast", "Swords Dance", "Knock Off", "Aqua Jet"],
                 "abilities": ["Intimidate"],
                 "teraTypes": ["Fire"]
             },
             {
                 "role": "Fast Attacker",
-                "movepool": ["Liquidation", "Bomb Blast", "Flip Turn", "Knock Off"],
+                "movepool": ["Crabhammer", "Bomb Blast", "Flip Turn", "Knock Off"],
                 "abilities": ["Intimidate"],
                 "teraTypes": ["Fire"]
             }
@@ -2246,7 +2302,7 @@
         "sets": [
             {
                 "role": "Bulky Support",
-                "movepool": ["Spikes", "Flip Turn", "Psychic", "Psychosonic Laser", "Scald", "Thunder Wave"],
+                "movepool": ["Spikes", "Flip Turn", "Psychic", "Scald", "Thunder Wave"],
                 "abilities": ["Rough Skin"],
                 "teraTypes": ["Steel"]
             },
@@ -2500,9 +2556,9 @@
         "sets": [
             {
                 "role": "Fast Attacker",
-                "movepool": ["Bullet Storm", "Whirling Tornado", "Bomb Blast", "Bullet Seed", "Rock Blast"],
+                "movepool": ["Bomb Blast", "Whirling Tornado", "Seed Bomb", "Rock Blast", "U-Turn"],
                 "abilities": ["Artillery"],
-                "teraTypes": ["Steel", "Fire"]
+                "teraTypes": ["Fire", "Grass"]
             }
         ]
     },
@@ -2540,6 +2596,18 @@
             {
                 "role": "Bulky Support",
                 "movepool": ["Protect", "Toxic", "C-Moon", "Play Rough", "Zen Headbutt"],
+                "abilities": ["Awaiting Heaven"],
+                "teraTypes": ["Steel"]
+            },
+            {
+                "role": "Setup Sweeper",
+                "movepool": ["Protect", "Calm Mind", "Earth Power", "Moonblast"],
+                "abilities": ["Awaiting Heaven"],
+                "teraTypes": ["Steel", "Ground"]
+            },
+            {
+                "role": "Fast Support",
+                "movepool": ["Protect", "Toxic", "Moonblast", "Rapid Spin", "C-Moon"],
                 "abilities": ["Awaiting Heaven"],
                 "teraTypes": ["Water", "Steel"]
             }

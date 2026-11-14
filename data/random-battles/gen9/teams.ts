@@ -108,7 +108,7 @@ const NO_STAB = [
 	'dragontail', 'drainingkiss', 'doomdesire', 'electroweb', 'eruption', 'explosion', 'fakeout', 'feint', 'flamecharge', 'flipturn', 'futuresight',
 	'grassyglide', 'iceshard', 'icywind', 'incinerate', 'infestation', 'machpunch', 'meteorbeam', 'mortalspin', 'nuzzle', 'pluck', 'pursuit',
 	'quickattack', 'rapidspin', 'reversal', 'selfdestruct', 'shadowsneak', 'skydrop', 'snarl', 'strugglebug', 'suckerpunch', 'trailblaze',
-	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'masamunecutter', 'shortcircuit', 'snowgrave', 'barrelroll'
+	'uturn', 'vacuumwave', 'voltswitch', 'watershuriken', 'waterspout', 'channelledblitz', 'shortcircuit', 'snowgrave', 'barrelroll'
 ];
 // Hazard-setting moves
 const HAZARDS = [
@@ -880,6 +880,11 @@ export class RandomTeams {
 				movePool, teraType, role);
 		}
 		
+		if (movePool.includes('moonblast') && species.id === 'puccinewmoon') {
+			counter = this.addMove('moonblast', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+		
 		// Enforce Fake Out on Orange
 		if (movePool.includes('fakeout') && species.id === 'orange') {
 			counter = this.addMove('fakeout', moves, types, abilities, teamDetails, species, isLead, isDoubles,
@@ -938,6 +943,11 @@ export class RandomTeams {
 		}
 		
 		if (movePool.includes('willowisp') && species.id === 'eram' && role === 'Fast Support') {
+			counter = this.addMove('willowisp', moves, types, abilities, teamDetails, species, isLead, isDoubles,
+				movePool, teraType, role);
+		}
+
+		if (movePool.includes('drainingkiss') && species.id === 'blue') {
 			counter = this.addMove('willowisp', moves, types, abilities, teamDetails, species, isLead, isDoubles,
 				movePool, teraType, role);
 		}
@@ -1211,7 +1221,11 @@ export class RandomTeams {
 		case 'Impatience':
 			return (species.id === 'aqua' && !moves.has('aerialace'));
 		case 'Seed Sower':
-			return (species.id === 'terakota' && !moves.has('earthquake'));
+			return (species.id === 'terakota' && !moves.has('highhorsepower'));
+		case 'Transcendent Eye':
+			return (species.id === 'elderguardian' && !moves.has('psychosoniclaser'));
+		case 'Amplifier':
+			return (species.id === 'heart' && !moves.has('psychosoniclaser'));
 		}
 
 		return false;
@@ -1347,7 +1361,7 @@ export class RandomTeams {
 			return (moves.has('closecombat') || moves.has('leafstorm')) ? 'White Herb' : 'Sitrus Berry';
 		}
 		if (moves.has('shellsmash') && ability !== 'Weak Armor') return 'White Herb';
-		if (moves.has('meteorbeam') || moves.has('channelledblitz') || (moves.has('electroshot') && !teamDetails.rain)) return 'Power Herb';
+		if (moves.has('meteorbeam') || moves.has('channelledblitz') || moves.has('psychosoniclaser') || (moves.has('electroshot') && !teamDetails.rain)) return 'Power Herb';
 		if (moves.has('acrobatics') && ability !== 'Protosynthesis') return '';
 		if (moves.has('auroraveil') || moves.has('lightscreen') && moves.has('reflect')) return 'Light Clay';
 		if (ability === 'Gluttony') return `${this.sample(['Aguav', 'Figy', 'Iapapa', 'Mago', 'Wiki'])} Berry`;

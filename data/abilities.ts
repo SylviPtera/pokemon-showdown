@@ -6753,10 +6753,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				foe.addVolatile('gastroacid');
 			}
 		},
-		onModifySecondaries(secondaries) {
-			this.debug('Revert to Zero prevent secondary');
-			return secondaries.filter(effect => !!effect.self);
-		},
+		// onModifySecondaries(secondaries) {
+		// 	this.debug('Revert to Zero prevent secondary');
+		// 	return secondaries.filter(effect => !!effect.self);
+		// },
 		flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, cantsuppress: 1, notrace: 1, failskillswap: 1, notransform: 1, breakable: 1 },
 		name: "Revert To Zero",
 		rating: 4.5,
