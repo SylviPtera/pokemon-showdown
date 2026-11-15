@@ -2172,6 +2172,28 @@
             }
         ]
     },
+    "pokey": {
+        "level": 84,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Stealth Rock", "Spikes", "Earthquake", "Toxic Spikes", "Leech Seed", "Toxic", "Spiky Shield", "Seed Bomb", "Synthesis"],
+                "abilities": ["Rough Skin"],
+                "teraTypes": ["Fire"]
+            }
+        ]
+    },
+    "pokeymega": {
+        "level": 81,
+        "sets": [
+            {
+                "role": "Bulky Support",
+                "movepool": ["Stealth Rock", "Spikes", "Earthquake", "Seed Bomb", "Leech Seed", "Synthesis", "Barb Barrage"],
+                "abilities": ["Rough Skin", "Poison Point"],
+                "teraTypes": ["Ground"]
+            }
+        ]
+    },
     "gooperblooper": {
         "level": 81,
         "sets": [

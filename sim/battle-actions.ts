@@ -692,7 +692,11 @@ export class BattleActions {
 			let accuracy = move.accuracy;
 			if (move.ohko) { // bypasses accuracy modifiers
 				if (!target.isSemiInvulnerable()) {
-					accuracy = 30;
+					if (move.id !== 'consumingvoid') {
+						accuracy = 30;
+					} else {
+						accuracy = 90;
+					}
 					if (move.ohko === 'Ice' && this.battle.gen >= 7 && !pokemon.hasType('Ice')) {
 						accuracy = 20;
 					}

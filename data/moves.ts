@@ -8686,7 +8686,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		accuracy: true,
 		basePower: 0,
 		category: "Status",
-		isNonstandard: "Past",
 		name: "Heal Order",
 		pp: 10,
 		priority: 0,
@@ -22459,6 +22458,29 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		type: "Ground",
 		contestType: "Beautiful",
 	},
+	consumingvoid: {
+		num: 9000,
+		accuracy: 90,
+		basePower: 0,
+		category: "Physical",
+		name: "Consuming Void",
+		pp: 5,
+		priority: 0,
+		flags: { protect: 1, },
+		ohko: true,
+		onTryMove(source, target, move) {
+			if (target.boosts.evasion >= 0 || !this.queue.willMove(target)) {
+				this.add('-fail', source, 'move: Consuming Void');
+				return null;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Dark",
+		zMove: { basePower: 180 },
+		maxMove: { basePower: 130 },
+		contestType: "Tough",
+	},
 	cream: {
 		num: 210,
 		accuracy: 40,
@@ -22959,6 +22981,10 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			onResidualOrder: 13,
 			onResidual(pokemon) {
 				const source = this.effectState.source;
+				if (this.field.getPseudoWeather('madeinheaven')) {
+					this.damage(pokemon.baseMaxhp / 8);
+					this.boost({ atk: -1, spa: -1 }, pokemon, source, this.dex.getActiveMove('idletransfiguration'));
+				}
 				this.damage(pokemon.baseMaxhp / 8);
 				this.boost({ atk: -1, spa: -1 }, pokemon, source, this.dex.getActiveMove('idletransfiguration'));
 			},
@@ -22983,7 +23009,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		},
 		category: "Physical",
 		name: "Infernal Climax",
-		pp: 10,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, metronome: 1, bite: 1},
 		multihit: 3,
@@ -23397,8 +23423,8 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	magnetstorm: {
 		num: 3001,
-		accuracy: 90,
-		basePower: 70,
+		accuracy: 85,
+		basePower: 65,
 		category: "Physical",
 		name: "Magnet Storm",
 		pp: 5,

@@ -672,6 +672,25 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		tier: "RU",
 		doublesTier: "(DUU)"
 	},
+	whomp: {
+		tier: "NU",
+		doublesTier: "(DUU)"
+	},
+	pokey: {
+		tier: "UU",
+		doublesTier: "(DUU)"
+	},
+	pokeymega: {
+		tier: "OU",
+		doublesTier: "(DUU)"
+	},
+	cheepcheep: {
+		tier: "LC",
+	},
+	cheepchomp: {
+		tier: "RU",
+		doublesTier: "(DUU)",
+	},
 	blooper: {
 		tier: "LC",
 	},
